@@ -1,0 +1,55 @@
+﻿.heading {
+width: 360px;
+height: 44px;
+	border-bottom: 1px solid #bababa;
+	-webkit-box-shadow: inset 0px -1px 0px #fff, 0px 1px 3px rgba(0, 0, 0, .08);
+	-moz-box-shadow: inset 0px -1px 0px #fff, 0px 1px 3px rgba(0, 0, 0, .08);
+	box-shadow: inset 0px -1px 0px #fff, 0px 1px 3px rgba(0, 0, 0, .08);
+	-webkit-border-radius: 4px 4px 0px 0px;
+	-moz-border-radius: 4px 4px 0px 0px;
+	border-radius: 4px 4px 0px 0px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 44px;
+	color: #444444;
+	text-shadow: 0px 1px 0px #fff;
+	
+	background-image: -webkit-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+}
+.reveal-modal-bg {
+position: fixed;
+height: 100%;
+width: 100%;
+background: #000;
+background: rgba(0, 0, 0, 0.18);
+z-index: 100;
+top: 0;
+left: 0;
+}
+.content {
+width: 360px;
+height: 144px;
+background: #fcfcfc;
+-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.25);
+-moz-box-shadow: 0px 1px 3px rgba(0,0,0,.25);
+box-shadow: 0px 1px 3px rgba(0,0,0,.25);
+-webkit-border-radius: 0px 0px 4px 4px;
+-moz-border-radius: 0px 0px 4px 4px;
+border-radius: 0px 0px 4px 4px;
+}
+.modal {
+width: 360px;
+height: 189px;
+padding: 8px;
+background: rgba(0,0,0,.3);
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+position: absolute !important;
+top: 50% !important;
+left: 50% !important;
+margin-top: -94px !important;
+margin-left: -180px !important;
+z-index: 101;
+}

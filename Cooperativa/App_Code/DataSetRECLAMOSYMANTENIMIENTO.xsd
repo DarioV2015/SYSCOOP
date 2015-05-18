@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRECLAMOSYMANTENIMIENTO" targetNamespace="http://tempuri.org/DataSetRECLAMOSYMANTENIMIENTO.xsd" xmlns:mstns="http://tempuri.org/DataSetRECLAMOSYMANTENIMIENTO.xsd" xmlns="http://tempuri.org/DataSetRECLAMOSYMANTENIMIENTO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRECLAMOSYMANTENIMIENTO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetRECLAMOSYMANTENIMIENTO" msprop:Generator_DataSetName="DataSetRECLAMOSYMANTENIMIENTO">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RECLAMOS" msprop:Generator_UserTableName="RECLAMOS" msprop:Generator_RowDeletedName="RECLAMOSRowDeleted" msprop:Generator_TableClassName="RECLAMOSDataTable" msprop:Generator_RowChangedName="RECLAMOSRowChanged" msprop:Generator_RowClassName="RECLAMOSRow" msprop:Generator_RowChangingName="RECLAMOSRowChanging" msprop:Generator_RowEvArgName="RECLAMOSRowChangeEvent" msprop:Generator_RowEvHandlerName="RECLAMOSRowChangeEventHandler" msprop:Generator_TablePropName="RECLAMOS" msprop:Generator_TableVarName="tableRECLAMOS" msprop:Generator_RowDeletingName="RECLAMOSRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDRECLAMOS" msprop:Generator_UserColumnName="IDRECLAMOS" msprop:Generator_ColumnPropNameInRow="IDRECLAMOS" msprop:Generator_ColumnVarNameInTable="columnIDRECLAMOS" msprop:Generator_ColumnPropNameInTable="IDRECLAMOSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RECLAMOS" msprop:Generator_UserColumnName="RECLAMOS" msprop:Generator_ColumnPropNameInRow="RECLAMOS" msprop:Generator_ColumnVarNameInTable="columnRECLAMOS" msprop:Generator_ColumnPropNameInTable="RECLAMOSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_UserColumnName="FECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IDORDENTRABAJOCORRECTIVO" msprop:Generator_UserColumnName="IDORDENTRABAJOCORRECTIVO" msprop:Generator_ColumnPropNameInRow="IDORDENTRABAJOCORRECTIVO" msprop:Generator_ColumnVarNameInTable="columnIDORDENTRABAJOCORRECTIVO" msprop:Generator_ColumnPropNameInTable="IDORDENTRABAJOCORRECTIVOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="IDSOCIO" msprop:Generator_UserColumnName="IDSOCIO" msprop:Generator_ColumnPropNameInRow="IDSOCIO" msprop:Generator_ColumnVarNameInTable="columnIDSOCIO" msprop:Generator_ColumnPropNameInTable="IDSOCIOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="APELLIDO" msprop:Generator_UserColumnName="APELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBREPERSONA" msprop:Generator_UserColumnName="NOMBREPERSONA" msprop:Generator_ColumnPropNameInRow="NOMBREPERSONA" msprop:Generator_ColumnVarNameInTable="columnNOMBREPERSONA" msprop:Generator_ColumnPropNameInTable="NOMBREPERSONAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CUIT" msprop:Generator_UserColumnName="CUIT" msprop:Generator_ColumnPropNameInRow="CUIT" msprop:Generator_ColumnVarNameInTable="columnCUIT" msprop:Generator_ColumnPropNameInTable="CUITColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="ZONAS" msprop:Generator_UserColumnName="ZONAS" msprop:Generator_ColumnPropNameInRow="ZONAS" msprop:Generator_ColumnVarNameInTable="columnZONAS" msprop:Generator_ColumnPropNameInTable="ZONASColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CALLES" msprop:Generator_UserColumnName="CALLES" msprop:Generator_ColumnPropNameInRow="CALLES" msprop:Generator_ColumnVarNameInTable="columnCALLES" msprop:Generator_ColumnPropNameInTable="CALLESColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NROCALLE" msprop:Generator_UserColumnName="NROCALLE" msprop:Generator_ColumnPropNameInRow="NROCALLE" msprop:Generator_ColumnVarNameInTable="columnNROCALLE" msprop:Generator_ColumnPropNameInTable="NROCALLEColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PREVENTIVO" msprop:Generator_UserTableName="PREVENTIVO" msprop:Generator_RowDeletedName="PREVENTIVORowDeleted" msprop:Generator_TableClassName="PREVENTIVODataTable" msprop:Generator_RowChangedName="PREVENTIVORowChanged" msprop:Generator_RowClassName="PREVENTIVORow" msprop:Generator_RowChangingName="PREVENTIVORowChanging" msprop:Generator_RowEvArgName="PREVENTIVORowChangeEvent" msprop:Generator_RowEvHandlerName="PREVENTIVORowChangeEventHandler" msprop:Generator_TablePropName="PREVENTIVO" msprop:Generator_TableVarName="tablePREVENTIVO" msprop:Generator_RowDeletingName="PREVENTIVORowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDORDENTRABAJOP" msprop:Generator_UserColumnName="IDORDENTRABAJOP" msprop:Generator_ColumnPropNameInRow="IDORDENTRABAJOP" msprop:Generator_ColumnVarNameInTable="columnIDORDENTRABAJOP" msprop:Generator_ColumnPropNameInTable="IDORDENTRABAJOPColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FECHAINICIO" msprop:Generator_UserColumnName="FECHAINICIO" msprop:Generator_ColumnPropNameInRow="FECHAINICIO" msprop:Generator_ColumnVarNameInTable="columnFECHAINICIO" msprop:Generator_ColumnPropNameInTable="FECHAINICIOColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FECHAFIN" msprop:Generator_UserColumnName="FECHAFIN" msprop:Generator_ColumnPropNameInRow="FECHAFIN" msprop:Generator_ColumnVarNameInTable="columnFECHAFIN" msprop:Generator_ColumnPropNameInTable="FECHAFINColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OTP" msprop:Generator_UserColumnName="OTP" msprop:Generator_ColumnPropNameInRow="OTP" msprop:Generator_ColumnVarNameInTable="columnOTP" msprop:Generator_ColumnPropNameInTable="OTPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TAREAGENERAL" msprop:Generator_UserColumnName="TAREAGENERAL" msprop:Generator_ColumnPropNameInRow="TAREAGENERAL" msprop:Generator_ColumnVarNameInTable="columnTAREAGENERAL" msprop:Generator_ColumnPropNameInTable="TAREAGENERALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIPTAREA" msprop:Generator_UserColumnName="DESCRIPTAREA" msprop:Generator_ColumnPropNameInRow="DESCRIPTAREA" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTAREA" msprop:Generator_ColumnPropNameInTable="DESCRIPTAREAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ZONA" msprop:Generator_UserColumnName="ZONA" msprop:Generator_ColumnPropNameInRow="ZONA" msprop:Generator_ColumnVarNameInTable="columnZONA" msprop:Generator_ColumnPropNameInTable="ZONAColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

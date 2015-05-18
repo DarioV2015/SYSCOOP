@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCONSUMO" targetNamespace="http://tempuri.org/DataSetCONSUMO.xsd" xmlns:mstns="http://tempuri.org/DataSetCONSUMO.xsd" xmlns="http://tempuri.org/DataSetCONSUMO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCONSUMO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetCONSUMO" msprop:Generator_DataSetName="DataSetCONSUMO">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableCONSUMOS" msprop:Generator_UserTableName="DataTableCONSUMOS" msprop:Generator_RowDeletedName="DataTableCONSUMOSRowDeleted" msprop:Generator_RowChangedName="DataTableCONSUMOSRowChanged" msprop:Generator_RowClassName="DataTableCONSUMOSRow" msprop:Generator_RowChangingName="DataTableCONSUMOSRowChanging" msprop:Generator_RowEvArgName="DataTableCONSUMOSRowChangeEvent" msprop:Generator_RowEvHandlerName="DataTableCONSUMOSRowChangeEventHandler" msprop:Generator_TableClassName="DataTableCONSUMOSDataTable" msprop:Generator_TableVarName="tableDataTableCONSUMOS" msprop:Generator_RowDeletingName="DataTableCONSUMOSRowDeleting" msprop:Generator_TablePropName="DataTableCONSUMOS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FECHAMEDICION" msprop:Generator_UserColumnName="FECHAMEDICION" msprop:Generator_ColumnVarNameInTable="columnFECHAMEDICION" msprop:Generator_ColumnPropNameInRow="FECHAMEDICION" msprop:Generator_ColumnPropNameInTable="FECHAMEDICIONColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LECTURACONSUMO" msprop:Generator_UserColumnName="LECTURACONSUMO" msprop:Generator_ColumnVarNameInTable="columnLECTURACONSUMO" msprop:Generator_ColumnPropNameInRow="LECTURACONSUMO" msprop:Generator_ColumnPropNameInTable="LECTURACONSUMOColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="MEDIDOR" msprop:Generator_UserColumnName="MEDIDOR" msprop:Generator_ColumnVarNameInTable="columnMEDIDOR" msprop:Generator_ColumnPropNameInRow="MEDIDOR" msprop:Generator_ColumnPropNameInTable="MEDIDORColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="IDSOCIO" msprop:Generator_UserColumnName="IDSOCIO" msprop:Generator_ColumnVarNameInTable="columnIDSOCIO" msprop:Generator_ColumnPropNameInRow="IDSOCIO" msprop:Generator_ColumnPropNameInTable="IDSOCIOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="APELLIDO" msprop:Generator_UserColumnName="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_UserColumnName="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CALLE" msprop:Generator_UserColumnName="CALLE" msprop:Generator_ColumnVarNameInTable="columnCALLE" msprop:Generator_ColumnPropNameInRow="CALLE" msprop:Generator_ColumnPropNameInTable="CALLEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NROCALLE" msprop:Generator_UserColumnName="NROCALLE" msprop:Generator_ColumnVarNameInTable="columnNROCALLE" msprop:Generator_ColumnPropNameInRow="NROCALLE" msprop:Generator_ColumnPropNameInTable="NROCALLEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CONSUMO" msprop:Generator_UserColumnName="CONSUMO" msprop:Generator_ColumnPropNameInRow="CONSUMO" msprop:Generator_ColumnVarNameInTable="columnCONSUMO" msprop:Generator_ColumnPropNameInTable="CONSUMOColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ZONAS" msprop:Generator_UserColumnName="ZONAS" msprop:Generator_ColumnPropNameInRow="ZONAS" msprop:Generator_ColumnVarNameInTable="columnZONAS" msprop:Generator_ColumnPropNameInTable="ZONASColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

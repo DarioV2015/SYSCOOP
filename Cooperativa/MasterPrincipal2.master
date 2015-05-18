@@ -1,0 +1,905 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPrincipal2.master.cs"
+    Inherits="MasterPrincipal2" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Página sin título</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .acoordeon
+        {
+            background-color: Gray;
+            height: 20px;
+        }
+        .acoordeonContent
+        {
+            background-color: Blue;
+            display: block;
+        }
+        .acoordeonLink
+        {
+            background-color: Green;
+        }
+        .accordionCabecera
+        {
+            padding: 8px;
+            padding-left: 18px;
+            text-align: left;
+            color: black;
+            text-decoration: none;
+            outline: none;
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            font-size: 13px;
+            background: #EEE url( "/Cooperativa/Imagenes/gradiente.png" ) repeat-x 0 0;
+            cursor: auto;
+            font-weight: bold;
+        }
+        .IconoFlechas
+        {
+            background-image: url( "/Cooperativa/Imagenes/arrows.gif" );
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            width: 13px;
+            height: 13px;
+            top: 9px;
+            right: 2px;
+            text-align: center;
+            padding-left: 5px;
+            overflow: hidden;
+        }
+        .accordionCabeceraSelected
+        {
+            padding: 8px;
+            padding-left: 18px;
+            text-align: left;
+            color: black;
+            text-decoration: none;
+            outline: none;
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            font-size: 13px;
+            background: #EEE url( "/Cooperativa/Imagenes/gradiente.png" ) repeat-x 0 0;
+            cursor: auto;
+            font-weight: bold;
+        }
+        .accordionCabeceraSelected div.IconoFlechas
+        {
+            background-position: 0 -12px;
+        }
+        .accordionContenido
+        {
+            font-family: Sans-Serif;
+            background-color: beige;
+            font-size: 11px;
+            padding-left: 5px;
+            padding-top: 2px;
+            font-weight: bold;
+        }
+        .accordionContenido ul li:hover
+        {
+            background-color: #E5DED3;
+            font-weight: bold;
+            text-decoration: none; /*background-position: 0 -64px;*/
+            cursor: pointer;
+            font-size: 11px;
+        }
+        .a
+        {
+            text-decoration: none;
+            font-family: Sans-Serif;
+            color: Black;
+        }
+        .accordionContenido ul li
+        {
+            list-style: none;
+            padding-top: 4px;
+            border-bottom: 1px solid #E5ded3;
+            padding-bottom: 4px;
+        }
+        .accordionContenido ul
+        {
+            padding-left: 0px;
+        }
+        .accordionCabecera:hover
+        {
+            color: E5ded3;
+            font-weight: normal;
+            text-decoration: none;
+            background-position: 0 -64px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .color
+        {
+            background-position: 0% 0%;
+            height: 55px;
+            position: relative;
+            display: block;
+            -moz-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            -webkit-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+            -moz-border-radius: 30px 30px 30px 30px;
+            -webkit-border-radius: 30px 30px 30px 30px; /* para Opera */
+            border-radius: 30px 30px 3opx 30px;
+            top: 0px;
+            left: 0px;
+            background-color: #0bf;
+            background-repeat: repeat;
+            background-attachment: scroll;
+        }
+        .style2
+        {
+            height: 100px;
+        }
+        .style5
+        {
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            font-size: 16px;
+            text-align: center;
+            margin-left: 130px;
+            margin-top: 18px;
+            color:aliceblue;
+        }
+        .style4
+        {
+            height: 400px; /*border-left: 1px solid rgb(226, 225, 225);*/
+            margin-left: 10px;
+            border-spacing: 0px;
+            padding-left: 10px;
+        }
+        .style6
+        {
+            text-align: right;
+            margin-right: 15px;
+            margin-top: 40px;
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            font-size: 13px;
+            height: 20px;
+        }
+        .logo
+        {
+            margin-left: 55px;
+            height: 80px;
+            width: 90px;
+        }
+        .style3
+        {
+            width: 210px;
+           /* height: 485px;*/
+           
+            background-color: beige;
+            box-shadow: px 2px 8px rgba(0, 0, 0, 0.6);
+            border-radius: 30px 30px 30px 30px;
+            -webkit-border-radius: 18px 0px 0px 0px; /*  -moz-border-radius: 30px 30px 30px 30px;
+            
+            -webkit-border-radius: 30px 30px 30px 30px;
+            /* para Opera */ /*border-radius: 30px 0px 0px 30px;
+            border-right-style:none;
+            border-style:solid;
+           border-color:Gray;*/
+        }
+        .div
+        {
+            border-spacing: 0px;
+            height: 37px;
+        }
+        .SiteMap
+        {
+            margin-top: 12px;
+        }
+        .style7
+        {
+            /*border-left: 1px solid rgb(226, 225, 225);*/
+            margin-left: 10px;
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            font-size: 12px;
+            font-weight: bold;
+            border-spacing: 0px;
+            height: 23px;
+            border-bottom-style: solid;
+            border-bottom-color: beige;
+            border-bottom-width: thin;
+        }
+        .labelMenu
+        {
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            font-size: 13px;
+            margin-left: 90px;
+        }
+        .MenuUsuario
+        {
+            /*background-image:url(Imagenes/1400094416_user-alt.png);*/
+            background-repeat: no-repeat;
+            margin-left: 810px;
+            margin-top: 18px;
+            list-style: none;
+        }
+        .MenuAyuda
+        {
+            /*background-image:url(Imagenes/1400094499_help.png);*/
+            background-repeat: no-repeat;
+            margin-left: 15px;
+            margin-top: 18px;
+            list-style: none;
+        }
+        .imagenPath
+        {
+            vertical-align: bottom;
+            height: 12px;
+            width: 12px;
+        }
+        .style8
+        {
+            border-spacing: 0px;
+            height: 41px;
+            width: 600px;
+        }
+        .fontUsuario
+        {
+        	margin-left: 800px;
+            font-family: "Source Sans Pro" , Helvetica, Arial;
+            color: rgb(253, 253, 242);
+            font-size: 17px;
+            font-weight: bold;
+        	}
+    </style>
+    <link href="Style/PopUp.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server" style="height:569px">
+    <div>
+    </div>
+    <table style="width: 100%; margin-top:0px">
+        <tr>
+            <td colspan="2" style="margin-left: 25px">
+                <asp:Image ID="Image1" runat="server" Height="60px" ImageUrl="~/Imagenes/SISE_logo1.gif"
+                    Width="70px" class="logo" Style="float: left" />
+                
+                <div class="style6">
+                    <asp:Label ID="lblFecha" runat="server" CssClass="style6"></asp:Label>
+                    
+                    </div>
+            </td>
+            <td >
+            
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="height: 75px">
+                <div class="color">
+                    <div style="float: left">
+                        <asp:Label ID="Label1" runat="server" Text="Bienvenido!" Class="style5" Height="40px"></asp:Label>
+                        <asp:Label ID="lblUsuario" runat="server" CssClass="fontUsuario"></asp:Label>
+                        
+                    </div>
+                    <div style="float: left">
+                        <asp:ImageButton ID="imagenAvisos" runat="server" 
+                        ImageUrl="~/Imagenes/1411790037_projects2.png" Visible="False" 
+                    onclick="imagenAvisos_Click" style=" margin-top:5px; width:40px"/>
+                      
+                    </div>
+                    <div style="float: left">
+                        <ul class="MenuAyuda">
+                            <li></li>
+                        </ul>
+                    </div>
+                        
+                </div>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="style3" align="justify" valign="top" style="border-spacing: 40px" rowspan="2" height="auto">
+                <div style="margin-top: 10px">
+                    <asp:Label ID="Label3" runat="server" Text="MENÚ" CssClass="labelMenu" Font-Bold="True"></asp:Label>
+                </div>
+                <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnablePageMethods="true" EnableScriptGlobalization="True">
+                </asp:ToolkitScriptManager>
+                <asp:Accordion ID="AccordionSocio" runat="server" HeaderCssClass="accordionCabecera"
+                    ContentCssClass="accordionContenido" HeaderSelectedCssClass="accordionCabeceraSelected"
+                    FadeTransitions="true" FramesPerSecond="40" TransitionDuration="250" AutoSize="None"
+                    SelectedIndex="-1" RequireOpenedPane="false" Height="352px" Style="margin-top: 15px"
+                    Width="230px" Visible="False">
+                    <Panes>
+                    <asp:AccordionPane ID="AccordionPane9" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Sesión</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lnkCerrarSession" onclick="lnkCerrarSession_Click" runat="server" CssClass="a">Cerrar Sesión</asp:LinkButton>
+                                        </li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/CambiarPassword.aspx"
+                                        class="a">Cambiar Contraseña</a></li>
+                                        
+                                        
+                                    
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    
+                        
+                        <asp:AccordionPane ID="AccordionPane2" runat="server" Style="margin-top: 0px">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Consumo</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarDeclaracionArtefactos.aspx"
+                                        class="a">Registrar Declaración de Artefactos</a> </li>
+                                          <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/CalcularConsumoEstimadoSocio.aspx"
+                                        class="a">Calcular Consumo Estimado</a></li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane3" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Instalación</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarPedidoInstalacionMedidor.aspx"
+                                        class="a">Registrar Pedido de Instalación </a></li>
+                                    
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                      
+                        <asp:AccordionPane ID="AccordionPane5" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Reclamo</div>
+                            </Header>
+                            <Content>
+                                <ul>
+
+   
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/ConsultarReclamo.aspx"
+                                        class="a">Consultar Reclamo </a></li> 
+                                    
+                                
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    </Panes>
+                </asp:Accordion>
+                <asp:Accordion ID="AccordionGuardia" runat="server" HeaderCssClass="accordionCabecera"
+                    ContentCssClass="accordionContenido" HeaderSelectedCssClass="accordionCabeceraSelected"
+                    FadeTransitions="true" FramesPerSecond="40" TransitionDuration="250" AutoSize="None"
+                    SelectedIndex="-1" RequireOpenedPane="false" Height="352px" Style="margin-top: 15px"
+                    Width="230px" Visible="False">
+                    <Panes>
+                    <asp:AccordionPane ID="AccordionPane14" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Sesión</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/CambiarPassword.aspx"
+                                        class="a">Cambiar Contraseña</a></li>
+                                            
+                                           
+                                            <li>
+                                        <asp:LinkButton ID="LinkButton2" onclick="lnkCerrarSession_Click" runat="server" CssClass="a">Cerrar Sesión</asp:LinkButton>
+                                        </li>
+                                        
+                                        
+                                    
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    
+                       
+                       
+                        <asp:AccordionPane ID="AccordionPane17" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Instalación</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                  
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarResultadoInstalacionMedidor.aspx"
+                                        class="a">Registrar Resultado Instalación</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/AsignarMedidorASocio.aspx"
+                                        class="a">Asignar Medidor a Socio </a></li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                       
+                        <asp:AccordionPane ID="AccordionPane19" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Reclamo</div>
+                            </Header>
+                            <Content>
+                                <ul>
+
+                                 <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarReclamo.aspx"
+                                        class="a">Registrar Reclamo</a></li>
+                                 <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarProblema.aspx"
+                                        class="a">Registrar Problema</a></li>
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarTipoReclamoTipico.aspx"
+                                        class="a">Registrar Tipo de Reclamo</a></li>
+                                 <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarSolucion.aspx"
+                                        class="a">Registrar Solución</a></li>   
+                       <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarResultadoMantenimientoCorrectivo.aspx"
+                                        class="a">Registrar Resultado OTC </a></li>    
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/ConsultarReclamo.aspx"
+                                        class="a">Consultar Reclamo </a></li> 
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/ConsultarOTC.aspx"
+                                        class="a">Consultar OTC </a></li>     
+                                
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane7" runat="server" Style="margin-top: 0px">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Consumo</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    
+                                   
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarMedicionMedidor.aspx"
+                                        class="a">Registrar Medición</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/ConsultarMedicionMedidor.aspx"
+                                        class="a">Consultar Medición </a></li>
+                                   
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane22" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Mapa</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/ConsultarMapa.aspx" class="a">Consultar Mapa </a></li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    </Panes>
+                </asp:Accordion>
+                
+                
+                
+                <asp:Accordion ID="AccordionJefes" runat="server" HeaderCssClass="accordionCabecera"
+                    ContentCssClass="accordionContenido" HeaderSelectedCssClass="accordionCabeceraSelected"
+                    FadeTransitions="true" FramesPerSecond="40" TransitionDuration="250" AutoSize="None"
+                    SelectedIndex="-1" RequireOpenedPane="false" Height="352px" Style="margin-top: 15px"
+                    Width="230px" Visible="False">
+                    <Panes>
+                    <asp:AccordionPane ID="AccordionPane1" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Sesión</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton3" onclick="lnkCerrarSession_Click" runat="server" CssClass="a">Cerrar Sesión</asp:LinkButton>
+                                        </li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/CambiarPassword.aspx"
+                                        class="a">Cambiar Contraseña</a></li>
+                                        
+                                        
+                                    
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    
+                        <asp:AccordionPane ID="AccordionPane12" runat="server" Style="margin-top: 0px">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Altas
+                                </div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarSocio.aspx"
+                                        class="a">Registrar Socio </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/ModificarSocio.aspx"
+                                        class="a">Modificar Socio</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarMedidor.aspx"
+                                        class="a">Registrar Medidor</a> </li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarTransformador.aspx"
+                                        class="a">Registrar Transformador</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarSubestacion.aspx"
+                                        class="a">Registrar Subestación </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarRuta.aspx"
+                                        class="a">Registrar Ruta</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarPlantaTransformadora.aspx"
+                                        class="a">Registrar Planta Transformadora </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarLinea.aspx"
+                                        class="a">Registrar Línea</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarPoste.aspx"
+                                        class="a">Registrar Poste </a></li>
+                                        <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarContrato.aspx"
+                                        class="a">Registrar Contrato </a></li>
+                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarProveddor.aspx"
+                                        class="a">Registrar Proveedor </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarInsumo.aspx"
+                                        class="a">Registrar Insumo  </a></li>
+                                    
+                                    
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarHerramienta.aspx"
+                                        class="a">Registrar Herramienta </a></li>
+                                    
+                                    <li>Insertar Vía Blanca </li>
+                                    <li>Consultar Contrato </li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        
+                        
+                        <asp:AccordionPane ID="AccordionPane8" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Empleados</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                  <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarGuardiaReclamo.aspx"
+                                        class="a">Registrar Guardia Reclamo </a></li>
+                                   <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarGuardiaReclamoSuplente.aspx"
+                                        class="a"> Registrar Guardia Reclamo Suplente</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarDiagramacionTurnosGuardiaReclamo.aspx"
+                                        class="a">Registrar Diagramación de Turnos</a></li>
+                       
+                                         <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/AsignarHerramientaAGrupoGR.aspx"
+                                        class="a">Asignar Herramienta</a></li>
+                                   <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarCuadrilla.aspx"
+                                        class="a">Registrar Cuadrilla</a></li>
+                                    
+                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/AsignarHerramientaACuadrilla.aspx"
+                                        class="a">Asignar Herramienta a Cuadrilla</a></li>
+                                    <li>Asignar Orden de Trabajo </li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                         <asp:AccordionPane ID="AccordionPane6" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Mantenimiento</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarTareaGeneral.aspx"
+                                        class="a">Registrar Tarea </a></li>
+                                 <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarActividad.aspx"
+                                        class="a">Registrar Actividad </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarPlanificacionMantenimientoPreventivo.aspx"
+                                        class="a">Registrar Planificación </a></li>   
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/GenerarOTP.aspx"
+                                        class="a">Generar OT </a></li>         
+                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarIngresoDeContrato.aspx"
+                                        class="a">Registrar Ingreso de Contrato </a></li>      
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/ProgramarCorteEnergia.aspx"
+                                        class="a">Programar Corte de Energía </a></li> 
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/GenerarAvisoDeCorte.aspx"
+                                        class="a">Generar Aviso de Corte </a></li> 
+                                         <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarResultadoOTP.aspx"
+                                        class="a">Registrar Resultado OTP </a></li>
+                                    
+                                     
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        
+                        <asp:AccordionPane ID="AccordionPane25" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Informes</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                 <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Reportes/ReportesReclamos.aspx"
+                                        class="a">Informes</a></li>
+                                   
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane26" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Mapa</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/ConsultarMapa.aspx" class="a">Consultar Mapa </a></li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    </Panes>
+                </asp:Accordion>
+                <asp:Accordion ID="AccordionCapataz" runat="server" HeaderCssClass="accordionCabecera"
+                    ContentCssClass="accordionContenido" HeaderSelectedCssClass="accordionCabeceraSelected"
+                    FadeTransitions="true" FramesPerSecond="40" TransitionDuration="250" AutoSize="None"
+                    SelectedIndex="-1" RequireOpenedPane="false" Height="352px" Style="margin-top: 15px"
+                    Width="230px" Visible="False">
+                    <Panes>
+                    <asp:AccordionPane ID="AccordionPane10" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Sesión</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton1" onclick="lnkCerrarSession_Click" runat="server" CssClass="a">Cerrar Sesión</asp:LinkButton>
+                                        </li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/CambiarPassword.aspx"
+                                        class="a">Cambiar Contraseña</a></li>
+                                        
+                                        
+                                    
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    
+                       
+                        
+                        <asp:AccordionPane ID="AccordionPane13" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Instalación</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarTipoResutladoInstalacionMedidor.aspx"
+                                        class="a">Registrar Tipo Resultado Instalación</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/GenerarOrdenInstalacionMedidor.aspx"
+                                        class="a">Generar Orden de Instalación</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarPedidoInstalacionMedidor.aspx"
+                                        class="a">Registrar Pedido de Instalación </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarResultadoInstalacionMedidor.aspx"
+                                        class="a">Registrar Resultado Instalación</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/AsignarMedidorASocio.aspx"
+                                        class="a">Asignar Medidor a Socio </a></li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                         <asp:AccordionPane ID="AccordionPane4" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Mantenimiento</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarTareaGeneral.aspx"
+                                        class="a">Registrar Tarea </a></li>
+                                 <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarActividad.aspx"
+                                        class="a">Registrar Actividad </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarPlanificacionMantenimientoPreventivo.aspx"
+                                        class="a">Registrar Planificación </a></li>   
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/GenerarOTP.aspx"
+                                        class="a">Generar OT </a></li>         
+                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarIngresoDeContrato.aspx"
+                                        class="a">Registrar Ingreso de Contrato </a></li>      
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/ProgramarCorteEnergia.aspx"
+                                        class="a">Programar Corte de Energía </a></li> 
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/GenerarAvisoDeCorte.aspx"
+                                        class="a">Generar Aviso de Corte </a></li> 
+                                         <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarResultadoOTP.aspx"
+                                        class="a">Registrar Resultado OTP </a></li>
+                                    
+                                     
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    </Panes>
+                </asp:Accordion>
+                
+                
+                
+                <asp:Accordion ID="AccordionAdministrativo" runat="server" HeaderCssClass="accordionCabecera"
+                    ContentCssClass="accordionContenido" HeaderSelectedCssClass="accordionCabeceraSelected"
+                    FadeTransitions="true" FramesPerSecond="40" TransitionDuration="250" AutoSize="None"
+                    SelectedIndex="-1" RequireOpenedPane="false" Height="352px" Style="margin-top: 15px"
+                    Width="230px" Visible="False">
+                    <Panes>
+                    <asp:AccordionPane ID="AccordionPane27" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Sesión</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton4" onclick="lnkCerrarSession_Click" runat="server" CssClass="a">Cerrar Sesión</asp:LinkButton>
+                                        </li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/CambiarPassword.aspx"
+                                        class="a">Cambiar Contraseña</a></li>
+                                        
+                                        
+                                    
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    
+                        <asp:AccordionPane ID="AccordionPane28" runat="server" Style="margin-top: 0px">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Altas
+                                </div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarSocio.aspx"
+                                        class="a">Registrar Socio </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/ModificarSocio.aspx"
+                                        class="a">Modificar Socio</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarMedidor.aspx"
+                                        class="a">Registrar Medidor</a> </li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarTransformador.aspx"
+                                        class="a">Registrar Transformador</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarSubestacion.aspx"
+                                        class="a">Registrar Subestación </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarRuta.aspx"
+                                        class="a">Registrar Ruta</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarPlantaTransformadora.aspx"
+                                        class="a">Registrar Planta Transformadora </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarLinea.aspx"
+                                        class="a">Registrar Línea</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarPoste.aspx"
+                                        class="a">Registrar Poste </a></li>
+                                        <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarContrato.aspx"
+                                        class="a">Registrar Contrato </a></li>
+                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarProveddor.aspx"
+                                        class="a">Registrar Proveedor </a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarInsumo.aspx"
+                                        class="a">Registrar Insumo  </a></li>
+                                    
+                                    
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MPreventivo/RegistrarHerramienta.aspx"
+                                        class="a">Registrar Herramienta </a></li>
+                                    
+                                    <li>Insertar Vía Blanca </li>
+                                    <li>Consultar Contrato </li>
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane11" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Reclamo</div>
+                            </Header>
+                            <Content>
+                                <ul>
+
+   
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/ConsultarReclamo.aspx"
+                                        class="a">Consultar Reclamo </a></li> 
+                                <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/MCorrectivoSesion/RegistrarReclamo.aspx"
+                                        class="a">Registrar Reclamo</a></li>
+                                    
+                                
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane29" runat="server" Style="margin-top: 0px">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Consumo</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                  
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarMedicionMedidor.aspx"
+                                        class="a">Registrar Medición</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/ConsultarMedicionMedidor.aspx"
+                                        class="a">Consultar Medición </a></li>
+                                   
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                        <asp:AccordionPane ID="AccordionPane30" runat="server">
+                            <Header>
+                                <div class="IconoFlechas" style="float: left">
+                                </div>
+                                <div>
+                                    Instalación</div>
+                            </Header>
+                            <Content>
+                                <ul>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarTipoResutladoInstalacionMedidor.aspx"
+                                        class="a">Registrar Tipo Resultado Instalación</a></li>
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/GenerarOrdenInstalacionMedidor.aspx"
+                                        class="a">Generar Orden de Instalación</a></li>
+                                   
+                                   
+                                   
+                                </ul>
+                            </Content>
+                        </asp:AccordionPane>
+                    </Panes>
+                </asp:Accordion>
+                
+            </td>
+            <td class="style7">
+                <div style="margin-left: 7px; border-spacing: 0px;" class="style8">
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" CssClass="SiteMap" Height="40px">
+                        <PathSeparatorTemplate>
+                            <asp:Image ID="Image2" runat="server" Height="14px" ImageAlign="Bottom" ImageUrl="~/Imagenes/icon-arrow-right-b.png"
+                                Width="14px" vertical-align=" Bottom" CssClass="imagenPath" />
+                        </PathSeparatorTemplate>
+                        <RootNodeTemplate>
+                            <asp:Image ID="Image3" runat="server" Height="24px" ImageUrl="~/Imagenes/Home.png"
+                                Width="27px" CssClass="imagenPath" />
+                        </RootNodeTemplate>
+                    </asp:SiteMapPath>
+                </div>
+            </td>
+        </tr>
+        <tr style="height: 473px">
+            <td class="style4" valign="top" style="margin-top: 15px">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+                
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

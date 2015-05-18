@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Principal.master.cs" Inherits="Principal" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Página sin título</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 593px;
+            border-left: 1px solid rgb(226, 225, 225);
+        }
+        .style5
+        {
+            width: 210px;
+            height: 135px;
+        }
+        .style6
+        {
+            border-spacing: 0px;
+            height: 100%;
+        }
+        .acoordeon
+        {
+            background-color: Gray;
+            height: 20px;
+        }
+        .acoordeonContent
+        {
+            background-color: Blue;
+            display: block;
+        }
+        .acoordeonLink
+        {
+            background-color: Green;
+        }
+        .accordionCabecera
+        {
+            padding: 8px;
+            padding-left: 18px;
+            text-align: left;            
+            color: black;
+            text-decoration: none;
+            outline: none;
+            font-family: "Source Sans Pro", Helvetica, Arial;
+            font-size:14px;
+            background: #EEE url("Imagenes/bg.gif") repeat-x 0 0;
+            cursor:auto;
+        }
+        .IconoFlechas
+        {
+        	background-image:url("Imagenes/arrows.gif");
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            width: 13px;
+            height: 13px;
+            top: 9px;
+            right: 2px;
+            text-align:center;
+           padding-left: 5px;
+            overflow: hidden;
+            
+        }
+         .accordionCabeceraSelected
+        {
+            padding: 8px;
+            padding-left: 18px;
+            text-align: left;          
+            color: black;
+            text-decoration: none;
+            outline: none;
+            font-family: "Source Sans Pro", Helvetica, Arial;
+            font-size:14px;        
+            background: #EEE url("Imagenes/bg.gif") repeat-x 0 0;
+            cursor:auto;
+        }
+         .accordionCabeceraSelected div.IconoFlechas
+         {
+         	background-position:0 -12px;
+ 
+         	}
+        .accordionContenido
+        {
+            font-family: Sans-Serif;
+           background: #FAFAFA;
+            font-size: 12px;
+            padding-left: 5px;
+            padding-top:2px;
+        }
+      
+        .accordionContenido ul li:hover
+        {
+        	background-color: #d6dfec;            
+                    	
+            font-weight: normal;
+            text-decoration: none;
+            /*background-position: 0 -64px;*/
+            cursor: pointer;
+        }
+        .accordionContenido ul li
+        {
+         list-style:none;
+         padding-top:3px;
+         border-bottom: 1px solid #E9E9E9;
+         padding-bottom:3px;
+        	}
+        .accordionContenido ul 
+        {
+        	padding-left:0px;
+        	}
+        .color
+        {
+            height: 135px;
+            position: relative;
+            background: #fff;
+            display: block;
+            background: #0bf;
+            -moz-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            -webkit-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.7)));
+            background-image: -moz-linear-gradient(-90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+            background-image: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+        }
+        .accordionCabecera:hover
+        {
+        	color: #333;
+            font-weight: normal;
+            text-decoration: none;
+            background-position: 0 -64px;
+        	}
+        .style7
+        {
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    </div>
+    <table style="width:100%;" class="style6">
+        <tr>
+            <td class="style5" >
+            <div style="height: 121px">    
+                <asp:Image ID="Image1" runat="server" Height="130px" 
+                    ImageUrl="~/Imagenes/SISE_logo_RGB.jpg" Width="176px" />
+                </div>
+            </td>
+            <td class="color"  >
+            </td>
+        </tr>
+        <tr  >
+          
+            <td align="justify" valign="top" style=" border-spacing:20px" class="style7"> &nbsp;</td>
+            
+            <td class="style1" rowspan="2">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">     
+        </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr  >
+          
+            <td align="justify" valign="top" style=" border-spacing:20px">
+            
+                    <asp:Accordion ID="Accordion1" runat="server"  
+                         HeaderCssClass="accordionCabecera" ContentCssClass="accordionContenido" 
+                         HeaderSelectedCssClass="accordionCabeceraSelected" FadeTransitions= "true" FramesPerSecond="40" TransitionDuration="250" 
+                         AutoSize="None" SelectedIndex="-1"
+                         RequireOpenedPane="false" Height="352px" style="margin-top: 0px" Width="230px">
+                        <Panes>
+                        <asp:AccordionPane runat="server" style="margin-top:0px" >
+                        <Header>  
+                        <div class="IconoFlechas"  style = "float:left"></div>
+                        <div> Medidor </div>
+                           </Header>
+                             <Content>
+                                <ul>
+                                    <li> Registrar Socio </li>
+                                    <li> Modificar Socio</li>
+                                    <li> Registrar Medidor </li>
+                                    <li> Registrar Transformador</li> 
+                                    <li> Registrar Subestación </li>
+                                    <li> Registrar Ruta</li>
+                                    <li> Registrar Planta Transformadora </li>
+                                    <li> Registrar Línea</li> 
+                                    <li> Registrar Poste </li>
+                                    <li> Registrar Tipo Resultado Instalación</li>
+                                    <li> Asignar Medidor a Socio </li>
+                                    <li> Generar Orden de Instalación</li> 
+                                    <li> Registrar Pedido de Instalación </li>
+                                    <li> Registrar Resultado Instalación</li>
+                                    <li> Registrar Declaración de Artefactos </li>
+                                    <li> Calcular Consumo Estimado</li>
+                                    <li> Cargar Datos a MEMO </li>
+                                    <li> Registrar Medición</li>
+                                    <li> Consultar Medición </li>
+                                    <li> Consultar Mapa</li> 
+  
+                                </ul> 
+                             </Content>
+                         </asp:AccordionPane>
+                         <asp:AccordionPane ID="AccordionPane1" runat="server" style="margin-top:0px">
+                         <Header>
+                          <div class="IconoFlechas"  style = "float:left"></div>
+                          <div>M.Correctivo</div>
+                         </Header>
+                             <Content>
+                                <ul>
+                                    <li > Registrar Reclamo </li>
+                                    <li> Registrar Problema</li>
+                                    <li > Registrar Tipo de Reclamo </li>
+                                    <li> Registrar Solución</li>
+                                
+                                </ul>
+                              </Content>
+                          </asp:AccordionPane>
+                          <asp:AccordionPane ID="AccordionPane2" runat="server">
+                            <Header>
+                             <div class="IconoFlechas"  style = "float:left"></div>
+                             <div>M.Preventivo</div>
+                            </Header>
+                                <Content>
+                                <ul>
+                                    <li  > Registrar Tarea </li>
+                                    <li> Registrar Actividad</li>
+                                    <li> Insertar Vía Blanca</li>
+                                
+                                </ul>
+                                </Content>
+                           </asp:AccordionPane> 
+                           </Panes>
+                           </asp:Accordion>
+               
+                <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+                </asp:ToolkitScriptManager>
+                    
+                    
+            </td>
+            
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

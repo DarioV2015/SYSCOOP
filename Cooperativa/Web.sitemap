@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title=""  description="">
+      <siteMapNode url="~/InicioJefes.aspx" title="Inicio"  description="" />
+      <siteMapNode url="~/InicioCapataz.aspx" title="Inicio"  description="" />
+      <siteMapNode url="~/InicioGuardiReclamo.aspx" title="Inicio"  description="" />
+      <siteMapNode url="~/InicioAdministrativo.aspx" title="Inicio"  description="" />
+        <siteMapNode url="~/Default.aspx" title="Sesión"  description="" />
+        <siteMapNode url="~/Medidor/LogIn.aspx" title=" Iniciar Sesión"  description="" />
+
+      <siteMapNode url="" title="Sesión"  description="" >
+        <siteMapNode url="~/Medidor/" title="Cerrar Sesión"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/CambiarPassword.aspx" title="Cambiar Contraseña"  description="" />
+      </siteMapNode>
+      
+      
+        <siteMapNode url="" title="Altas"  description="" >
+          <siteMapNode url="~/Medidor/RegistrarSocio.aspx" title="Registrar Socio"  description="" />
+          <siteMapNode url="~/Medidor/ModificarSocio.aspx" title="Modificar Socio"  description="" />
+          <siteMapNode url="~/Medidor/RegistrarMedidor.aspx" title="Registrar Medidor"  description="" />
+          <siteMapNode url="~/Medidor/RegistrarLinea.aspx" title="Registrar Linea"  description="" />
+          <siteMapNode url="~/Medidor/RegistrarPoste.aspx" title="Registrar Poste"  description="" />
+          <siteMapNode url="~/MPreventivo/RegistrarHerramienta.aspx" title="Registrar Herramienta"  description="" />
+          <siteMapNode url="~/MPreventivo/RegistrarContrato.aspx" title="Registrar Contrato"  description="" />
+          <siteMapNode url="~/MPreventivo/RegistrarProveddor.aspx" title="Registrar Proveedor"  description="" />
+          <siteMapNode url="~/MPreventivo/RegistrarInsumo.aspx" title="Registrar Insumo"  description="" />
+          <siteMapNode url="" title="CU 8"  description="" />
+          <siteMapNode url="" title="CU 9"  description="" />
+          <siteMapNode url="" title="CU 10"  description="" />
+        </siteMapNode>
+      <siteMapNode url="" title="Consumo"  description="" >
+        <siteMapNode url="~/Medidor/RegistrarDeclaracionArtefactos.aspx" title="Registrar Declaración de Artefactos" roles="Socio"/>
+        <siteMapNode url="~/Medidor/RegistrarMedicionMedidor.aspx" title="Registrar Medición"/>
+        <siteMapNode url="~/Medidor/CalcularConsumoEstimadoSocio.aspx" title="Calcular Consumo Estimado"/>
+      </siteMapNode>
+      <siteMapNode url="" title="Instalación"  description="" >
+        <siteMapNode url="~/Medidor/RegistrarTipoResutladoInstalacionMedidor.aspx" title="Registrar Tipo Resultado Instalación"/>
+        <siteMapNode url="~/Medidor/AsignarMedidorASocio.aspx" title="Asignar Medidor a Socio"/>
+        <siteMapNode url="~/Medidor/RegistrarPedidoInstalacionMedidor.aspx" title="Registrar Pedido Instalación"  description="" roles="Socio"/>
+        <siteMapNode url="~/Medidor/GenerarOrdenInstalacionMedidor.aspx" title="Generar Orden de Instalación"  description="" />
+        <siteMapNode url="~/Medidor/RegistrarResultadoInstalacionMedidor.aspx" title="Registrar Resultado de Instalación"  description="" />
+      </siteMapNode>
+      <siteMapNode url="" title="Empleados"  description="" >
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarGuardiaReclamo.aspx" title="Registrar Guardia Reclamo"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarGuardiaReclamoSuplente.aspx" title="Registrar Guardia Reclamo Suplente"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/ModificarGuardiaReclamoSuplente.aspx" title="Modificar Guardia Reclamo Suplente"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/AsignarHerramientaAGrupoGR.aspx" title="Asignar Herramienta a Grupo"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarDiagramacionTurnosGuardiaReclamo.aspx" title="Registrar Diagramación de Turnos"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarCuadrilla.aspx" title=" Registrar Cuadrilla"  description="" />
+        
+      </siteMapNode>
+      <siteMapNode url="" title="Reclamo"  description="" >
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarTipoReclamoTipico.aspx" title="Registrar Tipo de Reclamo"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/ConsultarReclamo.aspx" title="Consultar Reclamo"  description="" roles="Socio" />
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarProblema.aspx" title="Registrar Problema"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarSolucion.aspx" title="Registrar Solución"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/ConsultarOTC.aspx" title="Consultar Orden de Trabajo"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarReclamo.aspx" title="Registrar Reclamo"  description="" />
+        <siteMapNode url="~/MCorrectivoSesion/GenerarOTC.aspx" title="Generar Orden de Trabajo"  description="" />
+
+        <siteMapNode url="~/MCorrectivoSesion/RegistrarResultadoMantenimientoCorrectivo.aspx" title="Registrar Resultado OTC"  description="" />
+      </siteMapNode>
+
+      <siteMapNode url="" title="Mantenimiento"  description="" >
+        <siteMapNode url="~/MPreventivo/RegistrarActividad.aspx" title="Registrar Actividad"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarTareaGeneral.aspx" title="Registrar Tarea"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarPlanificacionMantenimientoPreventivo.aspx" title="Registrar Planificación"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarIngresoDeContrato.aspx" title="Registrar Ingreso de Contrato"  description="" />
+        <siteMapNode url="~/MPreventivo/GenerarOTP.aspx" title="Generar Orden de Trabajo"  description="" />
+        <siteMapNode url="~/MPreventivo/ProgramarCorteEnergia.aspx" title="Programar Corte de Energía"  description="" />
+        <siteMapNode url="~/MPreventivo/GenerarAvisoDeCorte.aspx" title="Generar Aviso de Corte"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarIngresoHerramientas.aspx" title="Registrar Ingreso de Herramientas"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarIngresoInsumos.aspx" title="Registrar Ingreso de Insumos"  description="" />
+        <siteMapNode url="~/MPreventivo/AvisosVarios.aspx" title="Avisos"  description="" />
+        <siteMapNode url="~/MPreventivo/AsignarCuadrillaAOTP.aspx" title="Asignar Cuadrilla"  description="" />
+        <siteMapNode url="~/MPreventivo/AsignarHerramientaACuadrilla.aspx" title="Asignar Herramienta a Cuadrilla"  description="" />
+        <siteMapNode url="~/MPreventivo/RegistrarResultadoOTP.aspx" title="Registrar Resultado OTP"  description="" />
+      </siteMapNode>
+           
+      <siteMapNode url="" title="Informes"  description="" >
+        <siteMapNode url=" ~/Reportes/ReportesReclamos.aspx" title=" Reportes"  description="" />
+      </siteMapNode>
+      <siteMapNode url="" title="Mapa"  description="" >
+        <siteMapNode url="~/Medidor/ConsultarMapa.aspx" title="Consultar Mapa"  description="" />
+      </siteMapNode>
+    </siteMapNode>
+</siteMap>

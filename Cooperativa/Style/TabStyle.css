@@ -1,0 +1,66 @@
+﻿     .TabStyle .ajax__tab_header
+        {
+            cursor: pointer;
+            background-color: #f1f1f1;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 36px;
+            border-bottom: 1px solid #bebebe;
+            width:650px;
+        }
+      
+        .TabStyle .ajax__tab_active .ajax__tab_tab
+        {
+            border: 1px solid;
+            border-color: #bebebe #bebebe #e1e1e1 #bebebe;
+            background-color: #e1e1e1;
+            padding: 10px;
+            border-bottom: none;
+        }
+        .TabStyle .ajax__tab_active .ajax__tab_tab:hover
+        {
+            border: 1px solid;
+            border-color: #bebebe #bebebe #e1e1e1 #bebebe;
+            background-color: #e1e1e1;
+            padding: 10px;
+            border-bottom: none;
+        }
+      
+        .TabStyle .ajax__tab_tab
+        {
+            border: 1px solid;
+            border-color: #e1e1e1 #e1e1e1 #bebebe #e1e1e1;
+            background-color: #f1f1f1;
+            color: #777777;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .TabStyle .ajax__tab_tab:hover
+        {
+            border: 1px solid;
+            border-color: #bebebe #bebebe #e1e1e1 #bebebe;
+            background-color: #e1e1e1;
+            color: #777777;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: none;
+        }
+          .TabStyle .ajax__tab_active .ajax__tab_tab, .TabStyle .ajax__tab_tab, .TabStyle .ajax__tab_header .ajax__tab_tab
+        {
+            margin: 0px 0px 0px 0px;
+        }
+      
+        .TabStyle .ajax__tab_body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            border-top: 0;
+            border: 1px solid #F3EAEA;
+            border-top: none;
+            padding: 5px;
+            background-color:#F8F5F5;
+           
+        }

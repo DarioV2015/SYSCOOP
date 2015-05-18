@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetPREVENTIVO" targetNamespace="http://tempuri.org/DataSetPREVENTIVO.xsd" xmlns:mstns="http://tempuri.org/DataSetPREVENTIVO.xsd" xmlns="http://tempuri.org/DataSetPREVENTIVO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="SISEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SISEConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.SISEConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetPREVENTIVO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetPREVENTIVO" msprop:Generator_DataSetName="DataSetPREVENTIVO">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTablePREVENTIVO" msprop:Generator_UserTableName="DataTablePREVENTIVO" msprop:Generator_RowDeletedName="DataTablePREVENTIVORowDeleted" msprop:Generator_TableClassName="DataTablePREVENTIVODataTable" msprop:Generator_RowChangedName="DataTablePREVENTIVORowChanged" msprop:Generator_RowClassName="DataTablePREVENTIVORow" msprop:Generator_RowChangingName="DataTablePREVENTIVORowChanging" msprop:Generator_RowEvArgName="DataTablePREVENTIVORowChangeEvent" msprop:Generator_RowEvHandlerName="DataTablePREVENTIVORowChangeEventHandler" msprop:Generator_TablePropName="DataTablePREVENTIVO" msprop:Generator_TableVarName="tableDataTablePREVENTIVO" msprop:Generator_RowDeletingName="DataTablePREVENTIVORowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDORDENTRABAJOP" msprop:Generator_UserColumnName="IDORDENTRABAJOP" msprop:Generator_ColumnPropNameInRow="IDORDENTRABAJOP" msprop:Generator_ColumnVarNameInTable="columnIDORDENTRABAJOP" msprop:Generator_ColumnPropNameInTable="IDORDENTRABAJOPColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="FECHAINICIO" msprop:Generator_UserColumnName="FECHAINICIO" msprop:Generator_ColumnPropNameInRow="FECHAINICIO" msprop:Generator_ColumnVarNameInTable="columnFECHAINICIO" msprop:Generator_ColumnPropNameInTable="FECHAINICIOColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FECHAFIN" msprop:Generator_UserColumnName="FECHAFIN" msprop:Generator_ColumnPropNameInRow="FECHAFIN" msprop:Generator_ColumnVarNameInTable="columnFECHAFIN" msprop:Generator_ColumnPropNameInTable="FECHAFINColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OTP" msprop:Generator_UserColumnName="OTP" msprop:Generator_ColumnPropNameInRow="OTP" msprop:Generator_ColumnVarNameInTable="columnOTP" msprop:Generator_ColumnPropNameInTable="OTPColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TAREAGENERAL" msprop:Generator_UserColumnName="TAREAGENERAL" msprop:Generator_ColumnPropNameInRow="TAREAGENERAL" msprop:Generator_ColumnVarNameInTable="columnTAREAGENERAL" msprop:Generator_ColumnPropNameInTable="TAREAGENERALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIPTAREA" msprop:Generator_UserColumnName="DESCRIPTAREA" msprop:Generator_ColumnPropNameInRow="DESCRIPTAREA" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTAREA" msprop:Generator_ColumnPropNameInTable="DESCRIPTAREAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ZONA" msprop:Generator_UserColumnName="ZONA" msprop:Generator_ColumnPropNameInRow="ZONA" msprop:Generator_ColumnVarNameInTable="columnZONA" msprop:Generator_ColumnPropNameInTable="ZONAColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,22 @@
+﻿.fieldset
+	{
+		
+		position: relative;
+	padding: 10px;
+	padding-top: 0;
+	padding-top: 25px\9;
+	margin-bottom: 30px;
+	background: #F6F6F6;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#FFFFFF));
+	background: -moz-linear-gradient(center top, #EFEFEF, #FFFFFF 100%);
+	box-shadow: 3px 3px 10px #ccc;
+	-moz-box-shadow: 3px 3px 10px #ccc;
+	-webkit-box-shadow: 3px 3px 10px #ccc;
+	border: none;
+	width:460px;
+	
+	}
+  

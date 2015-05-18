@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReclamo2" targetNamespace="http://tempuri.org/DataSetReclamo2.xsd" xmlns:mstns="http://tempuri.org/DataSetReclamo2.xsd" xmlns="http://tempuri.org/DataSetReclamo2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReclamo2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetReclamo2" msprop:Generator_DataSetName="DataSetReclamo2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableRECLAMOSSS" msprop:Generator_UserTableName="DataTableRECLAMOSSS" msprop:Generator_RowDeletedName="DataTableRECLAMOSSSRowDeleted" msprop:Generator_RowChangedName="DataTableRECLAMOSSSRowChanged" msprop:Generator_RowClassName="DataTableRECLAMOSSSRow" msprop:Generator_RowChangingName="DataTableRECLAMOSSSRowChanging" msprop:Generator_RowEvArgName="DataTableRECLAMOSSSRowChangeEvent" msprop:Generator_RowEvHandlerName="DataTableRECLAMOSSSRowChangeEventHandler" msprop:Generator_TableClassName="DataTableRECLAMOSSSDataTable" msprop:Generator_TableVarName="tableDataTableRECLAMOSSS" msprop:Generator_RowDeletingName="DataTableRECLAMOSSSRowDeleting" msprop:Generator_TablePropName="DataTableRECLAMOSSS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDRECLAMO" msprop:Generator_UserColumnName="IDRECLAMO" msprop:Generator_ColumnPropNameInRow="IDRECLAMO" msprop:Generator_ColumnVarNameInTable="columnIDRECLAMO" msprop:Generator_ColumnPropNameInTable="IDRECLAMOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RECLAMOS" msprop:Generator_UserColumnName="RECLAMOS" msprop:Generator_ColumnPropNameInRow="RECLAMOS" msprop:Generator_ColumnVarNameInTable="columnRECLAMOS" msprop:Generator_ColumnPropNameInTable="RECLAMOSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_UserColumnName="FECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IDORDENTRABAJOCORRECTIVO" msprop:Generator_UserColumnName="IDORDENTRABAJOCORRECTIVO" msprop:Generator_ColumnPropNameInRow="IDORDENTRABAJOCORRECTIVO" msprop:Generator_ColumnVarNameInTable="columnIDORDENTRABAJOCORRECTIVO" msprop:Generator_ColumnPropNameInTable="IDORDENTRABAJOCORRECTIVOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="IDSOCIO" msprop:Generator_UserColumnName="IDSOCIO" msprop:Generator_ColumnPropNameInRow="IDSOCIO" msprop:Generator_ColumnVarNameInTable="columnIDSOCIO" msprop:Generator_ColumnPropNameInTable="IDSOCIOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="APELLIDO" msprop:Generator_UserColumnName="APELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBREPERSONA" msprop:Generator_UserColumnName="NOMBREPERSONA" msprop:Generator_ColumnPropNameInRow="NOMBREPERSONA" msprop:Generator_ColumnVarNameInTable="columnNOMBREPERSONA" msprop:Generator_ColumnPropNameInTable="NOMBREPERSONAColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CUIT" msprop:Generator_UserColumnName="CUIT" msprop:Generator_ColumnPropNameInRow="CUIT" msprop:Generator_ColumnVarNameInTable="columnCUIT" msprop:Generator_ColumnPropNameInTable="CUITColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ZONAS" msprop:Generator_UserColumnName="ZONAS" msprop:Generator_ColumnPropNameInRow="ZONAS" msprop:Generator_ColumnVarNameInTable="columnZONAS" msprop:Generator_ColumnPropNameInTable="ZONASColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CALLES" msprop:Generator_UserColumnName="CALLES" msprop:Generator_ColumnPropNameInRow="CALLES" msprop:Generator_ColumnVarNameInTable="columnCALLES" msprop:Generator_ColumnPropNameInTable="CALLESColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NROCALLE" msprop:Generator_UserColumnName="NROCALLE" msprop:Generator_ColumnPropNameInRow="NROCALLE" msprop:Generator_ColumnVarNameInTable="columnNROCALLE" msprop:Generator_ColumnPropNameInTable="NROCALLEColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="MES" msprop:Generator_UserColumnName="MES" msprop:Generator_ColumnPropNameInRow="MES" msprop:Generator_ColumnVarNameInTable="columnMES" msprop:Generator_ColumnPropNameInTable="MESColumn" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
