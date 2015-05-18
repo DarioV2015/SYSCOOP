@@ -20,6 +20,8 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
         {
             if (Convert.ToInt32(Session["haciaRegistrarReclamo"]) == 1) //viene de Registrar Tipo Reclamo Típico
             {
+                tabconteiner1.ActiveTabIndex = 2;
+
                 if (Convert.ToInt32(Session["seleccionoSocio"]) == 1) //si seleccionó Socio
                 {
                     rdbSocio.Checked = true;
@@ -29,15 +31,8 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                     rdbCUIT.Visible = true;
                     rdbNoSocio.Checked = false;
 
-                 
-
                     PanelSocioEmpresa.Visible = false;
                     PanelSocioParticular.Visible = false;
-                    PanelMedidores.Visible = false;
-                    PanelNoSocio.Visible = false;
-                    panelNuevaDir.Visible = false;
-                    panelNuevaDireccion.Visible = false;
-                    panelDetalleReclamo.Visible = false;
 
                     if (Convert.ToInt32(Session["seleccionoNroSocio"]) == 1)
                     {
@@ -52,6 +47,20 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                         txtNroDocumento.Visible = false;
                         lblCUIT.Visible = false;
                         txtNroCUIT.Visible = false;
+
+                        SDSMedidoresSocio.SelectParameters["IDSOCIO"].DefaultValue = Session["nroSocio"].ToString();
+
+                        foreach (GridViewRow rows in gvMedidores.Rows)
+                        {
+                            RadioButton medidorS = (RadioButton)rows.FindControl("gvMedidores_rdbSeleccionado");
+
+                            if (Convert.ToInt32(Session["idMedidorSeleccionado"]) == Convert.ToInt32(gvMedidores.Rows[rows.RowIndex].Cells[1].Text))
+                                medidorS.Checked = true;
+                        }
+
+                        PanelMedidores.Visible = true;
+                        panelNuevaDir.Visible = true;
+                        panelDetalleReclamo.Visible = true;
                     }
 
                     if (Convert.ToInt32(Session["seleccionoNroDocumento"]) == 1)
@@ -139,6 +148,9 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
             }
             else
             {
+
+                tabconteiner1.ActiveTabIndex = 0;
+
                 limpiarCampos(this.Controls);
 
                 rdbNroSocio.Visible = false;
@@ -673,6 +685,8 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
         foreach (GridViewRow rows in gvMedidores.Rows)
         {
             RadioButton medidorSeleccionado = (RadioButton)rows.FindControl("gvMedidores_rdbSeleccionado");
+
+            Session["idMedidorSeleccionado"] = Convert.ToInt32(gvMedidores.Rows[rows.RowIndex].Cells[1].Text);
 
             if (medidorSeleccionado.Checked)
             {
