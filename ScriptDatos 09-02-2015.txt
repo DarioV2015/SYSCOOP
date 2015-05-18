@@ -1,0 +1,1032 @@
+delete from areadominio;
+delete from marca;
+delete from tipoartefacto;
+delete from artefacto;
+delete from proveedor;
+delete from tiporesultadoim;
+delete from ordeninstalacion;
+delete from pedidoinstalacion;
+delete from reclamo;
+delete from consumo;
+delete from corteprogramado;
+delete from medidor;
+delete from linea;
+delete from subestacion;
+delete from tipolinea;
+delete from tramolinea;
+delete from socio;
+delete from empleadoporgrupogr;
+delete from empleadoporcuadrilla;
+delete from empleado;
+delete from empresa;
+delete from persona;
+delete from detalleinsumo;
+delete from detalleordentrabajocorrectivo;
+delete from ordentrabajocorrectivo;
+delete from linea;
+delete from tramolinea;
+delete from poste;
+delete from subestacion;
+delete from domicilio;
+delete from estadootp;
+delete from ordentrabajopreventivo;
+delete from detalleinsumoactividad;
+delete from detalleactividad;
+delete from detalleherramientatarea;
+delete from tipootp;
+delete from tareaplanificada;
+delete from tareageneral;
+delete from estadotareaplanificada;
+delete from provincia;
+delete from ciudad;
+delete from zona;
+delete from calle;
+delete from historialempleado;
+delete from cargoempleado;
+delete from cargosocioempresa;
+delete from categoria;
+delete from detallecontrato;
+delete from contrato;
+delete from estadocontrato;
+delete from estadoempleado;
+delete from imagenes;
+delete from estadomedidor;
+delete from estadoordeninstalacion;
+delete from estadootc;
+delete from estadopedido;
+delete from estadoreclamo;
+delete from estadosocio;
+delete from historialherramienta;
+delete from historialgrupo;
+delete from grupoporturno;
+delete from grupoguardiareclamo;
+delete from estadoguardiareclamo;
+delete from herramienta;
+delete from estadoherramienta;
+delete from herramientasporsolucion;
+delete from herramientaporotc;
+delete from asignacionherramienta;
+delete from problemasporsolucion;
+delete from problema;
+delete from solucion;
+delete from usuario;
+delete from rol;
+delete from tipodocumento;
+delete from tipoherramienta;
+delete from tipomedidor;
+delete from tipoorganizacion;
+delete from tiporeclamo;
+delete from tipoherramienta;
+delete from prioridad;
+delete from tiposocio;
+delete from turno;
+delete from tipoinsumo;
+delete from stockinsumo;
+delete from detalleinsumo;
+delete from asignacioninsumo;
+delete from insumo;
+delete from actividad;
+delete from complejidadactividad;
+delete from complejidad;
+delete from asignacioncuadrilla;
+delete from cuadrilla;
+delete from vehiculo;
+delete from estadovehiculo;
+delete from notificacion;
+delete from estadopedidoinsumo;
+delete from tipopedido;
+delete from estadodetallecontrato;
+delete from estadopedidoherramienta;
+delete from historialcuadrilla;
+delete from estadocuadrilla;
+delete from tareageneralxactividad;
+delete from estadopedidomedidor;
+delete from estadootp;
+
+INSERT [dbo].[ROL] ([IDROL], [DESCRIPCION]) VALUES (1, 'Guardia')
+INSERT [dbo].[ROL] ([IDROL], [DESCRIPCION]) VALUES (2, 'Socio')
+INSERT [dbo].[ROL] ([IDROL], [DESCRIPCION]) VALUES (3, 'JefeRedes')
+INSERT [dbo].[ROL] ([IDROL], [DESCRIPCION]) VALUES (4, 'JefeDistribucion')
+INSERT [dbo].[ROL] ([IDROL], [DESCRIPCION]) VALUES (5, 'Capataz')
+INSERT [dbo].[ROL] ([IDROL], [DESCRIPCION]) VALUES (6, 'Administrativo')
+
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (1, N'gvazquez', N'123', 3)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (2, N'rstang', N'123', 4)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (3, N'hrupani', N'123', 5)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (4, N'pvelez', N'123', 5)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (5, N'mguiñazu', N'123', 5)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (6, N'lgauna', N'123', 5)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (7, N'nbruno', N'123', 6)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (8, N'jgomez', N'123', 1)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (9, N'dvillegas', N'123', 1)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (10, N'jsuarez', N'123', 1)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (11, N'prodriguez', N'123', 1)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (12, N'Martinez', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (13, N'Martino', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (14, N'Vera', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (15, N'Zen', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (16, N'Rodriguez', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (17, N'Sandoval', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (18, N'Alvarez', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (19, N'Castro', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (20, N'Soria', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (21, N'Marín', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (22, N'Electronics', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (23, N'YPF', 123, 2)
+INSERT [dbo].[USUARIO] ([IDUSUARIO], [NOMBREUSUARIO], [CONTRASEÑA], [IDROL]) VALUES (24, N'Molinos Florencia', 123, 2)
+
+
+INSERT [dbo].[PROBLEMA] ([IDPROBLEMA], [DESCRIPCION], [NOMBRE]) VALUES (1, 'Corte de suministro electrico', 'Corte de suministro electrico')
+INSERT [dbo].[PROBLEMA] ([IDPROBLEMA], [DESCRIPCION], [NOMBRE]) VALUES (2, 'Baja de tension temporaria', 'Baja de tension temporaria')
+INSERT [dbo].[PROBLEMA] ([IDPROBLEMA], [DESCRIPCION], [NOMBRE]) VALUES (3, 'Obstruccion de cableado aereo', 'Obstruccion de cableado aereo')
+INSERT [dbo].[PROBLEMA] ([IDPROBLEMA], [DESCRIPCION], [NOMBRE]) VALUES (4, 'Quemadura de medidor', 'Quemadura de medidor')
+INSERT [dbo].[PROBLEMA] ([IDPROBLEMA], [DESCRIPCION], [NOMBRE]) VALUES (5, 'Caida de cable sobre la calle', 'Caida de cable sobre la calle')
+
+
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (1, 'Revision de bajada de línea', 'Revisión de bajada de linea')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (2, 'Control de medidor', 'Control de medidor')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (3, 'Revision de fase', 'Revision de fase')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (4, 'Cambio de medidor', 'Cambio de medidor')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (5, 'Control termografico', 'Control termografico en subestacion')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (6, 'Liberacion de obstruccion', 'Liberación de obstruccion')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (7, 'Cambio de lamparas', 'Cambio de lamparas')
+INSERT [dbo].[SOLUCION] ([IDSOLUCION], [DESCRIPCION], [NOMBRE]) VALUES (8, 'Arreglo de cable', 'Arreglo de cable')
+
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (1,1)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (1,2)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (1,3)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (2,2)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (2,1)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (2,5)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (3,6)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (4,4)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (5,6)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (5,8)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (6,7)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (7,1)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (7,2)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (7,3)
+INSERT [dbo].[PROBLEMASPORSOLUCION] ([IDPROBLEMA],[IDSOLUCION]) VALUES (7,5)
+
+INSERT [dbo].[AREADOMINIO] ([IDAREADOMINIO], [DESCRIPCION]) VALUES (CAST(1 AS Numeric(38, 0)), N'Urbana')
+INSERT [dbo].[AREADOMINIO] ([IDAREADOMINIO], [DESCRIPCION]) VALUES (CAST(2 AS Numeric(38, 0)), N'Rural')
+
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (1, 'Neba')
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (2, 'Philips')
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (3, 'Daewoo')
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (4, 'Ormay')
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (5, 'Drean')
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (6, 'Samsung')
+INSERT [dbo].[MARCA] ([IDMARCA],[DESCRIPCION]) VALUES (7, 'Yelmo')
+
+INSERT [dbo].[IMAGENES] ([ID],[DESCRIPCION]) VALUES (1, '../Imagenes/MedidorR.png')
+INSERT [dbo].[IMAGENES] ([ID],[DESCRIPCION]) VALUES (2, '../Imagenes/MedidorV.png')
+INSERT [dbo].[IMAGENES] ([ID],[DESCRIPCION]) VALUES (3, '../Imagenes/Poste.png')
+INSERT [dbo].[IMAGENES] ([ID],[DESCRIPCION]) VALUES (4, '../Imagenes/Subestacion.png')
+
+INSERT [dbo].[PROVINCIA] ([IDPROVINCIA],[NOMBRE]) VALUES (1,'Córdoba')
+INSERT [dbo].[PROVINCIA] ([IDPROVINCIA],[NOMBRE]) VALUES (2,'Buenos Aires')
+INSERT [dbo].[PROVINCIA] ([IDPROVINCIA],[NOMBRE]) VALUES (3,'Santa Fe')
+
+INSERT [dbo].[CIUDAD] ([IDCIUDAD],[IDPROVINCIA],[NOMBRE]) VALUES (1,1,'Laboulaye')
+INSERT [dbo].[CIUDAD] ([IDCIUDAD],[IDPROVINCIA],[NOMBRE]) VALUES (2,1,'Córdoba')
+INSERT [dbo].[CIUDAD] ([IDCIUDAD],[IDPROVINCIA],[NOMBRE]) VALUES (3,2,'La Plata')
+INSERT [dbo].[CIUDAD] ([IDCIUDAD],[IDPROVINCIA],[NOMBRE]) VALUES (4,3,'Rosario')
+INSERT [dbo].[CIUDAD] ([IDCIUDAD],[IDPROVINCIA],[NOMBRE]) VALUES (5,2,'CABA')
+INSERT [dbo].[CIUDAD] ([IDCIUDAD],[IDPROVINCIA],[NOMBRE]) VALUES (6,3,'Santa Fe')
+
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (1, N'Tomas Scott')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (2, N'Tucumán')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (3, N'Mitre')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (4, N'Avenida Pellegrini')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (5, N'Newbery')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (6, N'Intendente Fenoglio')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (7, N'Las Heras')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (8, N'Moreno')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (9, N'Chacabuco')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (10, 'Circunvalación Norte')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (11, '25 de Mayo')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (12, 'Avenida Quintana')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (13, 'Gregorio Vidal')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (14, 'Juan B. Justo')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (15, 'León Forgues')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (16, 'Julio Argentino Roca')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (17, 'Avenida Independencia')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (18, 'Manuel A. Moreira')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (19, 'Colón')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (20, 'Almirante Brown')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (21, 'Esteban Echeverría')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (22, 'Ruta 7')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (23, 'Juan A. Más')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (24, 'Pedro Estanguet')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (25, 'Galo Llorente')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (26, 'Florentino Ameghino')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (27, 'Daireaux')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (28, 'Pasco')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (29, 'Pedro Estanguet')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (30, 'Rodriguez Pena')
+INSERT [dbo].[CALLE] ([IDCALLE], [NOMBRE]) VALUES (31, 'San Martin')
+insert into Calle(idCalle, nombre) values (32,'Vieytes')
+insert into Calle(idCalle, nombre) values (34,'San Martín')
+insert into Calle(idCalle, nombre) values (35,'España')
+insert into Calle(idCalle, nombre) values (36,'Dr. Alberto Orlandini')
+insert into Calle(idCalle, nombre) values (37,'Saavedra')
+insert into Calle(idCalle, nombre) values (38,'Int. Delbo')
+insert into Calle(idCalle, nombre) values (39,'GJ Grant')
+insert into Calle(idCalle, nombre) values (40,'Juan B. Justo')
+insert into Calle(idCalle, nombre) values (43,'Andrés Chazarreta')
+insert into Calle(idCalle, nombre) values (44,'Victoria')
+insert into Calle(idCalle, nombre) values (46,'Vélez Sarsfield')
+insert into Calle(idCalle, nombre) values (49,'José María Paz')
+insert into Calle(idCalle, nombre) values (51,'Diputado Guevara')
+insert into Calle(idCalle, nombre) values (52,'España')
+insert into Calle(idCalle, nombre) values (54,'Pascual Iramain')
+insert into Calle(idCalle, nombre) values (56,'Alberdi')
+insert into Calle(idCalle, nombre) values (57,'Alfredo González')
+insert into Calle(idCalle, nombre) values (58,'Cayetino Alba')
+insert into Calle(idCalle, nombre) values (59,'Falucho')
+insert into Calle(idCalle, nombre) values (61,'Avenida Quintana')
+insert into Calle(idCalle, nombre) values (65,'Bartolomé Mitre')
+insert into Calle(idCalle, nombre) values (66,'Jaime Pérez')
+
+
+
+
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (1, N'Guardia Reclamo')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (2, N'Guardia Reclamo Suplente')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (3, N'Oficial Electricista')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (4, N'Medio Oficial')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (5, N'Ayudante')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (6, N'Jefe Redes')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (7, N'Capataz')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (8, N'Oficial Especializado')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (9, N'Administrativo')
+INSERT [dbo].[CARGOEMPLEADO] ([IDCARGOEMPLEADO], [DESCRIPCION]) VALUES (10, N'Jede Distribucion')
+
+INSERT [dbo].[CARGOSOCIOEMPRESA] ([IDCARGO], [DESCRIPCION]) VALUES (1, N'Presidente')
+INSERT [dbo].[CARGOSOCIOEMPRESA] ([IDCARGO], [DESCRIPCION]) VALUES (2, N'Gerente')
+INSERT [dbo].[CARGOSOCIOEMPRESA] ([IDCARGO], [DESCRIPCION]) VALUES (3, N'Jefe')
+INSERT [dbo].[CATEGORIA] ([IDCATEGORIA], [DESCRIPCION]) VALUES (1, N'Residencial')
+INSERT [dbo].[CATEGORIA] ([IDCATEGORIA], [DESCRIPCION]) VALUES (2, N'Comercial')
+INSERT [dbo].[CATEGORIA] ([IDCATEGORIA], [DESCRIPCION]) VALUES (3, N'Industrial')
+INSERT [dbo].[CATEGORIA] ([IDCATEGORIA], [DESCRIPCION]) VALUES (4, N'Residencial/Comercial')
+
+INSERT [dbo].[ESTADOCONTRATO] ([IDESTADOCONTRATO]  ,[DESCRIPCION]) VALUES  (1 ,'Pendiente')
+INSERT [dbo].[ESTADOCONTRATO] ([IDESTADOCONTRATO]  ,[DESCRIPCION]) VALUES  (2 ,'Ingresado')
+INSERT [dbo].[ESTADOCONTRATO] ([IDESTADOCONTRATO]  ,[DESCRIPCION]) VALUES  (3 ,'Incompleto')
+
+INSERT [dbo].[COMPLEJIDAD] ([DESCRIPCION], [IDCOMPLEJIDAD]) VALUES ('Simple', 1)
+INSERT [dbo].[COMPLEJIDAD] ([DESCRIPCION], [IDCOMPLEJIDAD]) VALUES ('Mediana', 2)
+INSERT [dbo].[COMPLEJIDAD] ([DESCRIPCION], [IDCOMPLEJIDAD]) VALUES ('Complejo', 3)
+INSERT [dbo].[COMPLEJIDAD] ([DESCRIPCION], [IDCOMPLEJIDAD]) VALUES ('Muy Complejo', 4)
+
+INSERT [dbo].[COMPLEJIDADACTIVIDAD] ([IDCOMPLEJIDAD], [NOMBRE], [DURACION]) VALUES (1, 'Simple', 10)
+INSERT [dbo].[COMPLEJIDADACTIVIDAD] ([IDCOMPLEJIDAD], [NOMBRE], [DURACION]) VALUES (2, 'Mediana', 20)
+INSERT [dbo].[COMPLEJIDADACTIVIDAD] ([IDCOMPLEJIDAD], [NOMBRE], [DURACION]) VALUES (3, 'Complejo', 30)
+INSERT [dbo].[COMPLEJIDADACTIVIDAD] ([IDCOMPLEJIDAD], [NOMBRE], [DURACION]) VALUES (4, 'Muy Complejo', 60)
+
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (1, N'Quitar Poste','Sacar el poste de su lugar',3 ,40)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (2, N'Mover Poste','Cambio',3,40)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (3, N'Cambio Poste','Cambio',3,40)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (4, N'Reemplazo de cable','Reemplazo de cable',3,40)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (5, N'Control de tensión en tendido','Control de tensión en tendido',2,50)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (6, N'Cambio de aceite subestacion','Cambio de aceite subestacion',2,30)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (7, N'Control medidores en zona','Control medidores en zona',2,90)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (8, N'Cambio interruptor subestación','Cambio interruptor subestación',3,60)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (9, N'Control de tensión líneas','Control de tensión líneas',1,70)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (10, N'Control estado medidores','Control estado medidores',1,80)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (11, N'Control de lectura medidores','Control de lectura medidores',1,90)
+INSERT [dbo].[ACTIVIDAD] ([IDACTIVIDAD], [NOMBRE],[DESCRIPCION],[COMPLEJIDAD],[TIEMPOESTIMADO]) VALUES (12, N'Control de postes alumbrado','Control de postes alumbrado',1,90)
+
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (1, 1)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (1, 2)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (1, 3)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (2, 5)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (2, 9)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (2, 7)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (3, 6)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (3, 8)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (3, 7)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (4, 7)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (4, 10)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (4, 11)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (4, 5)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (5, 5)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (5, 7)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (5, 10)
+INSERT [dbo].[TAREAGENERALXACTIVIDAD] ([IDTAREA], [IDACTIVIDAD]) VALUES (5, 12)
+
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (1, '25/05/2014 00:00:00.000', 1, NULL, 1, 'Medidor')
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (2, '26/05/2014 00:00:00.000', 1, NULL, 1, 'Medidor')
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (3, '27/08/2014 00:00:00.000', 1, NULL, 1, 'Medidor')
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (4, '27/08/2014 00:00:00.000', 1, NULL, 1, 'Herramienta')
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (5, '10/09/2014 00:00:00.000', 1, NULL, 1, 'Herramienta')
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (6, '05/10/2014 00:00:00.000', 1, NULL, 1, 'Insumo')
+INSERT [dbo].[CONTRATO] ([IDCONTRATO], [FECHAPEDIDO], [IDPROVEEDOR], [FECHAINGRESO], [IDESTADOCONTRATO], [TIPOCONTRATO]) VALUES (7, '10/10/2014 00:00:00.000', 1, NULL, 1, 'Insumo')
+
+INSERT [dbo].[ZONA] ([IDZONA], [DESCRIPCION], [CANTMANZANAS], [CALLENORTE], [CALLESUR], [CALLEESTE], [CALLEOESTE]) VALUES (1, 'Norte 1', NULL, 10,11,12,13)
+INSERT [dbo].[ZONA] ([IDZONA], [DESCRIPCION], [CANTMANZANAS], [CALLENORTE], [CALLESUR], [CALLEESTE], [CALLEOESTE]) VALUES (2, 'Norte 2', NULL, 10,14,15,12)
+INSERT [dbo].[ZONA] ([IDZONA], [DESCRIPCION], [CANTMANZANAS], [CALLENORTE], [CALLESUR], [CALLEESTE], [CALLEOESTE]) VALUES (3, 'Centro 1', NULL,16,4,17,18)
+INSERT [dbo].[ZONA] ([IDZONA], [DESCRIPCION], [CANTMANZANAS], [CALLENORTE], [CALLESUR], [CALLEESTE], [CALLEOESTE]) VALUES (4, 'Centro 2', NULL,19,20,21,17)
+INSERT [dbo].[ZONA] ([IDZONA], [DESCRIPCION], [CANTMANZANAS], [CALLENORTE], [CALLESUR], [CALLEESTE], [CALLEOESTE]) VALUES (5, 'Sur 1', NULL,4,22,17,18)
+INSERT [dbo].[ZONA] ([IDZONA], [DESCRIPCION], [CANTMANZANAS], [CALLENORTE], [CALLESUR], [CALLEESTE], [CALLEOESTE]) VALUES (6, 'Sur 2', NULL,23,22,21,17)
+
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (1, 226, 0, 1, 1, N'0', '-34.1289345', '-63.39077629999997')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (2, 123, 0, 2, 1, N'0', '-34.1247681', '-63.39282780000002')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (3, 34, 0, 4, 1, N'0', '-34.1290935', '-63.39094890000001')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (4, 576, 0, 5, 1, N'0', '-34.1337495', '-63.398149399999966')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (5, 903, 1, 2, 1, N'A', '-34.1358005', '-63.39616920000003')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (6, 476, 0, 7, 1, N'0', '-34.123607', '-63.401211699999976')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (7, 56, 0, 8, 1, N'0', '-34.1236099', '-63.39109629999996')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (8, 57, 2, 3, 1, N'B', '-34.1289345', '-63.39077629999997')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (9, 395, 0, 5, 1, N'0', '-34.12996', '-63.39704879999999')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (10, 777, 0, 6, 1, N'0', '-34.1245916', '-63.403087400000004')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (11, 2309, 2, 9, 1, N'C', '-34.117142', '-63.38781610000001')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (12, 4, 234, 1, 1, N'A', '-34.1289345', '-63.39077629999997')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (13, 200, NULL, 24, 1, NULL, '-34.1163837', '-63.39161139999999')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (14, 200, NULL, 25, 2, NULL, '-34.1182393', '-63.38277689999995')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (15, 250, NULL, 7, 3, NULL, '-34.1248104', '-63.395454700000016')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (16, 200, NULL, 26, 4, NULL, '-34.127413', '-63.38288219999998')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (17, 200, NULL, 27, 5, NULL, '-34.1313694', '-63.39609440000004')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (18, 200, NULL, 28, 6, NULL, '-34.1334582', '-63.386051399999985')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (19, 200, NULL, 29, 1, NULL, '-34.1163837', '-63.39161139999999')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (20, 150, NULL, 30, 2, NULL, '-34.1181944', '-63.3828087')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (21, 200, NULL, 7, 3, NULL, '-34.1250693', '-63.39421570000002')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (22, 300, NULL, 26, 4, NULL, '-34.1276701', '-63.38162269999998')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (23, 250, NULL, 27, 5, NULL, '-34.1311086', '-63.39734850000002')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (24, 300, NULL, 28, 6, NULL, '-34.1339792', '-63.38350779999996')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (25, 50, NULL, 2, 3, NULL, '-34.1232247', '-63.39232079999999')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (26, 100, NULL, 2, 3, NULL, '-34.1242702', '-63.3926386')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (27, 150, NULL, 31, 3, NULL, '-34.1232324', '-63.39231540000003')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (28, 200, NULL, 31, 3, NULL, '-34.122971', '-63.39358779999998')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (29, 250, NULL, 31, 3, NULL, '-34.1227168', '-63.39482529999998')
+INSERT [dbo].[DOMICILIO] ([IDDOMICILIO], [NROCALLE], [PISO], [IDCALLE], [IDZONA], [DPTO], [LATITUD], [LONGITUD]) VALUES (30, 300, NULL, 31, 3, NULL, '-34.1224516', '-63.396116199999994')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (31,251,0,32, 2, '0', '-34.1178064', '-63.379380200000014')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (32,401,0,33, 1, '0', '-34.1192399', '-63.40117320000002')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (33,151,0,34, 3, '0', '-34.1230449', '-63.39338129999999')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (34,602,0,35, 6, '0', '-34.1364385', '-63.39091659999997')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (35,252,0,36, 5, '0', '-34.133074', '-63.39864739999996')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (36,1,0,37, 2, '0', '-34.1197137', '-63.38628610000001')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (37,501,0,38, 6, '0', '-34.1396546', '-63.37551239999999')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (38,101,0,39, 4, '0', '-34.1273353', '-63.38017639999998')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (39,201,0,40, 2, '0', '-34.1234277', '-63.3791956')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (40,101,0,41, 2, '0', '-34.1221669', '-63.3852344')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (41,151,0,42, 4, '0', '-34.1281066', '-63.3850319')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (42,450,0,43, 6, '0', '-34.1314851', '-63.37899520000002')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (43,152,0,44, 2, '0', '-34.1129372', '-63.380765699999984')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (44,541,0,45, 2, '0', '-34.1107934', '-63.37163909999998')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (45,178,0,46, 1, '0', '-34.112262', '-63.38986449999999')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (46,102,0,47, 6, '0', '-34.1432149', '-63.390272900000014')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (47,180,0,48, 6, '0', '-34.1432262', '-63.38841500000001')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (48,226,0,49, 6, '0', '-34.14446909999999', '-63.387273100000016')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (49,352,0,50, 3, '0', '-34.1252878', '-63.398475399999995')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (50,551,0,51, 5, '0', '-34.133192', '-63.399367299999994')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (51,302,0,52, 6, '0', '-34.1299018', '-63.38898389999997')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (52,502,0,53, 4, '0', '-34.1256334', '-63.3752389')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (53,251,0,54, 4, '0', '-34.1308276', '-63.379881100000034')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (54,151,0,55, 1, '0', '-34.1179609', '-63.38808800000004')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (55,552,0,56, 6, '0', '-34.1358763', '-63.38806920000002')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (56,101,0,57, 5, '0', '-34.1328216', '-63.39456580000001')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (57,525,0,58, 2, '0', '-34.1114408', '-63.37821500000001')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (58,401,0,59, 1, '0', '-34.1096195', '-63.397208999999975')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (59,302,0,60, 1, '0', '-34.1144457', '-63.38701409999999')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (60,451,0,61, 1, '0', '-34.1116526', '-63.384878800000024')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (61,101,0,62, 1, '0', '-34.1184679', '-63.38824460000001')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (62,502,0,63, 6, '0', '-34.139621', '-63.37616270000001')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (63,551,0,64, 6, '0', '-34.1356073', '-63.390703299999984')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (64,652,0,65, 5, '0', '-34.13731430000001', '-63.39787839999997')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (65,402,0,66, 6, '0', '-34.1373186', '-63.37910149999999')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (66,2,0,67, 5, '0', '-34.1395344', '-63.392668000000015')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (67,452,0,68, 3, '0', '-34.1216368', '-63.400082399999974')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud)  values (68,151,0,69,1,'0','-34.1112684','-63.389420900000005')
+
+
+INSERT [dbo].[ESTADOVEHICULO] ([IDESTADO], [DESCRIPCION]) VALUES (1, N'Disponible')
+INSERT [dbo].[ESTADOVEHICULO] ([IDESTADO], [DESCRIPCION]) VALUES (2, N'Asignada')
+INSERT [dbo].[ESTADOVEHICULO] ([IDESTADO], [DESCRIPCION]) VALUES (3, N'De Baja')
+
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (1, N'FORD','BZA345','12/03/2004 00:00:00',NULL,1)
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (2, N'FORD','MDE231','12/03/2004 00:00:00',NULL,1)
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (3, N'VW','MJK897','12/03/2004 00:00:00',NULL,1)
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (4, N'VW','JHU765','12/03/2004 00:00:00',NULL,1)
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (5, N'Toyota','KLJ876','12/03/2004 00:00:00',NULL,1)
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (6, N'Toyota','MLO987','12/03/2004 00:00:00',NULL,1)
+INSERT [dbo].[VEHICULO] ([IDVEHICULO],[MARCA],[DOMINIO],[FECHAALTA],[FECHABAJA],[IDESTADO]) VALUES (7, N'Toyota','NKJ432','12/03/2004 00:00:00',NULL,1)
+
+INSERT [dbo].[TIPODOCUMENTO] ([IDTIPODOCUMENTO], [DESCRIPCION]) VALUES (1, N'D.N.I.')
+INSERT [dbo].[TIPODOCUMENTO] ([IDTIPODOCUMENTO], [DESCRIPCION]) VALUES (2, N'L.C.')
+INSERT [dbo].[TIPODOCUMENTO] ([IDTIPODOCUMENTO], [DESCRIPCION]) VALUES (3, N'L.E.')
+INSERT [dbo].[TIPODOCUMENTO] ([IDTIPODOCUMENTO], [DESCRIPCION]) VALUES (4, N'Pasaporte')
+
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (12090894, 1, 4,  N'Gabriel',  N'Vazquez',  'marcosdariovillegas@gmail.com',  N'M',  42536789)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (13998676, 3, 5,  N'Ricardo',  N'Stang',  'marcosdariovillegas@gmail.com',  N'M',  3514657789)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (21090777, 2, 9, N'Horacio',  N'Rupani',  'marcosdariovillegas@gmail.com',  N'M',  3546278891)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (19765432, 1, 10,  N'Pablo',  N'Velez', 'marcosdariovillegas@gmail.com',  N'M',  3546278894)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32751026, 1, 3,  N'Matías',  N'Guiñazu',  'marcosdariovillegas@gmail.com',  N'M',  3516278891)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (15001886, 1, 6,  N'Lucas',  N'Gauna',  'marcosdariovillegas@gmail.com',  N'M',  35462782291)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (25510223, 1, 2,  N'Lucia',  N'Perez',  'marcosdariovillegas@gmail.com' , N'F',  43567890)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (25140220, 1, 8,  N'Nahuel' , N'Bruno' , 'marcosdariovillegas@gmail.com',  N'M',  46097812)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (20220114, 1, 15 , N'Laura' ,N'Sandoval',  'marcosdariovillegas@gmail.com' , N'F' , 42431110)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (22615829, 1, 7, N'Juan ' , N'Gomez',  'marcosdariovillegas@gmail.com',  N'M',  3596278891)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32992220, 2, 1,  N'Dario',  N'Villegas',  'marcosdariovillegas@gmail.com',  N'M',  3516278891)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32751336, 4, 17,  N'Laura', N'Gomez',  'marcosdariovillegas@gmail.com',  N'F',  428354)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32751566, 3, 11,  N'Juan',  N'Suarez',  'marcosdariovillegas@gmail.com',  N'M',  351345987)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (2751436, 1, 24,   N'Dora',  N'Marín',  'marcosdariovillegas@gmail.com',  N'F',  354345987)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32751786, 1, 20,  N'Pedro' , N'Rodriguez',  'marcosdariovillegas@gmail.com',  N'M',  351335987)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (20751906, 1, 16,   N'Sergio',  N'Castro',  'marcosdariovillegas@gmail.com',  N'M',  351345487)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (33454376, 1, 22,  N'Juan',  N'Alvarez',  'marcosdariovillegas@gmail.com',  N'M',  351346787)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (17351626, 1, 14,  N'Esteban',  N'Dominguez',  'marcosdariovillegas@gmail.com',  N'M',  351334527)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (12051116, 1, 17,  N'Luciano',  N'Juarez',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (19751936, 1, 11,  N'Sonia',  N'Sanchez',  'marcosdariovillegas@gmail.com',  N'F',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (12754466, 1, 10,  N'Hugo',  N'Alvarez',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (26745026, 1, 17,  N'Raúl',  N'Soria',  'marcosdariovillegas@gmail.com' , N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32754466, 1, 9,  N'Luis',  N'Perez',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (27776026, 1, 5,  N'César',  N'Gauna' , 'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (21784466, 1, 3,  N'Alberto',  N'Pastor',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (27725026, 1, 5,  N'Agustín',  N'Martinez',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32764466, 1, 1,  N'Matías',  N'Martinez',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (32432026, 1, 4,  N'Lucas',  N'Martino',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (24564466, 1, 2,  N'Pablo',  N'Vera',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+INSERT [dbo].[PERSONA] ([NRODOCUMENTO], [TIPODOCUMENTO], [IDDOMICILIO], [NOMBRE], [APELLIDO], [EMAIL], [SEXO], [TELEFONO]) VALUES (29432026, 1, 14,  N'Damián',  N'Zen',  'marcosdariovillegas@gmail.com',  N'M',  NULL)
+
+INSERT [dbo].[ESTADOSOCIO] ([IDESTADOSOCIO], [DESCRIPCION]) VALUES (1, N'Activo')
+INSERT [dbo].[ESTADOSOCIO] ([IDESTADOSOCIO], [DESCRIPCION]) VALUES (2, N'Inactivo')
+INSERT [dbo].[ESTADOSOCIO] ([IDESTADOSOCIO], [DESCRIPCION]) VALUES (3, N'Baja')
+
+INSERT [dbo].[TIPOSOCIO] ([IDTIPOSOCIO], [DESCRIPCION]) VALUES (1, N'Persona Física')
+INSERT [dbo].[TIPOSOCIO] ([IDTIPOSOCIO], [DESCRIPCION]) VALUES (2, N'Persona Jurídica')
+
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (1, '05/10/2014 00:00:00', NULL, 32764466, 1, 12, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (2, '05/09/2014 00:00:00', NULL, 32432026, 1, 13, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (3, '02/04/1990 00:00:00', NULL, 24564466, 1, 14, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (4, '02/04/1990 00:00:00', NULL, NULL, 1, NULL, NULL, 2, 30545700413)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (5, '01/08/1994 00:00:00', NULL, NULL, 1, NULL, 22, 2, 30545340413)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (6, '12/06/1994 00:00:00', NULL, NULL, 1, NULL, 23, 2, 30435700413)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (7, '01/06/1994 00:00:00', NULL, NULL, 1, NULL, 24, 2, 30545703453)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (8, '15/09/1995 00:00:00', NULL, 29432026, 1, 15, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (9, '16/08/1998 00:00:00', NULL, 32751786, 3, 16, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (10, '21/08/1998 00:00:00', NULL, 20220114, 1, 17, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (11, '21/10/1998 00:00:00', NULL, 33454376, 1, 18, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (12, '24/08/2000 00:00:00', NULL, 20751906, 1, 19, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (13, '09/12/2000 00:00:00', NULL, 26745026, 1, 20, 1, 1, NULL)
+INSERT [dbo].[SOCIO] ([IDSOCIO], [FECHAALTA], [FECHABAJA], [NRODOCUMENTO], [IDESTADO], [IDUSUARIO], [IDTIPODOCUMENTO], [IDTIPOSOCIO], [CUIT]) VALUES (14, '17/12/2000 00:00:00', NULL, 2751436, 1, 21, 1, 1, NULL)
+
+INSERT [dbo].[ESTADOMEDIDOR] ([IDESTADOMEDIDOR], [DESCRIPCION], [IMAGEN]) VALUES (1, N'Disponible', NULL)
+INSERT [dbo].[ESTADOMEDIDOR] ([IDESTADOMEDIDOR], [DESCRIPCION], [IMAGEN]) VALUES (2, N'Asignado', NULL)
+INSERT [dbo].[ESTADOMEDIDOR] ([IDESTADOMEDIDOR], [DESCRIPCION], [IMAGEN]) VALUES (3, N'Activo', 2)
+
+INSERT [dbo].[TIPOMEDIDOR] ([IDTIPOMEDIDOR], [DESCRIPCION]) VALUES (1, N'Monofásico')
+INSERT [dbo].[TIPOMEDIDOR] ([IDTIPOMEDIDOR], [DESCRIPCION]) VALUES (2, N'Trifásico')
+
+INSERT [dbo].[PRIORIDAD] ([IDPRIORIDAD], [DESCRIPCION], [RANKING]) VALUES (1, N'Baja','1')
+INSERT [dbo].[PRIORIDAD] ([IDPRIORIDAD], [DESCRIPCION], [RANKING]) VALUES (2, N'Media', '2')
+INSERT [dbo].[PRIORIDAD] ([IDPRIORIDAD], [DESCRIPCION], [RANKING]) VALUES (3, N'Alta', '3')
+
+INSERT [dbo].[TIPOLINEA] ([IDTIPOLINEA], [NOMBRE], [DESCRIPCION]) VALUES (1, 'Baja Tensión', 'BT')
+INSERT [dbo].[TIPOLINEA] ([IDTIPOLINEA], [NOMBRE], [DESCRIPCION]) VALUES (2, 'Media Tensión', 'MT')
+INSERT [dbo].[TIPOLINEA] ([IDTIPOLINEA], [NOMBRE], [DESCRIPCION]) VALUES (3, 'Alta Tensión', 'AT')
+
+INSERT [dbo].[SUBESTACION] ([IDSUBESTACION], [DESCRIPCION], [IDDOMICILIO]) VALUES (1, 'Subestación 1', 19)
+INSERT [dbo].[SUBESTACION] ([IDSUBESTACION], [DESCRIPCION], [IDDOMICILIO]) VALUES (2, 'Subestación 2', 20)
+INSERT [dbo].[SUBESTACION] ([IDSUBESTACION], [DESCRIPCION], [IDDOMICILIO]) VALUES (3, 'Subestación 3', 21)
+INSERT [dbo].[SUBESTACION] ([IDSUBESTACION], [DESCRIPCION], [IDDOMICILIO]) VALUES (4, 'Subestación 4', 22)
+INSERT [dbo].[SUBESTACION] ([IDSUBESTACION], [DESCRIPCION], [IDDOMICILIO]) VALUES (5, 'Subestación 5', 23)
+INSERT [dbo].[SUBESTACION] ([IDSUBESTACION], [DESCRIPCION], [IDDOMICILIO]) VALUES (6, 'Subestación 6', 24)
+
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (1, 1,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (2, 2,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (3, 3,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (4, 4,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (5, 5,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (6, 6,NULL)	
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (7, 7,NULL)	
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (8, 8,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (9, 9,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (10, 10,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (11, 11,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (12, 12,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (13, 13,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (14, 14,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (15, 15,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (16, 16,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (17, 17,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (18, 18,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (19, 19,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (20, 20,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (21, 21,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (22, 22,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (23, 23,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (24, 24,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (25, 25,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (26, 26,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (27, 27,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (28, 28,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (29	, 29,NULL)
+INSERT [dbo].[POSTE] ([IDPOSTE], [IDDOMICILIO], [FECHAALTA]) VALUES (30, 30,NULL)
+insert into Poste(idposte,iddomicilio,fechaalta)values(31,31,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(32,32,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(33,33,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(34,34,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(35,35,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(36,36,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(37,37,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(38,38,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(39,39,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(40,40,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(41,41,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(42,42,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(44,43,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(45,44,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(46,45,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(47,46,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(48,47,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(49,48,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(50,49,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(51,50,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(52,51,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(53,52,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(54,53,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(55,54,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(56,55,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(57,56,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(59,57,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(60,58,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(61,59,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(62,60,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(63,61,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(64,62,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(65,63,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(66,64,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(67,65,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(68,66,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(69,67,getDate())
+insert into Poste(idposte,iddomicilio,fechaalta)values(70,68,getDate()) 
+
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (69,251,0,11, 1, '0', '-34.1200797', '-63.395250799999985')
+insert into Poste (idposte,iddomicilio,fechaalta) values (71, 69, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (70,1,0,65, 3, '0', '-34.12212900000001', '-63.3933801')
+insert into Poste (idposte,iddomicilio,fechaalta) values (72, 70, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (71,201,0,7, 3, '0', '-34.12500970000001', '-63.394651599999975')
+insert into Poste (idposte,iddomicilio,fechaalta) values (73, 71, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (72,52,0,2, 3, '0', '-34.1236453', '-63.392448599999966')
+insert into Poste (idposte,iddomicilio,fechaalta) values (74, 72, getDate())
+insert into Calle(idCalle, nombre) values (67,'Eduardo Wilde')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (73,201,0,67, 3, '0', '-34.1254172', '-63.39972260000002')
+insert into Poste (idposte,iddomicilio,fechaalta) values (75, 73, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (74,301,0,4, 3, '0', '-34.1275796', '-63.39838639999999')
+insert into Poste (idposte,iddomicilio,fechaalta) values (76, 74, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (75,351,0,4, 3, '0', '-34.1273431', '-63.39952470000003')
+insert into Poste (idposte,iddomicilio,fechaalta) values (77, 75, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (76,451,0,34, 3, '0', '-34.1213453', '-63.401654199999996')
+insert into Poste (idposte,iddomicilio,fechaalta) values (78, 76, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (77,402,0,7, 3, '0', '-34.1239338', '-63.39964799999996')
+insert into Poste (idposte,iddomicilio,fechaalta) values (79, 77, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (78,302,0,34, 3, '0', '-34.1223096', '-63.39680720000001')
+insert into Poste (idposte,iddomicilio,fechaalta) values (80, 78, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (79,252,0,2, 3, '0', '-34.1280934', '-63.39378569999997')
+insert into Poste (idposte,iddomicilio,fechaalta) values (81, 79, getDate())
+insert into Calle(idCalle, nombre) values (68,'JM Pérez')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (80,2,0,68, 3, '0', '-34.1211518', '-63.39971460000004')
+insert into Poste (idposte,iddomicilio,fechaalta) values (82, 80, getDate())
+insert into Calle(idCalle, nombre) values (69,'Int. Fenoglio')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (81,101,0,69, 3, '0', '-34.1265096', '-63.39272249999999')
+insert into Poste (idposte,iddomicilio,fechaalta) values (83, 81, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (82,251,0,4, 3, '0', '-34.1278908', '-63.396888399999966')
+insert into Poste (idposte,iddomicilio,fechaalta) values (84, 82, getDate())
+insert into Calle(idCalle, nombre) values (70,'Mariano Moreno')
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (83,251,0,70, 3, '0', '-34.1280062', '-63.3924389')
+insert into Poste (idposte,iddomicilio,fechaalta) values (85, 83, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (84,201,0,69, 3, '0', '-34.1260798', '-63.39479940000001')
+insert into Poste (idposte,iddomicilio,fechaalta) values (86, 84, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (85,201,0,51, 3, '0', '-34.1260147', '-63.39720420000003')
+insert into Poste (idposte,iddomicilio,fechaalta) values (87, 85, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (86,452,0,34, 3, '0', '-34.1214233', '-63.401121699999976')
+insert into Poste (idposte,iddomicilio,fechaalta) values (88, 86, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (87,2,0,70, 3, '0', '-34.1228254', '-63.39085269999998')
+insert into Poste (idposte,iddomicilio,fechaalta) values (89, 87, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (88,252,0,67, 3, '0', '-34.126874', '-63.40011249999998')
+insert into Poste (idposte,iddomicilio,fechaalta) values (90, 88, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (89,52,0,69, 3, '0', '-34.1268067', '-63.39113450000002')
+insert into Poste (idposte,iddomicilio,fechaalta) values (91, 89, getDate())
+insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud ) values (90,302,0,51, 5, '0', '-34.12831', '-63.397857199999976')
+insert into Poste (idposte,iddomicilio,fechaalta) values (92, 90, getDate())
+
+
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (1,15,2)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,1,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (2,2,26)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,2,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (3,26,7)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,3,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (4,7,27)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,4,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (5,27,33)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,5,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (6,33,28)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,6,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (7,28,29)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,7,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (8,29,30)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,8,3, 1, 'Linea 3')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (9,29,30)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (3,9,3, 1, 'Linea 3')
+
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (10,86,83)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (4,10,3, 1, 'Linea 4')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (11,83,91)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (4,11,3, 1, 'Linea 4')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (12,91,81)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (4,12,3, 1, 'Linea 4')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (13,81,85)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (4,13,3, 1, 'Linea 4')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (14,85,1)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (4,14,3, 1, 'Linea 4')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (15,85,1)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (4,15,3, 1, 'Linea 4')
+
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (16,87,84)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,16,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (17,84,76)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,17,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (18,76,77)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,18,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (19,77,90)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,19,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (20,90,75)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,20,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (21,75,79)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,21,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (22,79,6)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,22,3, 1, 'Linea 5')
+insert into tramolinea (idtramolinea,idposteinicio,idpostefin)  values (23,79,6)
+insert into linea (idlinea, idtramolinea, idsubestacion,idtipolinea,descripcion) values (5,23,3, 1, 'Linea 5')
+
+
+--INSERT [dbo].[TRAMOLINEA] ([IDTRAMOLINEA], [IDPOSTEINICIO], [FECHAALTATRAMO], [IDPOSTEFIN]) VALUES (2, 2, NULL, 7)
+--INSERT [dbo].[TRAMOLINEA] ([IDTRAMOLINEA], [IDPOSTEINICIO], [FECHAALTATRAMO], [IDPOSTEFIN]) VALUES (3, 7, NULL, 9)
+--INSERT [dbo].[TRAMOLINEA] ([IDTRAMOLINEA], [IDPOSTEINICIO], [FECHAALTATRAMO], [IDPOSTEFIN]) VALUES (4, 9, NULL, 11)
+--INSERT [dbo].[TRAMOLINEA] ([IDTRAMOLINEA], [IDPOSTEINICIO], [FECHAALTATRAMO], [IDPOSTEFIN]) VALUES (5, 11, NULL, 13)
+--
+--INSERT [dbo].[LINEA] ([IDLINEA], [DESCRIPCION], [IDSUBESTACION], [IDTIPOLINEA], [IDTRAMOLINEA]) VALUES (1, 'Línea 1',3 , 1, 2)
+--INSERT [dbo].[LINEA] ([IDLINEA], [DESCRIPCION], [IDSUBESTACION], [IDTIPOLINEA], [IDTRAMOLINEA]) VALUES (2, 'Línea 2', 3, 1, 3)
+--INSERT [dbo].[LINEA] ([IDLINEA], [DESCRIPCION], [IDSUBESTACION], [IDTIPOLINEA], [IDTRAMOLINEA]) VALUES (3, 'Línea 3', 3, 1, 4)
+--INSERT [dbo].[LINEA] ([IDLINEA], [DESCRIPCION], [IDSUBESTACION], [IDTIPOLINEA], [IDTRAMOLINEA]) VALUES (4, 'Línea 4', 3, 1, 5)
+
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 1, N'111',1,1,3,1,3,NULL,1,NULL)
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 2, N'112',4,2,3,1,1,NULL,1,NULL)
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 3, N'113',2,3,3,1,3,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 4, N'114',14,8,3,2,1,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 5, N'115',20,9,3,2,1,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 6, N'116',15,10,3,3,3,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 7, N'117',22,11,3,4,1,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 8, N'118',16,12,3,4,1,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 9, N'119',17,13,3,5,1,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 10, N'120',24,14,3,6,1,NULL,1,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 11, N'121',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 12, N'122',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 13, N'123',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL) 
+INSERT [dbo].[MEDIDOR] ([IDTIPOMEDIDOR], [FECHAALTA], [NROLOTE], [IDMEDIDOR], [NROFABRICACION], [IDDOMICILIO], [IDSOCIO], [IDESTADOMEDIDOR], [IDZONA], [IDLINEA], [IDCONSUMO], [IDPRIORIDAD], [IDCATEGORIA]) VALUES (1, '01/01/2014 00:00:00', 10500, 14, N'124',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL) 
+
+
+
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (1, '01/09/2014', 258, 1, 258)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (1, '01/07/2014', 351, 3, 351)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (1, '01/07/2014', 562, 4, 562)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (2, '01/10/2014', 563, 1, 305)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (2, '01/08/2014', 489, 3, 138)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (2, '01/08/2014', 956, 4, 394)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (3, '01/09/2014', 752, 3, 263)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (3, '01/09/2014', 1478, 4, 522)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (4, '01/10/2014', 1052, 3, 300)
+INSERT [dbo].[CONSUMO] ([IDCONSUMO], [FECHAMEDICION], [LECTURACONSUMO], [MEDIDOR], [CONSUMO]) VALUES (4, '01/10/2014', 1889, 4, 411)
+
+
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (1, 1, 34568, 1, NULL, NULL, 20, 1, NULL)
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (2, 1, 78965, 2, NULL, NULL, 10, 1, NULL)
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (3, 2, 89343, 2, NULL, NULL, 15, 1, NULL)
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (4, 3, 89333, NULL , 1, NULL, 30, 1, NULL)
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (5, 3, 89334, NULL, 2, NULL, 30, 1, NULL)
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (6, 4, 891243, NULL, NULL, 2, 20, 1, NULL)
+INSERT [dbo].[DETALLECONTRATO] ([IDDETALLECONTRATO], [IDCONTRATO], [NROLOTE], [IDTIPOMEDIDOR], [IDHERRAMIENTA],[IDINSUMO],[CANTIDAD],[IDESTADODETALLECONTRATO],[CANTIDADRESTANTE]) VALUES (7, 4, 891244, NULL, NULL, 3, 30, 1, NULL)
+
+INSERT [dbo].[ESTADOOTC] ([IDESTADOOTC], [DESCRIPCION]) VALUES (1, N'En Curso')
+INSERT [dbo].[ESTADOOTC] ([IDESTADOOTC], [DESCRIPCION]) VALUES (2, N'Pendiente Asignación')
+INSERT [dbo].[ESTADOOTC] ([IDESTADOOTC], [DESCRIPCION]) VALUES (3, N'Finalizada')
+INSERT [dbo].[ESTADOOTC] ([IDESTADOOTC], [DESCRIPCION]) VALUES (4, N'Cancelada')
+
+INSERT [dbo].[ESTADOGUARDIARECLAMO] ([IDESTADOGUARDIARECLAMO], [DESCRIPCION]) VALUES (1, N'Disponible')
+INSERT [dbo].[ESTADOGUARDIARECLAMO] ([IDESTADOGUARDIARECLAMO], [DESCRIPCION]) VALUES (2, N'Fuera de Turno')
+INSERT [dbo].[ESTADOGUARDIARECLAMO] ([IDESTADOGUARDIARECLAMO], [DESCRIPCION]) VALUES (3, N'En Turno')
+INSERT [dbo].[ESTADOGUARDIARECLAMO] ([IDESTADOGUARDIARECLAMO], [DESCRIPCION]) VALUES (4, N'Ocupado')
+INSERT [dbo].[ESTADOGUARDIARECLAMO] ([IDESTADOGUARDIARECLAMO], [DESCRIPCION]) VALUES (5, N'Eliminado')
+
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (1, 1, 1, 1)
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (2, 1, 2, 1)
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (3, 1, 3, 1)
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (4, 1, 4, 1)
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (5, 1, 5, 1)
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (6, 1, 6, 1)
+INSERT [dbo].[GRUPOGUARDIARECLAMO] ([IDGRUPO], [IDESTADOGUARDIARECLAMO], [IDVEHICULO], [IDAREADOMINIO]) VALUES (7, 1, 7, 1)
+
+--INSERT [dbo].[ORDENTRABAJOCORRECTIVO] ([IDORDENTRABAJO], [FECHAINICIO], [FECHAFIN], [IDESTADOOT], [IDGUARDIARECLAMO], [IDDOMICILIO], [HORAINICIO], [HORAFIN], [IDUSUARIO], [TIEMPORESOLUCION], [PRIORIDAD]) VALUES (1, '05/10/2014 14:10:00', '05/10/2014 14:40:00', 3, 1,1,'05/10/2014 14:10:00', '05/10/2014 14:40:00',1, 30,2)
+--INSERT [dbo].[ORDENTRABAJOCORRECTIVO] ([IDORDENTRABAJO], [FECHAINICIO], [FECHAFIN], [IDESTADOOT], [IDGUARDIARECLAMO], [IDDOMICILIO], [HORAINICIO], [HORAFIN], [IDUSUARIO], [TIEMPORESOLUCION], [PRIORIDAD]) VALUES (2, '06/10/2014 17:30:00', '06/10/2014 18:32:00', 3, 1,2,'06/10/2014 17:30:00', '06/10/2014 18:32:00',1, 62,2)
+--INSERT [dbo].[ORDENTRABAJOCORRECTIVO] ([IDORDENTRABAJO], [FECHAINICIO], [FECHAFIN], [IDESTADOOT], [IDGUARDIARECLAMO], [IDDOMICILIO], [HORAINICIO], [HORAFIN], [IDUSUARIO], [TIEMPORESOLUCION], [PRIORIDAD]) VALUES (3, '07/10/2014 19:25:00', '07/10/2014 20:30:00', 3, 1,3,'07/10/2014 19:25:00', '07/10/2014 20:30:00',1, 55,2)
+--INSERT [dbo].[ORDENTRABAJOCORRECTIVO] ([IDORDENTRABAJO], [FECHAINICIO], [FECHAFIN], [IDESTADOOT], [IDGUARDIARECLAMO], [IDDOMICILIO], [HORAINICIO], [HORAFIN], [IDUSUARIO], [TIEMPORESOLUCION], [PRIORIDAD]) VALUES (4, '10/10/2014 20:15:00', '10/10/2014 20:40:00', 3, 1,3,'10/10/2014 20:15:00', '10/10/2014 20:40:00',1, 25,2)
+
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (1, 1, 1, 1)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (2, 2, 2, 1)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (3, 2, 2, 2)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (4, 3, 3, 6)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (5, 4, 1, 2)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (6, 5, 2, 1)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (7, 5, 3, 6)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (8, 6, 1, 1)
+INSERT [dbo].[DETALLEORDENTRABAJOCORRECTIVO] ([IDDETALLE], [IDORDENTRABAJO], [IDPROBLEMA], [IDSOLUCION]) VALUES (9, 6, 1, 2)
+
+INSERT [dbo].[ESTADOEMPLEADO] ([IDESTADOEMPLEADO], [DESCRIPCION]) VALUES (1, N'Activo')
+INSERT [dbo].[ESTADOEMPLEADO] ([IDESTADOEMPLEADO], [DESCRIPCION]) VALUES (2, N'Baja')
+
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (1,  CAST (0x0000917B00000000 AS DateTime),  NULL, 6, 1, 12090894,  1,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (2,  CAST (0x0000979800000000 AS DateTime),  NULL, 10, 3 ,13998676, 2,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (3,  CAST (0x00009AFB00000000 AS DateTime),  NULL, 7, 2, 21090777,  3,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (4,  CAST (0x000087BF00000000 AS DateTime),  NULL, 7, 1, 19765432,  4,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (5,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 7, 1, 32751026,  5,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (6,  CAST (0x0000847700000000 AS DateTime),  NULL, 7, 1, 15001886,  6,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (7,    				   NULL,  NULL, 9, 1, 25510223,  7,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (8,     		     		    NULL, NULL, 1, 1, 25140220,  8,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (9,      			           NULL , NULL, 1, 2, 32992220,  9,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (10,     				   NULL,   NULL, 1, 3, 32751566,  10,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (11 , CAST (0x00009DCC00000000 AS DateTime),  NULL, 1, 3, 32751786,  11,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (12,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 3, 4, 32751336,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (13,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 3, 3, 32751566,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (14,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 3, 2, 2751436,   NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (15,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 3, 3, 32751786,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (16,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 4, 2, 2751906,   NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (17,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 4, 1, 33454376,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (18,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 4, 1, 17351626,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (19,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 4, 1, 12051116,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (20,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 5, 1, 19751936,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (21,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 5, 1, 12754466,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (22,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 1, 1, 26745026,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (23,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 1, 1, 32754466,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (24,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 1, 1, 27776026,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (25,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 1, 1, 21784466,  NULL,  1)
+INSERT [dbo].[EMPLEADO] ([IDEMPLEADO], [FECHAALTA], [FECHABAJA], [IDCARGO], [IDTIPODOCUMENTO], [NRODOCUMENTO], [IDUSUARIO], [ESTADO]) VALUES (26,  CAST (0x00009DCC00000000 AS DateTime),  NULL, 2, 1, 27725026,  NULL,  1)
+
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (1, 22)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (1, 10)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (2, 9)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (2, 23)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (3, 8)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (3, 24)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (4, 11)
+INSERT [dbo].[EMPLEADOPORGRUPOGR] ([IDGRUPOGUADIARECLAMO], [IDEMPLEADO]) VALUES (4, 25)
+
+INSERT [dbo].[EMPRESA] ([CUIT], [RAZONSOCIAL], [FECHAINICIOACT], [PAGINAWEB], [IDTIPOORG], [IDDOMICILIO], [TELEFONO], [EMAIL], [TIPODOCRESP], [NRODOCRESP], [CARGORESPONSABLE], [IDDOMICILIOEXTERNO]) VALUES (30545700413, N'FEL', '15/02/1979 15:00:00', N'www.coopfel.com.ar', NULL, 3, 4243110, NULL, 1, 31199612, NULL, NULL)
+INSERT [dbo].[EMPRESA] ([CUIT], [RAZONSOCIAL], [FECHAINICIOACT], [PAGINAWEB], [IDTIPOORG], [IDDOMICILIO], [TELEFONO], [EMAIL], [TIPODOCRESP], [NRODOCRESP], [CARGORESPONSABLE], [IDDOMICILIOEXTERNO]) VALUES (30545340413, N'Electronics SRL', '15/01/1985 15:00:00', NULL, NULL, NULL, NULL, NULL, 1, 31239612, NULL, NULL)
+INSERT [dbo].[EMPRESA] ([CUIT], [RAZONSOCIAL], [FECHAINICIOACT], [PAGINAWEB], [IDTIPOORG], [IDDOMICILIO], [TELEFONO], [EMAIL], [TIPODOCRESP], [NRODOCRESP], [CARGORESPONSABLE], [IDDOMICILIOEXTERNO]) VALUES (30435700413, N'YPF SRL', '15/02/1981 15:00:00', NULL, NULL, NULL, NULL, NULL, 1, 31549612, NULL, NULL)
+INSERT [dbo].[EMPRESA] ([CUIT], [RAZONSOCIAL], [FECHAINICIOACT], [PAGINAWEB], [IDTIPOORG], [IDDOMICILIO], [TELEFONO], [EMAIL], [TIPODOCRESP], [NRODOCRESP], [CARGORESPONSABLE], [IDDOMICILIOEXTERNO]) VALUES (30545703453, N'Molinos Florencia', '15/01/1989 15:00:00', NULL, NULL, NULL, NULL, NULL, 1, 31233612, NULL, NULL)
+
+INSERT [dbo].[ESTADOORDENINSTALACION] ([IDESTADOORDENINSTALACION], [DESCRIPCION]) VALUES (1, N'Generada')
+INSERT [dbo].[ESTADOORDENINSTALACION] ([IDESTADOORDENINSTALACION], [DESCRIPCION]) VALUES (2, N'Finalizada')
+
+INSERT [dbo].[ESTADOPEDIDO] ([IDDESTADOPEDIDO], [DESCRIPCION]) VALUES (1, N'Pendiente')
+INSERT [dbo].[ESTADOPEDIDO] ([IDDESTADOPEDIDO], [DESCRIPCION]) VALUES (2, N'Asignado')
+INSERT [dbo].[ESTADOPEDIDO] ([IDDESTADOPEDIDO], [DESCRIPCION]) VALUES (3, N'Finalizado')
+INSERT [dbo].[ESTADOPEDIDO] ([IDDESTADOPEDIDO], [DESCRIPCION]) VALUES (4, N'Cancelado')
+INSERT [dbo].[ESTADOPEDIDO] ([IDDESTADOPEDIDO], [DESCRIPCION]) VALUES (5, N'En Curso')
+
+INSERT [dbo].[ESTADORECLAMO] ([IDESTADORECLAMO], [DESCRIPCION]) VALUES (1, N'Pendiente')
+INSERT [dbo].[ESTADORECLAMO] ([IDESTADORECLAMO], [DESCRIPCION]) VALUES (2, N'Finalizado')
+INSERT [dbo].[ESTADORECLAMO] ([IDESTADORECLAMO], [DESCRIPCION]) VALUES (3, N'Cancelado')
+INSERT [dbo].[ESTADORECLAMO] ([IDESTADORECLAMO], [DESCRIPCION]) VALUES (4, N'Asignado')
+
+INSERT [dbo].[TURNO] ([IDTURNO], [HORAINICIO], [HORAFIN], [DESCRIPCION]) VALUES (1, N'00:00', N'06:00', N'Madrugada')
+INSERT [dbo].[TURNO] ([IDTURNO], [HORAINICIO], [HORAFIN], [DESCRIPCION]) VALUES (2, N'06:00', N'12:00', N'Mañana')
+INSERT [dbo].[TURNO] ([IDTURNO], [HORAINICIO], [HORAFIN], [DESCRIPCION]) VALUES (3, N'12:00', N'18:00', N'Tarde')
+INSERT [dbo].[TURNO] ([IDTURNO], [HORAINICIO], [HORAFIN], [DESCRIPCION]) VALUES (4, N'18:00', N'24:00', N'Noche')
+
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (1, 1)
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (2, 2)
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (3, 3)
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (4, 4)
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (5, 1)
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (6, 2)
+INSERT [dbo].[GRUPOPORTURNO] ([IDGRUPOGR], [IDTURNO]) VALUES (7, 1)
+
+INSERT [dbo].[TIPOHERRAMIENTA] ([IDTIPOHERRAMIENTA], [DESCRIPCION]) VALUES (1, N'Personal')
+INSERT [dbo].[TIPOHERRAMIENTA] ([IDTIPOHERRAMIENTA], [DESCRIPCION]) VALUES (2, N'Manejo Cables')
+INSERT [dbo].[TIPOHERRAMIENTA] ([IDTIPOHERRAMIENTA], [DESCRIPCION]) VALUES (3, N'Escaleras')
+INSERT [dbo].[TIPOHERRAMIENTA] ([IDTIPOHERRAMIENTA], [DESCRIPCION]) VALUES (4, N'Protección')
+INSERT [dbo].[ESTADOHERRAMIENTA]([IDESTADO],[DESCRIPCION]) VALUES (1, 'Disponible')
+INSERT [dbo].[ESTADOHERRAMIENTA]([IDESTADO],[DESCRIPCION]) VALUES (2, 'Asignada')
+INSERT [dbo].[ESTADOHERRAMIENTA]([IDESTADO],[DESCRIPCION]) VALUES (3, 'De Baja')
+
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (1, N'Aparejo Chico', CAST(0x0000A33B00000000 AS DateTime), '01/10/2014 00:00:00' , 123, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (2, N'Aparejo Grande', CAST(0x0000A33B00000000 AS DateTime), '10/11/2014 00:00:00', 235, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (3, N'Rana Chica', CAST(0x0000A33B00000000 AS DateTime), '12/12/2014 00:00:00', 45, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (4, N'Rana Grande', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 789, 2, NULL, NULL, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (5, N'Suncha p/ Fleje', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 937, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (6, N'Trailer Porta Bobina', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 35, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (7, N'Conos', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 667, 4, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (8, N'Escalera Extensible N1', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A97200000000 AS DateTime), 7098, 3, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (9, N'Escalera Extensible N2', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A97200000000 AS DateTime), 57, 3, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (10, N'Escalera Dobre N1', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A67700000000 AS DateTime), 2376, 3, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (11, N'Escalera Dobre N2', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A67700000000 AS DateTime), 789, 3, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (12, N'Juego Rondana N1', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A97200000000 AS DateTime), 45, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (13, N'Juego Rondana N1', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A97200000000 AS DateTime), 60, 2, NULL, 1, NULL)
+INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA],[ESTADOHERRAMIENTA],[ESPECIFICACIONTECNICA]) VALUES (14, N'Corta Cable N1', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A67700000000 AS DateTime), 87, 1, NULL, 1, NULL)
+--INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA]) VALUES (15, N'Corta Cable N2', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A67700000000 AS DateTime), 8900, 1, NULL)
+--INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA]) VALUES (16, N'Corta Cable N3', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 757, 1, NULL)
+--INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA]) VALUES (17, N'Herramieta Hidraulica Comprimida', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 4954, 2, NULL)
+--INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA]) VALUES (18, N'Separador Fase', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 2156, 4, NULL)
+--INSERT [dbo].[HERRAMIENTA] ([IDHERRAMIENTA], [DESCRIPCION], [FECHAINGRESO], [FECHAVENCIMIENTO], [NROLOTE], [IDTIPOHERRAMIENTA], [FECHABAJA]) VALUES (19, N'Conjunto Tira Cable', CAST(0x0000A33B00000000 AS DateTime), CAST(0x0000A6EE00000000 AS DateTime), 35, 2, NULL)
+
+INSERT [dbo].[HISTORIALEMPLEADO] ([IDEMPLEADO], [FECHAINICIO], [FECHAFIN], [IDCARGO]) VALUES (5, CAST(0x0000A2A600000000 AS DateTime), CAST(0x0000A2C400000000 AS DateTime), 10)
+
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (1, N'Rollo de Cable Preensamblado x 200 m', 200, N'metros', 2)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (2, N'Tornillos', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (3, N'Caja armada J23', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (4, N'Caja medidor monofásico', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (5, N'Caja medidor trifásico', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (6, N'Fusible Aéreo 15 Amp', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (7, N'Fusible Aéreo 30 Amp', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (8, N'Grampa para puesta a tierra', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (9, N'Jabalina lisa', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (10, N'Lámpara cuarzo 1500 W', 0, N'unidades', 1)
+INSERT [dbo].[INSUMO] ([IDINSUMO], [NOMBRE] , [ESPECIFICACION] , [UNIDADMEDIDA] , [IDTIPOINSUMO])VALUES (11, N'Lámpara sodio 400 W', 0, N'unidades', 1)
+
+INSERT [dbo].[DETALLEINSUMO] ([IDDETALLEOTC], [IDDETALLEINSUMO], [IDINSUMO], [CANTIDAD], [IDOTC])VALUES (1,1,1,10,1)
+INSERT [dbo].[DETALLEINSUMO] ([IDDETALLEOTC], [IDDETALLEINSUMO], [IDINSUMO], [CANTIDAD], [IDOTC])VALUES (1,2,2,4,1)
+
+INSERT [dbo].[TIPOINSUMO] ([IDTIPOINSUMO], [DESCRIPCION])VALUES (1, N'Cuantificables')
+INSERT [dbo].[TIPOINSUMO] ([IDTIPOINSUMO], [DESCRIPCION])VALUES (2, N'No Cuantificables')
+
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (100,1,5, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (101,2 ,1000, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (102,3,50, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (103,4,50, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (104,5,50, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (105,6,100, '15/10/2012 00:00:00', '26/10/2014 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (106,7,100, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (107,8,20, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (108,9,30, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (109,10,200, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+INSERT [dbo].[STOCKINSUMO] ([NROLOTE], [IDINSUMO], [CANTIDAD], [FECHAINGRESO], [FECHAVENCIMIENTO])VALUES (110,11,200, '15/10/2012 00:00:00', '26/10/2018 00:00:00')
+
+INSERT [dbo].[HISTORIALGRUPO] ([FECHAINICIO], [IDGRUPOGR], [FECHAFIN], [IDTURNO]) VALUES ('24/04/2015 00:00:00.000', 1, '24/05/2015 00:00:00.000', 1)
+INSERT [dbo].[HISTORIALGRUPO] ([FECHAINICIO], [IDGRUPOGR], [FECHAFIN], [IDTURNO]) VALUES ('24/04/2015 00:00:00.000', 1, '24/05/2015 00:00:00.000', 2)
+INSERT [dbo].[HISTORIALGRUPO] ([FECHAINICIO], [IDGRUPOGR], [FECHAFIN], [IDTURNO]) VALUES ('24/04/2015 00:00:00.000', 1, '24/05/2015 00:00:00.000', 3)
+INSERT [dbo].[HISTORIALGRUPO] ([FECHAINICIO], [IDGRUPOGR], [FECHAFIN], [IDTURNO]) VALUES ('24/04/2015 00:00:00.000', 1, '24/05/2015 00:00:00.000', 4)
+
+INSERT [dbo].[HISTORIALHERRAMIENTA] ([IDHERRAMIENTA], [FECHAINICIO], [FECHAFIN], [OBSERVACION], [NROGRUPOGR], [IDESTADOHERRAMIENTA]) VALUES (7, CAST(0x0000A33E00000000 AS DateTime), CAST(0x0000A35500000000 AS DateTime), N'', 1, NULL)
+INSERT [dbo].[HISTORIALHERRAMIENTA] ([IDHERRAMIENTA], [FECHAINICIO], [FECHAFIN], [OBSERVACION], [NROGRUPOGR], [IDESTADOHERRAMIENTA]) VALUES (7, CAST(0x0000A33F00000000 AS DateTime), CAST(0x0000A35000000000 AS DateTime), N'', 1, NULL)
+INSERT [dbo].[HISTORIALHERRAMIENTA] ([IDHERRAMIENTA], [FECHAINICIO], [FECHAFIN], [OBSERVACION], [NROGRUPOGR], [IDESTADOHERRAMIENTA]) VALUES (8, CAST(0x0000A38E00000000 AS DateTime), CAST(0x0000A38F00000000 AS DateTime), N'', 1, NULL)
+INSERT [dbo].[HISTORIALHERRAMIENTA] ([IDHERRAMIENTA], [FECHAINICIO], [FECHAFIN], [OBSERVACION], [NROGRUPOGR], [IDESTADOHERRAMIENTA]) VALUES (14, CAST(0x0000A38E00000000 AS DateTime), CAST(0x0000A38F00000000 AS DateTime), N'', 1, NULL)
+
+INSERT [dbo].[PEDIDOINSTALACION] ([IDPEDIDO], [IDSOCIO], [IDMEDIDOR], [FECHAPEDIDO], [IDDOMICILIO], [IDESTADO]) VALUES (1, 1, 1, CAST(0x0000A33600000000 AS DateTime), 2, 2)
+INSERT [dbo].[PEDIDOINSTALACION] ([IDPEDIDO], [IDSOCIO], [IDMEDIDOR], [FECHAPEDIDO], [IDDOMICILIO], [IDESTADO]) VALUES (2, 2, 2, CAST(0x0000A33700000000 AS DateTime), 10, 1)
+INSERT [dbo].[PEDIDOINSTALACION] ([IDPEDIDO], [IDSOCIO], [IDMEDIDOR], [FECHAPEDIDO], [IDDOMICILIO], [IDESTADO]) VALUES (3, 1, 2, CAST(0x0000A33F00000000 AS DateTime), 1, 1)
+
+INSERT [dbo].[ORDENINSTALACION] ([IDORDENINSTALACION], [IDPEDIDOINSTALACION], [FECHAINSTALACION], [IDGRUPOGR], [IDESTADOORDEN], [IDRESULTADOINST]) VALUES (1, 1, CAST(0x0000A34000000000 AS DateTime), 1, 1, NULL)
+INSERT [dbo].[ORDENINSTALACION] ([IDORDENINSTALACION], [IDPEDIDOINSTALACION], [FECHAINSTALACION], [IDGRUPOGR], [IDESTADOORDEN], [IDRESULTADOINST]) VALUES (2, 1, CAST(0x0000A34000000000 AS DateTime), 1, 1, NULL)
+
+INSERT [dbo].[PROVEEDOR] ([IDPROVEEDOR], [CUIT], [FECHAALTA], [FECHABAJA]) VALUES (1, 30545700400, '15/01/1995 18:00:00', NULL)
+
+INSERT [dbo].[TIPORECLAMO] ([IDTIPORECLAMO], [DESCRIPCION], [PRIORIDAD], [TIEMPORESOLUCION],[NOMBRE]) VALUES (1, 'Corte de luz en el domicilio', 1, 39, 'Corte de luz en el domicilio')
+INSERT [dbo].[TIPORECLAMO] ([IDTIPORECLAMO], [DESCRIPCION], [PRIORIDAD], [TIEMPORESOLUCION],[NOMBRE]) VALUES (2, 'Problema eléctrico en el tendido', 2, 55, 'Problema eléctrico en el tendido')
+INSERT [dbo].[TIPORECLAMO] ([IDTIPORECLAMO], [DESCRIPCION], [PRIORIDAD], [TIEMPORESOLUCION],[NOMBRE]) VALUES (3, 'Falta de tensión eléctrica', 2, 25, 'Falta de tensión eléctrica')
+INSERT [dbo].[TIPORECLAMO] ([IDTIPORECLAMO], [DESCRIPCION], [PRIORIDAD], [TIEMPORESOLUCION],[NOMBRE]) VALUES (4, 'Problema en generador de subestación', 3, 90, 'Problema en generador de subestación')
+
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (1, '05/09/2014 14:10:00', '05/09/2014 14:10:00', 'Corte de luz', 1,1,2,1,2,NULL,2,1,NULL) 
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (2, '05/09/2014 14:15:00', '05/09/2014 14:15:00', 'Corte de luz', 1,2,2,1,2,NULL,2,1,NULL)
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (3, '06/09/2014 17:30:00', '06/09/2014 17:30:00', 'Luz intermitente', 2,2,2,1,2,NULL,2,1,NULL)  
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (4, '06/09/2014 17:32:00', '06/09/2014 17:32:00', 'Luz intermitente', 2,10,2,1,2,NULL,2,1,NULL) 
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (5, '07/10/2014 19:25:00', '07/10/2014 19:25:00', 'Árbol sobre el cableado',3,11,2,3,2,NULL,2,1,NULL) 
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (6, '07/10/2014 19:26:00', '07/10/2014 19:26:00', 'Ramas obstruyen línea', 3,1,2,3,2,NULL,2,1,NULL) 
+--INSERT [dbo].[RECLAMO] ([IDRECLAMO], [FECHA], [HORA], [DESCRIPCION], [IDORDENTRABAJOCORRECTIVO], [IDSOCIO], [IDESTADORECLAMO], [IDTIPORECLAMO], [IDDOMICILIO], [NRODOCUMENTO], [PRIORIDAD], [IDUSUARIO], [IDTIPODOCUMENTO]) VALUES (7, '10/09/2014 20:15:00', '10/09/2014 20:15:00', 'Corte general', 4,13,2,1,2,NULL,2,1,NULL) 
+
+
+
+INSERT [dbo].[TIPOORGANIZACION] ([IDTIPOORGANIZACION], [DESCRIPCION]) VALUES (1, N'SRL')
+INSERT [dbo].[TIPOORGANIZACION] ([IDTIPOORGANIZACION], [DESCRIPCION]) VALUES (2, N'SA')
+INSERT [dbo].[NOTIFICACION] ([IDNOTIFICACION],[DESCRIPCION]) VALUES (1, 'Sin Notificar')
+INSERT [dbo].[NOTIFICACION] ([IDNOTIFICACION],[DESCRIPCION]) VALUES (2, 'Notificado')
+
+INSERT [dbo].[CORTEPROGRAMADO] ([FECHAINICIO], [HORAINICIO], [FECHAFIN], [HORAFIN], [MOTIVO],[IDSUBESTACION], [IDCORTE], [NOTIFICACION]) VALUES ('30/09/2014 18:00:00','30/09/2014 18:00:00', '30/09/2014 22:00:00', '30/09/2014 22:00:00', 'Cambio de cableado', 1, 1, 1)
+INSERT [dbo].[CORTEPROGRAMADO] ([FECHAINICIO], [HORAINICIO], [FECHAFIN], [HORAFIN], [MOTIVO],[IDSUBESTACION], [IDCORTE], [NOTIFICACION]) VALUES ('01/10/2014 08:00:00','01/10/2014 08:00:00', '01/10/2014 14:00:00', '01/10/2014 14:00:00', 'Reparación de tendido', 2, 2, 1)
+INSERT [dbo].[CORTEPROGRAMADO] ([FECHAINICIO], [HORAINICIO], [FECHAFIN], [HORAFIN], [MOTIVO],[IDSUBESTACION], [IDCORTE], [NOTIFICACION]) VALUES ('17/11/2014 18:00:00','17/11/2014 18:00:00', '17/11/2014 19:00:00', '17/11/2014 19:00:00', 'Cambio de aceite subestación', 1, 3, 1)
+INSERT [dbo].[CORTEPROGRAMADO] ([FECHAINICIO], [HORAINICIO], [FECHAFIN], [HORAFIN], [MOTIVO],[IDSUBESTACION], [IDCORTE], [NOTIFICACION]) VALUES ('15/11/2014 08:00:00','15/11/2014 08:00:00', '15/11/2014 09:00:00', '15/11/2014 09:00:00', 'Cambio de tendido MT', 3, 4, 1)
+INSERT [dbo].[CORTEPROGRAMADO] ([FECHAINICIO], [HORAINICIO], [FECHAFIN], [HORAFIN], [MOTIVO],[IDSUBESTACION], [IDCORTE], [NOTIFICACION]) VALUES ('20/12/2014 13:00:00','20/12/2014 13:00:00', '20/12/2014 14:00:00', '20/12/2014 14:00:00', 'Control de cableado', 3, 5, 1)
+
+INSERT [dbo].[ESTADOCUADRILLA] ([IDESTADOCUADRILLA],[DESCRIPCION]) VALUES (1, 'Disponible')
+INSERT [dbo].[ESTADOCUADRILLA] ([IDESTADOCUADRILLA],[DESCRIPCION]) VALUES (2, 'Asignada')
+INSERT [dbo].[ESTADOCUADRILLA] ([IDESTADOCUADRILLA],[DESCRIPCION]) VALUES (3, 'De Baja')
+
+INSERT [dbo].[CUADRILLA] ([IDCUADRILLA],[IDVEHICULO],[IDESTADOCUADRILLA]) VALUES (1,1,1)
+INSERT [dbo].[CUADRILLA] ([IDCUADRILLA],[IDVEHICULO],[IDESTADOCUADRILLA]) VALUES (2,1,1)
+INSERT [dbo].[CUADRILLA] ([IDCUADRILLA],[IDVEHICULO],[IDESTADOCUADRILLA]) VALUES (3,2,1)
+INSERT [dbo].[CUADRILLA] ([IDCUADRILLA],[IDVEHICULO],[IDESTADOCUADRILLA]) VALUES (4,2,1)
+
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (3,1)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (12,1)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (16,1)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (20,1)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (4,2)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (13,2)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (17,2)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (21,2)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (5,2)
+--INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (13,2)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (18,2)
+INSERT [dbo].[EMPLEADOPORCUADRILLA] ([IDEMPLEADO],[IDCUADRILLA]) VALUES (20,2)
+
+
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/10/2014 07:00:00', 1 , '31/10/2014 14:00:00', 1)
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/11/2014 07:00:00', 2 , '30/11/2014 14:00:00', 1)
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/12/2014 07:00:00', 3 , '31/12/2014 14:00:00', 1)
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/01/2015 07:00:00', 4 , '30/01/2015 14:00:00', 1)
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/02/2015 07:00:00', 5 , '28/02/2015 14:00:00', 1)
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/03/2015 07:00:00', 6 , '31/03/2015 14:00:00', 1)
+INSERT [dbo].[HISTORIALCUADRILLA] ([FECHAINICIO],[IDCUADRILLA],[FECHAFIN],[IDESTADOCUADRILLA]) VALUES ('01/04/2015 07:00:00', 7 , '30/04/2015 14:00:00', 1)
+
+
+
+INSERT [dbo].[ESTADOPEDIDOINSUMO] ([IDESTADO],[DESCRIPCION]) VALUES (1, 'Generado')
+INSERT [dbo].[ESTADOPEDIDOINSUMO] ([IDESTADO],[DESCRIPCION]) VALUES (2, 'Resuelto')
+INSERT [dbo].[ESTADOPEDIDOINSUMO] ([IDESTADO],[DESCRIPCION]) VALUES (3, 'Cancelado')
+INSERT [dbo].[ESTADOPEDIDOMEDIDOR] ([IDESTADO],[DESCRIPCION]) VALUES (1, 'Generado')
+INSERT [dbo].[ESTADOPEDIDOMEDIDOR] ([IDESTADO],[DESCRIPCION]) VALUES (2, 'Resuelto')
+INSERT [dbo].[ESTADOPEDIDOMEDIDOR] ([IDESTADO],[DESCRIPCION]) VALUES (3, 'Cancelado')
+
+INSERT [dbo].[ESTADODETALLECONTRATO] ([IDESTADODETALLECONTRATO], [DESCRIPCION]) VALUES (1, 'Pendiente')
+INSERT [dbo].[ESTADODETALLECONTRATO] ([IDESTADODETALLECONTRATO], [DESCRIPCION]) VALUES (2, 'Ingreso Parcial')
+INSERT [dbo].[ESTADODETALLECONTRATO] ([IDESTADODETALLECONTRATO], [DESCRIPCION]) VALUES (3, 'Ingreso Total')
+
+INSERT [dbo].[TIPOPEDIDO] ([IDTIPOPEDIDO], [DESCRIPCION]) VALUES (1, 'Vencimiento')
+INSERT [dbo].[TIPOPEDIDO] ([IDTIPOPEDIDO], [DESCRIPCION]) VALUES (2, 'Falta Stock')
+
+INSERT [dbo].[ESTADOPEDIDOHERRAMIENTA] ([IDESTADO],[DESCRIPCION]) VALUES (1, 'Generado')
+INSERT [dbo].[ESTADOPEDIDOHERRAMIENTA] ([IDESTADO],[DESCRIPCION]) VALUES (2, 'Resuelto')
+INSERT [dbo].[ESTADOPEDIDOHERRAMIENTA] ([IDESTADO],[DESCRIPCION]) VALUES (3, 'Cancelado')
+
+INSERT [dbo].[TAREAGENERAL] ([IDTAREAGENERAL],[NOMBRE],[DESCRIPCION],[PERIODICIDAD]) VALUES (1,'Control de alumbrado', 'Cambio de lámparas', 30)
+INSERT [dbo].[TAREAGENERAL] ([IDTAREAGENERAL],[NOMBRE],[DESCRIPCION],[PERIODICIDAD]) VALUES (2,'Control de líneas', 'Revision de la tensión', 60)
+INSERT [dbo].[TAREAGENERAL] ([IDTAREAGENERAL],[NOMBRE],[DESCRIPCION],[PERIODICIDAD]) VALUES (3,'Control de subestacion', 'Revision del aceite', 15)
+INSERT [dbo].[TAREAGENERAL] ([IDTAREAGENERAL],[NOMBRE],[DESCRIPCION],[PERIODICIDAD]) VALUES (4,'Control de medidores', 'Revision del estado general', 45)
+INSERT [dbo].[TAREAGENERAL] ([IDTAREAGENERAL],[NOMBRE],[DESCRIPCION],[PERIODICIDAD]) VALUES (5,'Control en zona', 'Control en zona', 90)
+
+INSERT [dbo].[TIPOOTP] ([IDTIPOOTP],[DESCRIPCION]) VALUES (1, 'Revisión de cableado de MT')
+INSERT [dbo].[TIPOOTP] ([IDTIPOOTP],[DESCRIPCION]) VALUES (2, 'Mantenimiento Alumbrado')
+INSERT [dbo].[ESTADOTAREAPLANIFICADA] ([IDESTADO],[DESCRIPCION]) VALUES (1, 'Pendiente')
+INSERT [dbo].[ESTADOTAREAPLANIFICADA] ([IDESTADO],[DESCRIPCION]) VALUES (2, 'Finalizada')
+INSERT [dbo].[ESTADOTAREAPLANIFICADA] ([IDESTADO],[DESCRIPCION]) VALUES (3, 'Planificada')
+
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (1, 1, '22/09/2014 00:00:00', '23/09/2014 00:00:00', 1,2,6,1,1,'13/09/2014 15:00:00', 'Verificación del estado de la línea')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (2, 2, '25/09/2014 00:00:00', '28/09/2014 00:00:00', 3,1,5,1,1,'14/09/2014 16:00:00', 'Control de subestación')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (3, 2, '03/10/2014 00:00:00', '05/10/2014 00:00:00', 2,2,7,1,1,'14/09/2014 16:00:00', 'Control de líneas Zona1')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (4, 2, '12/03/2013 00:00:00', '14/03/2013 00:00:00', 2,2,8,1,3,'14/09/2014 16:00:00', 'Control de líneas Zona2')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (5, 3, '25/03/2013 00:00:00', '27/03/2013 00:00:00', 2,2,7,1,3,'14/09/2014 16:00:00', 'Control de aceite subestación')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (6, 3, '10/04/2013 00:00:00', '13/04/2013 00:00:00', 3,2,5,1,3,'14/09/2014 16:00:00', 'Control de subestación Zona1')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (7, 3, '25/02/2013 00:00:00', '28/02/2013 00:00:00', 3,2,6,1,3,'14/09/2014 16:00:00', 'Control de subestación Zona2')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (8, 4, '17/07/2014 00:00:00', '22/07/2014 00:00:00', 5,2,8,1,3,'14/09/2014 16:00:00', 'Control de tapas medidores')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (9, 4, '25/03/2014 00:00:00', '29/03/2014 00:00:00', 4,2,5,1,3,'14/09/2014 16:00:00', 'Control de lectura medidores')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (10, 4, '25/07/2014 00:00:00', '30/07/2014 00:00:00', 5,2,5,1,3,'14/09/2014 16:00:00', 'Control estado medidores')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (11, 4, '08/02/2014 00:00:00', '10/02/2014 00:00:00', 2,2,5,1,3,'14/09/2014 16:00:00', 'Control de funcionamiento medidores')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (12, 4, '01/04/2014 00:00:00', '05/04/2014 00:00:00', 4,2,6,1,3,'14/09/2014 16:00:00', 'Control de medidas medidores')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (13, 3, '02/10/2014 00:00:00', '05/10/2014 00:00:00', 4,2,5,1,1,'14/09/2014 16:00:00', 'Control de estado subestacion')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (14, 2, '19/03/2014 00:00:00', '25/03/2014 00:00:00', 6,2,8,1,3,'14/09/2014 16:00:00', 'Control de tensión líneas')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (15, 1, '25/01/2014 00:00:00', '31/01/2014 00:00:00', 6,2,5,1,3,'14/09/2014 16:00:00', 'Control de postes alumbrado')
+INSERT [dbo].[TAREAPLANIFICADA] ([IDTAREAPLANIFICADA],[IDTAREAGENERAL],[FECHAINICIO], [FECHAFIN],[DURACION],[IDESTADO],[TIEMPOESTIMADO],[IDPRIORIDAD],[IDZONA],[FECHACREACION],[ASUNTO]) VALUES (16, 2, '31/10/2014 00:00:00', '01/11/2014 00:00:00', 6,1,5,1,3,'30/10/2014 16:00:00', 'Control de postes alumbrado')
+
+INSERT [dbo].[ESTADOOTP] ([IDESTADOOTP],[DESCRIPCION]) VALUES (1,'Pendiente')
+INSERT [dbo].[ESTADOOTP] ([IDESTADOOTP],[DESCRIPCION]) VALUES (2,'Finalizada')
+INSERT [dbo].[ESTADOOTP] ([IDESTADOOTP],[DESCRIPCION]) VALUES (3,'Cancelada')
+
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (1, 1, 2, 2, 1,'22/09/2014 00:00:00','22/09/2014 07:00:00',1,'23/09/2014 00:00:00','23/09/2014 14:00:00', 'Verificación del estado de la línea')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (2, 2, 2, 2, 1,'25/09/2014 00:00:00','25/09/2014 07:00:00',3,'28/09/2014 00:00:00','28/09/2014 14:00:00', 'Control de subestación')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (3, 3, 1, 2, 1,'25/10/2014 00:00:00','25/10/2014 07:00:00',2,'27/10/2014 00:00:00','27/10/2014 14:00:00', 'Control de líneas Zona1')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (4, 4, 1, 2, 1,'12/03/2013 00:00:00','12/03/2013 07:00:00',2,'14/03/2013 00:00:00','14/03/2013 14:00:00', 'Control de líneas Zona2')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (5, 5, 1, 2, 1,'25/03/2013 00:00:00','25/03/2013 07:00:00',2,'27/03/2013 00:00:00','27/03/2013 14:00:00', 'Control de aceite subestación')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (6, 6, 3, 2, 1,'10/04/2013 00:00:00','10/04/2013 07:00:00',3,'13/04/2013 00:00:00','13/04/2013 14:00:00', 'Control de subestación Zona1')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (7, 7, 3, 2, 1,'25/02/2013 00:00:00','25/02/2013 07:00:00',3,'28/02/2013 00:00:00','28/02/2013 14:00:00', 'Control de subestación Zona2')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (8, 8, 3, 2, 1,'17/07/2014 00:00:00','17/07/2014 07:00:00',5,'22/07/2014 00:00:00','22/07/2014 00:00:00', 'Control de tapas medidores')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (9, 9, 4, 2, 1,'25/03/2014 00:00:00','25/03/2014 07:00:00',4,'29/03/2014 00:00:00','29/03/2014 14:00:00', 'Control de lectura medidores')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (10, 10, 4, 2, 1,'25/07/2014 00:00:00','25/07/2014 07:00:00',5,'30/07/2014 00:00:00','30/07/2014 14:00:00', 'Control estado medidores')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (11, 11, 4, 2, 1,'08/02/2014 00:00:00','08/02/2014 07:00:00',2,'10/02/2014 00:00:00','10/02/2014 14:00:00', 'Control de funcionamiento medidores')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (12, 12, 4, 2, 1,'01/04/2014 00:00:00','01/04/2014 07:00:00',4,'05/04/2014 00:00:00','05/04/2014 14:00:00', 'Control de medidas medidores')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (13, 13, 1, 2, 1,'02/10/2014 00:00:00','02/10/2014 07:00:00',4,'06/10/2014 00:00:00','06/10/2014 14:00:00', 'Control de estado subestacion')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (14, 14, 1, 2, 1,'06/11/2014 00:00:00','06/11/2014 07:00:00',6,'12/11/2014 00:00:00','12/11/2014 14:00:00', 'Control de tensión líneas')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (15, 15, 1, 2, 1,'12/11/2014 00:00:00','12/11/2014 07:00:00',6,'18/11/2014 00:00:00','18/11/2014 14:00:00', 'Control de postes alumbrado')
+INSERT [dbo].[ORDENTRABAJOPREVENTIVO] ([IDORDENTRABAJOP],[IDTAREAPLANIFICADA],[IDCUADRILLA], [IDESTADO],[IDTIPOOTP],[FECHAINICIO],[HORAINICIO],[DURACION],[FECHAFIN],[HORAFIN],[DESCRIPCION]) VALUES (16, 16, 1, 1, 1,'31/10/2014 00:00:00','31/10/2014 07:00:00',6,'01/11/2014 00:00:00','01/11/2014 14:00:00', 'Control de postes alumbrado')
+
+INSERT [dbo].[TIPOARTEFACTO] ([IDTIPOARTEFACTO],[DESCRIPCION],[POTENCIA]) VALUES (1,'Heladera',0.5)
+INSERT [dbo].[TIPOARTEFACTO] ([IDTIPOARTEFACTO],[DESCRIPCION],[POTENCIA]) VALUES (2,'Lavarropa',0.6)
+INSERT [dbo].[TIPOARTEFACTO] ([IDTIPOARTEFACTO],[DESCRIPCION],[POTENCIA]) VALUES (3,'Cocina',0.01)
+INSERT [dbo].[TIPOARTEFACTO] ([IDTIPOARTEFACTO],[DESCRIPCION],[POTENCIA]) VALUES (4,'Televisor',0.1)
+INSERT [dbo].[TIPOARTEFACTO] ([IDTIPOARTEFACTO],[DESCRIPCION],[POTENCIA]) VALUES (5,'Horno eléctrico',1.5)
+INSERT [dbo].[TIPOARTEFACTO] ([IDTIPOARTEFACTO],[DESCRIPCION],[POTENCIA]) VALUES (6,'Estufa',1.2)
+
+INSERT [dbo].[TIPORESULTADOIM] ([IDTIPORESULTADO],[DESCRIPCION], [NOMBRE],[ESTADO]) VALUES (1,'Medidor instalado correctamente', 'Correcto', NULL)
+INSERT [dbo].[TIPORESULTADOIM] ([IDTIPORESULTADO],[DESCRIPCION], [NOMBRE],[ESTADO]) VALUES (2,'Inconveniente con la disposición del pilar', 'Problema con pilar', NULL)
+INSERT [dbo].[TIPORESULTADOIM] ([IDTIPORESULTADO],[DESCRIPCION], [NOMBRE],[ESTADO]) VALUES (3,'Desperfecto en línea de bajada', 'Problema con línea', NULL)
