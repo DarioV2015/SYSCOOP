@@ -162,7 +162,7 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
                         ViewState["domicilio"] = d.IdDomicilio;
                     }
 
-                    pi.Estado = Convert.ToInt32("2");
+                    pi.Estado = Convert.ToInt32("2"); //Pedido de Instalación ASIGNADO
 
                     bool creoPedido = false;
 
@@ -219,7 +219,7 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
                     ViewState["domicilio"] = d.IdDomicilio;
                 }
 
-                pi.Estado = Convert.ToInt32("1");
+                pi.Estado = Convert.ToInt32("1"); //Pedido de Instalación PENDIENTE
 
                 bool creoPedido = false;
 

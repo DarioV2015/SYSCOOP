@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<link href="Style/Componentes.css" rel="stylesheet" type="text/css" />
+    <link href="Style/Componentes.css" rel="stylesheet" type="text/css" />
     <link href="Style/PopUp2.css" rel="stylesheet" type="text/css" />
     <link href="Style/Inicio.css" rel="stylesheet" type="text/css" />
     <link href="Style/TabStyle2.css" rel="stylesheet" type="text/css" />
@@ -105,7 +105,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<asp:TabContainer   ID="tabconteiner1" runat="server" ActiveTabIndex="0" 
+    <asp:TabContainer   ID="tabconteiner1" runat="server" ActiveTabIndex="0" 
         CssClass="TabStyle2" Width="1002px">
 <asp:TabPanel  ID= "tabPanel1" runat="server" HeaderText="Correctivo" Width="75px">
     <HeaderTemplate >
@@ -200,13 +200,12 @@ and otc.iddomicilio=d.iddomicilio
 and d.idzona=z.idzona
 and (otc.idestadoot = 1 or otc.idestadoot = 2) "></asp:SqlDataSource>
              
-        </fieldset>
-        </asp:Panel>
+        </fieldset></asp:Panel>
         
         
     <asp:Panel ID="Panel3" runat="server" style="display:inline-flex">
      <fieldset class="fieldset" style="width:430px; ">
-        <legend class="titulo"> Pedidos de Instalación Pendientes</legend>
+        <legend class="titulo"> Órdenes de Instalación Pendientes</legend>
          <asp:GridView ID="GvOIPendientes" runat="server" AutoGenerateColumns="False" 
              DataKeyNames="idordeninstalacion" DataSourceID="SdsOIPendientes"
              CellPadding="4" ForeColor="#333333" GridLines="None" Width="430px">

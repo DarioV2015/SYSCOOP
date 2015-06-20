@@ -27,6 +27,19 @@ public partial class MCorrectivoSesion_ConsultarReclamo : System.Web.UI.Page
         //}
         //this.Button2.Visible = false;
 
+        DatosUsuario usr = (DatosUsuario)Session["datosUsuario"];
+        if (usr != null && usr.Rol.ToUpper().Equals("SOCIO"))
+        {
+            rdb24Horas.Visible = false;
+            rdbOtr.Checked = true;
+            txtNroReclamo.Focus();
+        }
+        else
+        {
+            rdb24Horas.Visible = true;
+        }
+
+        
         if (!Page.IsPostBack)
         {
             rdb24Horas.Checked = false;

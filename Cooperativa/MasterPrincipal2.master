@@ -421,7 +421,8 @@
                             </Header>
                             <Content>
                                 <ul>
-                                  
+                                    <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/GenerarOrdenInstalacionMedidor.aspx"
+                                        class="a">Generar Orden Instalación Medidor</a></li>
                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/RegistrarResultadoInstalacionMedidor.aspx"
                                         class="a">Registrar Resultado Instalación</a></li>
                                     <li><a href="<% Request.Url.AbsoluteUri.ToString();%>/Cooperativa/Medidor/AsignarMedidorASocio.aspx"
