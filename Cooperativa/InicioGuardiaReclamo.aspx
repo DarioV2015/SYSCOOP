@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
-    CodeFile="InicioGuardiaReclamo.aspx.cs" Inherits="InicioGuardiaReclamo" Title="Página sin título" %>
+    CodeFile="InicioGuardiaReclamo.aspx.cs" Inherits="InicioGuardiaReclamo" Title="Inicio - Guardia Reclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -105,7 +105,7 @@
         Width="1002px">
         <asp:TabPanel ID="tabPanel1" runat="server" HeaderText="Correctivo" Width="75px">
             <HeaderTemplate>
-                TAREAS PENDIENTES
+                <asp:Label ID="lblTareasPendientes" runat="server" Text="Label"></asp:Label>
             </HeaderTemplate>
             <ContentTemplate>
                 <asp:Panel ID="Panel2" runat="server" Style="display: inline-flex; margin-top: 13px">

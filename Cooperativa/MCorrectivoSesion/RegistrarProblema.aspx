@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
     CodeFile="RegistrarProblema.aspx.cs" Inherits="MCorrectivoSesion_RegistrarProblema"
-    Title="Página sin título" %>
+    Title="Registrar Problema" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

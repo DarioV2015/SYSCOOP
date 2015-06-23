@@ -66,6 +66,7 @@ public partial class LogIn : System.Web.UI.Page
                     }
                     else if (roles.Equals("Administrativo"))
                     {
+                        //Response.Redirect("~/InicioGuardiaReclamo.aspx");
                         Response.Redirect("~/InicioAdministrativo.aspx");
                     }
                 Response.Redirect(FormsAuthentication.GetRedirectUrl(Usr, false));

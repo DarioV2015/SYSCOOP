@@ -26,13 +26,13 @@ public class OTC
 
     public OrdenTrabajoCorrectivo traerOTCEnCurso(int grupoGR)
     {
-        string sql = "select distinct otc.idordentrabajo, otc.fechainicio, otc.horainicio, otc.prioridad," + 
+        string sql = "select distinct otc.idordentrabajo, otc.fechainicio, otc.horainicio, otc.prioridad," +
         " tr.descripcion as 'Tipo de Reclamo'," +
-        " c.nombre, d.nrocalle, d.piso, d.dpto, z.descripcion as Zona, z.idzona, tr.idtiporeclamo" + 
-        " from ordentrabajocorrectivo otc, calle c, domicilio d, zona z, tiporeclamo tr, reclamo r" + 
-        " where otc.iddomicilio = d.iddomicilio" + 
-        " and d.idcalle = c.idcalle" + 
-        " and d.idzona = z.idzona" + 
+        " c.nombre, d.nrocalle, d.piso, d.dpto, z.descripcion as Zona, z.idzona, tr.idtiporeclamo" +
+        " from ordentrabajocorrectivo otc, calle c, domicilio d, zona z, tiporeclamo tr, reclamo r" +
+        " where otc.iddomicilio = d.iddomicilio" +
+        " and d.idcalle = c.idcalle" +
+        " and d.idzona = z.idzona" +
         " and r.idtiporeclamo = tr.idtiporeclamo" +
         " and r.idordentrabajocorrectivo = otc.idordentrabajo" +
         " and otc.idestadoot = 1 and otc.idguardiareclamo = " + grupoGR;
@@ -104,33 +104,115 @@ public class OTC
         dr.Close();
         return otc;
     }
-    public OrdenInstalacionMedidor traerOrdenInstalacion(int grupoGR)
+    public List<OrdenTrabajoCorrectivo> buscarOTCAsignadas(int grupoGR)
     {
-        string sql = "select oi.idordeninstalacion, convert(char(10)," +
-        " oi.fechainstalacion, 103)AS fechainstalacion, " +
-        " oi.idgrupogr, z.descripcion" +
-        " from ordeninstalacion oi, pedidoinstalacion ped, zona z, domicilio d" +
-        " where oi.idpedidoinstalacion=ped.idpedido" +
-        " and  ped.iddomicilio=d.iddomicilio" +
-        " and d.idzona =z.idzona" +
-        " and oi.idestadoorden=1" + 
-        " and oi.idgrupogr = " + grupoGR;
+        String sqlOrdenes = "select distinct otc.idordentrabajo, otc.fechainicio, otc.horainicio, otc.prioridad," + 
+        " tr.descripcion as 'Tipo de Reclamo'," +
+        " c.nombre, d.nrocalle, d.piso, d.dpto, z.descripcion as Zona, z.idzona, tr.idtiporeclamo" + 
+        " from ordentrabajocorrectivo otc, calle c, domicilio d, zona z, tiporeclamo tr, reclamo r" + 
+        " where otc.iddomicilio = d.iddomicilio" + 
+        " and d.idcalle = c.idcalle" + 
+        " and d.idzona = z.idzona" + 
+        " and r.idtiporeclamo = tr.idtiporeclamo" +
+        " and r.idordentrabajocorrectivo = otc.idordentrabajo" +
+        " and otc.idestadoot = 1 and otc.idguardiareclamo = " + grupoGR;
 
-        SqlDataReader dr = Datos.obtenerDataReader(sql);
-
-        OrdenInstalacionMedidor oim = new OrdenInstalacionMedidor();
+        SqlDataReader dr = Datos.obtenerDataReader(sqlOrdenes);
+        List<OrdenTrabajoCorrectivo> ordenes = new List<OrdenTrabajoCorrectivo>();
 
         while (dr.Read())
         {
-            oim.NroOrden = Convert.ToInt32(dr[0]);
-            oim.FechaInst = Convert.ToDateTime(dr[1]);
-            oim.IdGrupo = Convert.ToInt32(dr[2]);
-            oim.Zona = dr[3].ToString();
-        }
+            OrdenTrabajoCorrectivo otc = new OrdenTrabajoCorrectivo();
 
+            otc.NroOTC = Convert.ToInt32(dr[0]);
+            otc.FechaInicio = Convert.ToDateTime(dr[1]);
+            otc.HoraInicio = Convert.ToDateTime(dr[2]);
+            otc.Prioridad = Convert.ToSingle(dr[3]);
+            otc.TipoReclamo = dr[4].ToString();
+            otc.NombreCalle = dr[5].ToString();
+            otc.NroCalle = Convert.ToInt32(dr[6]);
+            otc.Piso = Convert.ToInt32(dr[7]);
+            otc.Dpto = dr[8].ToString();
+            otc.Zona = dr[9].ToString();
+            otc.NroZona = Convert.ToInt32(dr[10]);
+            otc.NroTipoReclamo = Convert.ToInt32(dr[11]);
+
+            ordenes.Add(otc);
+
+        }
         dr.Close();
-        return oim;
+        return ordenes;
+
     }
+    public List<OrdenTrabajoCorrectivo> buscarOTCAsignadas()
+    {
+        String sqlOrdenes = "select distinct otc.idordentrabajo, otc.fechainicio, otc.horainicio, otc.prioridad," +
+        " tr.descripcion as 'Tipo de Reclamo'," +
+        " c.nombre, d.nrocalle, d.piso, d.dpto, z.descripcion as Zona, z.idzona, tr.idtiporeclamo, " +
+        " otc.idguardiareclamo " + 
+        " from ordentrabajocorrectivo otc, calle c, domicilio d, zona z, tiporeclamo tr, reclamo r" +
+        " where otc.iddomicilio = d.iddomicilio" +
+        " and d.idcalle = c.idcalle" +
+        " and d.idzona = z.idzona" +
+        " and r.idtiporeclamo = tr.idtiporeclamo" +
+        " and r.idordentrabajocorrectivo = otc.idordentrabajo" +
+        " and otc.idestadoot = 1";
+
+        SqlDataReader dr = Datos.obtenerDataReader(sqlOrdenes);
+        List<OrdenTrabajoCorrectivo> ordenes = new List<OrdenTrabajoCorrectivo>();
+
+        while (dr.Read())
+        {
+            OrdenTrabajoCorrectivo otc = new OrdenTrabajoCorrectivo();
+
+            otc.NroOTC = Convert.ToInt32(dr[0]);
+            otc.FechaInicio = Convert.ToDateTime(dr[1]);
+            otc.HoraInicio = Convert.ToDateTime(dr[2]);
+            otc.Prioridad = Convert.ToSingle(dr[3]);
+            otc.TipoReclamo = dr[4].ToString();
+            otc.NombreCalle = dr[5].ToString();
+            otc.NroCalle = Convert.ToInt32(dr[6]);
+            otc.Piso = Convert.ToInt32(dr[7]);
+            otc.Dpto = dr[8].ToString();
+            otc.Zona = dr[9].ToString();
+            otc.NroZona = Convert.ToInt32(dr[10]);
+            otc.NroTipoReclamo = Convert.ToInt32(dr[11]);
+            otc.NroGrupoGR = Convert.ToInt32(dr[12]);
+
+            ordenes.Add(otc);
+
+        }
+        dr.Close();
+        return ordenes;
+
+    }
+    //public OrdenInstalacionMedidor traerOrdenInstalacion(int grupoGR)
+    //{
+    //    string sql = "select oi.idordeninstalacion, convert(char(10)," +
+    //    " oi.fechainstalacion, 103)AS fechainstalacion, " +
+    //    " oi.idgrupogr, z.descripcion" +
+    //    " from ordeninstalacion oi, pedidoinstalacion ped, zona z, domicilio d" +
+    //    " where oi.idpedidoinstalacion=ped.idpedido" +
+    //    " and  ped.iddomicilio=d.iddomicilio" +
+    //    " and d.idzona =z.idzona" +
+    //    " and oi.idestadoorden=1" + 
+    //    " and oi.idgrupogr = " + grupoGR;
+
+    //    SqlDataReader dr = Datos.obtenerDataReader(sql);
+
+    //    OrdenInstalacionMedidor oim = new OrdenInstalacionMedidor();
+
+    //    while (dr.Read())
+    //    {
+    //        oim.NroOrden = Convert.ToInt32(dr[0]);
+    //        oim.FechaInst = Convert.ToDateTime(dr[1]);
+    //        oim.IdGrupo = Convert.ToInt32(dr[2]);
+    //        oim.Zona = dr[3].ToString();
+    //    }
+
+    //    dr.Close();
+    //    return oim;
+    //}
     public OrdenTrabajoCorrectivo verSIOTCaFinalizar(int grupoGR)
     {
         string sql = "select idordentrabajo" +

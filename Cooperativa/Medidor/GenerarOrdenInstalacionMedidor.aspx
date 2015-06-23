@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
     CodeFile="GenerarOrdenInstalacionMedidor.aspx.cs" Inherits="Medidor_GenerarOrdenInstalacionMedidor"
-    Title="Orden de Instalación Medidor"  UICulture="auto" Culture="auto" %>
+    Title="Generar Orden de Instalación Medidor"  UICulture="auto" Culture="auto" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -169,9 +169,12 @@
                 
                 <table style="margin-top:0px; margin-left:186px">
                     <tr>
+                    <td>
+                        <asp:Label ID="lblNoHayPedidos" runat="server" Text="No existen Pedidos Pendientes"></asp:Label>
+                    </td>
                         <td>
                             <asp:GridView ID="gvPedidosInstalacion" runat="server" AutoGenerateColumns="False"
-                                DataKeyNames="IDPEDIDO" DataSourceID="SDSPedidosInst" HeaderStyle-CssClass="estiloHeaderTabla"
+                                HeaderStyle-CssClass="estiloHeaderTabla"
                                 CellPadding="4" ForeColor="#333333" GridLines="None" Style=" margin-top:20px" Width="270px">
                                 <RowStyle BackColor="#E8EFF8" ForeColor="#333333" />
                                 <HeaderStyle CssClass="estiloHeaderTabla" />
@@ -184,27 +187,27 @@
                                         </ItemTemplate>
                                         <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="IDPEDIDO" HeaderText="Nro. Pedido" ReadOnly="True" SortExpression="IDPEDIDO"
+                                    <asp:BoundField DataField="nropedido" HeaderText="Nro. Pedido" ReadOnly="True" SortExpression="nropedido"
                                         ItemStyle-CssClass="estiloHeaderTabla">
                                         <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                         <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="IDSOCIO" HeaderText="Nro. Socio" SortExpression="IDSOCIO" Visible="false"
+                                    <asp:BoundField DataField="nrosocio" HeaderText="Nro. Socio" SortExpression="nrosocio" 
                                         ItemStyle-CssClass="estiloHeaderTabla">
                                         <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                         <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="FECHAPEDIDO" HeaderText="Fecha Pedido" SortExpression="FECHAPEDIDO"
+                                    <asp:BoundField DataField="fechapedido" HeaderText="Fecha Pedido" SortExpression="fechapedido" DataFormatString="{0:d}"
                                         ItemStyle-CssClass="estiloHeaderTabla">
                                         <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                         <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="IDMEDIDOR" HeaderText="Nro. Medidor" SortExpression="IDMEDIDOR"
+                                    <asp:BoundField DataField="idmedidor" HeaderText="Nro. Medidor" SortExpression="idmedidor"
                                         Visible="false" ItemStyle-CssClass="estiloHeaderTabla">
                                         <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                         <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="DESCRIPCION" HeaderText="Estado" SortExpression="DESCRIPCION"
+                                    <asp:BoundField DataField="iddomicilio" HeaderText="Estado" SortExpression="iddomicilio"
                                         Visible="false" ItemStyle-CssClass="estiloHeaderTabla">
                                         <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                         <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
@@ -212,17 +215,6 @@
                                 </Columns>
                                 <HeaderStyle CssClass="estiloHeaderTabla" />
                             </asp:GridView>
-                        </td>
-                        <td>
-                            <asp:SqlDataSource ID="SDSPedidosInst" runat="server" ConnectionString="<%$ ConnectionStrings:SISEConnectionString %>"
-                                SelectCommand="SELECT P.IDPEDIDO, P.IDSOCIO, convert(char(10), P.FECHAPEDIDO, 103)AS FECHAPEDIDO, P.IDMEDIDOR, P.IDDOMICILIO, EP.DESCRIPCION FROM PEDIDOINSTALACION P, ESTADOPEDIDO EP WHERE (P.IDESTADO = EP.IDDESTADOPEDIDO AND P.IDESTADO = 2)
-ORDER BY 3 DESC"></asp:SqlDataSource>
-                        </td>
-                        <td>
-                            &nbsp;
-                        </td>
-                        <td>
-                            &nbsp;
                         </td>
                     </tr>
                 </table>

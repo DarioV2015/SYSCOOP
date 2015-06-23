@@ -20,88 +20,50 @@ public partial class InicioGuardiaReclamo : System.Web.UI.Page
             DatosUsuario datos = (DatosUsuario)Session["datosUsuario"];
             if (datos != null)
             {
-                //si hay OTC las muestro
+                lblTareasPendientes.Text = "TAREAS PENDIENTES ASIGNADAS AL GRUPO Nº " + Datos.getOrdenInstalacion().traerGrupoDelEmpleado(Convert.ToInt32(datos.IdUsuario)).ToString();
+
+                //me fijo si hay OTC Asignadas al Grupo
+
+                List<OrdenTrabajoCorrectivo> otc = Datos.getOTC().buscarOTCAsignadas(Convert.ToInt32(Datos.getOrdenInstalacion().traerGrupoDelEmpleado(Convert.ToInt32(datos.IdUsuario)).ToString()));
+
+                if (otc.Count > 0)
+                {
+                    gvOTCEnCurso.Visible = true;
+                    gvOTCEnCurso.DataSource = otc;
+                    gvOTCEnCurso.DataBind();
+
+                    lblNoHayOTC.Visible = false;
+                }
+                else
+                {
+                    gvOTCEnCurso.Visible = false;
+                    gvOTCEnCurso.DataSource = otc;
+                    gvOTCEnCurso.DataBind();
+
+                    lblNoHayOTC.Visible = true;
+                }
                 
-                List<OrdenTrabajoCorrectivo> otc = new List<OrdenTrabajoCorrectivo>();
+                //me fijo si hay Órdenes de Instalación
 
-                otc.Add(Datos.getOTC().traerOTCEnCurso((Convert.ToInt32(datos.NroGuardia))));
+                List<OrdenInstalacionMedidor> oim = Datos.getOrdenInstalacion().buscarOrdenesInstalacion(Convert.ToInt32(Datos.getOrdenInstalacion().traerGrupoDelEmpleado(Convert.ToInt32(datos.IdUsuario)).ToString()));
 
-            
-                OrdenInstalacionMedidor o = Datos.getOTC().traerOrdenInstalacion((Convert.ToInt32(datos.NroGuardia)));
-
-                List<OrdenInstalacionMedidor> oim = new List<OrdenInstalacionMedidor>();
-                oim.Add(Datos.getOTC().traerOrdenInstalacion((Convert.ToInt32(datos.NroGuardia))));
-
-                if(o != null)
+                if(oim.Count > 0)
                 {
                     GvOIPendientes.Visible = true;
                     GvOIPendientes.DataSource = oim;
                     GvOIPendientes.DataBind();
 
-                    lblNoHayOrdenesInstalacion.Visible= false;
+                    lblNoHayOrdenesInstalacion.Visible = false;
                 }
                 else
                 {
-                    lblNoHayOrdenesInstalacion.Visible= true;
                     GvOIPendientes.Visible = false;
+                    GvOIPendientes.DataSource = oim;
+                    GvOIPendientes.DataBind();
+
+                    lblNoHayOrdenesInstalacion.Visible = true;
                 }
-            //        gvOTCEnCurso.DataSource = otc;
-            //        gvOTCEnCurso.DataBind();
-                
-        
-
-            //    foreach (GridViewRow rows in gvOTCEnCurso.Rows)      
-            //    {
-            //        int nroOTC = Convert.ToInt32(gvOTCEnCurso.Rows[rows.RowIndex].Cells[0].Text);
-                    
-            //        if(nroOTC != 0)
-            //        {
-            //            gvOTCEnCurso.DataSource = otc;
-            //            gvOTCEnCurso.DataBind();
-
-            //            lblNoHayOTC.Visible = false;
-
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            lblNoHayOTC.Visible = true;
-            //        }
-            //    }
-
-            //    lblNoHayOTC.Visible = true;
-
-            //    //si hay Órdenes de Instalación Pendientes las muestro
-                
-            //    List<OrdenInstalacionMedidor> oim = new List<OrdenInstalacionMedidor>();
-
-            //    oim.Add(Datos.getOTC().traerOrdenInstalacion((Convert.ToInt32(datos.NroGuardia))));
-
-            //    //GvOIPendientes.DataSource = oim;
-            //    //GvOIPendientes.DataBind();
-
-            //    foreach (GridViewRow rows in GvOIPendientes.Rows)      
-            //    {
-            //        int nroOrden = Convert.ToInt32(GvOIPendientes.Rows[rows.RowIndex].Cells[0].Text);
-                    
-            //        if(nroOrden != 0)
-            //        {
-            //            GvOIPendientes.DataSource = oim;
-            //            GvOIPendientes.DataBind();
-
-            //            lblNoHayOrdenesInstalacion.Visible = false;
-
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            lblNoHayOrdenesInstalacion.Visible = true;
-            //        }
-            //    }
-
-            //    lblNoHayOrdenesInstalacion.Visible = true;
             
-            //}
 
         }
     }

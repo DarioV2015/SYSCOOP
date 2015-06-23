@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true" CodeFile="CambiarPassword.aspx.cs" Inherits="MCorrectivoSesion_CambiarPassword" Title="SISE" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true" CodeFile="CambiarPassword.aspx.cs" Inherits="MCorrectivoSesion_CambiarPassword" Title="Cambiar contraseña" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 <link href="../Style/Componentes.css" rel="stylesheet" type="text/css" />

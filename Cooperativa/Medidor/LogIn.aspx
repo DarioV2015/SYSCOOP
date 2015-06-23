@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
-    CodeFile="LogIn.aspx.cs" Inherits="LogIn" Title="SISE" %>
+    CodeFile="LogIn.aspx.cs" Inherits="LogIn" Title="Login SYSCOOP" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="Server">

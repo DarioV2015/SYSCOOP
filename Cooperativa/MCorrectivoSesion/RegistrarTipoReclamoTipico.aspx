@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
     CodeFile="RegistrarTipoReclamoTipico.aspx.cs" Inherits="MCorrectivoSesion_RegistrarTipoReclamoTipico"
-    Title="Tipo de Reclamo Típico" %>
+    Title="Registrar Tipo de Reclamo Típico" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

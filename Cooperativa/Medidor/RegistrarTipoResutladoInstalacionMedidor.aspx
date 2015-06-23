@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true" CodeFile="RegistrarTipoResutladoInstalacionMedidor.aspx.cs" Inherits="Medidor_RegistrarTipoResutladoInstalacionMedidor" Title="Página sin título" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true" CodeFile="RegistrarTipoResutladoInstalacionMedidor.aspx.cs" Inherits="Medidor_RegistrarTipoResutladoInstalacionMedidor" Title="Registrar Tipo Resultado" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">

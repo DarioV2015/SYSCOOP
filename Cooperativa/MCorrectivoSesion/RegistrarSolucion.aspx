@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
     CodeFile="RegistrarSolucion.aspx.cs" Inherits="MCorrectivoSesion_RegistrarSolucion"
-    Title="Página sin título" %>
+    Title="Registrar Solución" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ PreviousPageType VirtualPath="~/MCorrectivoSesion/RegistrarProblema.aspx" %>

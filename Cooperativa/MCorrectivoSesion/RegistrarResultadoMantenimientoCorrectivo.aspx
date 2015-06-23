@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
     CodeFile="RegistrarResultadoMantenimientoCorrectivo.aspx.cs" Inherits="MCorrectivoSesion_RegistrarResultadoMantenimientoCorrectivo"
-    Title="Registrar Resultado Orden Trabajo Preventivo" %>
+    Title="Registrar Resultado OTC" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

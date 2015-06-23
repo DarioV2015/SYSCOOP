@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPrincipal2.master" AutoEventWireup="true"
-    CodeFile="ConsultarOTC.aspx.cs" Inherits="MCorrectivoSesion_ConsultarOTC" Title="SISE" %>
+    CodeFile="ConsultarOTC.aspx.cs" Inherits="MCorrectivoSesion_ConsultarOTC" Title="Consultar OTC" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

@@ -226,4 +226,30 @@ public class PedidosInstalacion
         dr.Close();
         return t;
     }
+    public List<PedidoInstalacion> buscarPedidosPendientes()
+    {
+        String sqlOrdenes = "SELECT P.IDPEDIDO, P.IDSOCIO, convert(char(10), " + 
+        " P.FECHAPEDIDO, 103)AS FECHAPEDIDO, P.IDMEDIDOR, P.IDDOMICILIO, " + 
+        " EP.DESCRIPCION FROM PEDIDOINSTALACION P, ESTADOPEDIDO EP WHERE (P.IDESTADO = EP.IDDESTADOPEDIDO AND P.IDESTADO = 2)" +
+        " ORDER BY 3 DESC";
+
+        SqlDataReader dr = Datos.obtenerDataReader(sqlOrdenes);
+        List<PedidoInstalacion> pedidos = new List<PedidoInstalacion>();
+
+        while (dr.Read())
+        {
+            PedidoInstalacion p = new PedidoInstalacion();
+
+            p.NroPedido = Convert.ToInt32(dr[0]);
+            p.NroSocio = Convert.ToInt32(dr[1]);
+            p.FechaPedido = Convert.ToDateTime(dr[2]);
+            p.NroMedidor = Convert.ToInt32(dr[3]);
+            p.IdDomicilio = Convert.ToInt32(dr[4]);
+
+            pedidos.Add(p);
+
+        }
+        dr.Close();
+        return pedidos;
+    }
 }

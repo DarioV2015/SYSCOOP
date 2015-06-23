@@ -19,7 +19,33 @@ public partial class Medidor_GenerarOrdenInstalacionMedidor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!Page.IsPostBack)
+        {
+            //me fijo si hay Pedidos de Instalación Pendientes
 
+            List<PedidoInstalacion> pi = Datos.getPedidosInstalacion().buscarPedidosPendientes();
+
+            if (pi.Count > 0)
+            {
+                gvPedidosInstalacion.Visible = true;
+                gvPedidosInstalacion.DataSource = pi;
+                gvPedidosInstalacion.DataBind();
+
+                lblNoHayPedidos.Visible = false;
+
+                btnGenerar.Enabled = true;
+            }
+            else
+            {
+                gvPedidosInstalacion.Visible = false;
+                gvPedidosInstalacion.DataSource = pi;
+                gvPedidosInstalacion.DataBind();
+
+                lblNoHayPedidos.Visible = true;
+
+                btnGenerar.Enabled = false;
+            }
+        }
     }
     protected void rdbPedido_CheckedChanged(object sender, EventArgs e)
     {
@@ -171,7 +197,7 @@ public partial class Medidor_GenerarOrdenInstalacionMedidor : System.Web.UI.Page
     }
     protected void btnAceptarCancelacionOrden_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/InicioGuardiaReclamo.aspx", true);
+        Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);
     }
     protected void btnCancelarCancelacionOrden_Click(object sender, EventArgs e)
     {
@@ -179,6 +205,6 @@ public partial class Medidor_GenerarOrdenInstalacionMedidor : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionOrden_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/InicioGuardiaReclamo.aspx", true);
+        Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);
     }
 }

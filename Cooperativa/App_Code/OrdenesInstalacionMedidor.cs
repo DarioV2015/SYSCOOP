@@ -70,9 +70,90 @@ public class OrdenesInstalacionMedidor
         int v = Datos.ejecutarComando(sql);
         return v;
     }
-    
-    
-    
+    public int traerGrupoDelEmpleado(int idUsuario)
+    {
+        string sql = "select epg.idgrupoguadiareclamo" + 
+        " from empleado e, usuario u, empleadoporgrupogr epg" +
+        " where e.idempleado = epg.idempleado" +
+        " and e.idusuario = u.idusuario " +
+        " and e.idusuario = " + idUsuario;
+
+        SqlDataReader dr = Datos.obtenerDataReader(sql);
+        int nroGrupo = 0;
+
+        while (dr.Read())
+        {
+            if (dr[0].GetType() == Type.GetType("System.DBNull"))
+                nroGrupo = 0;
+            else
+                nroGrupo = Convert.ToInt32(dr[0]);
+        }
+
+        dr.Close();
+        return nroGrupo;
+    }
+
+    public List<OrdenInstalacionMedidor> buscarOrdenesInstalacion(int grupoGR)
+    {
+        String sqlOrdenes = "select oi.idordeninstalacion, convert(char(10)," +
+        " oi.fechainstalacion, 103)AS fechainstalacion, " +
+        " oi.idgrupogr, z.descripcion" +
+        " from ordeninstalacion oi, pedidoinstalacion ped, zona z, domicilio d" +
+        " where oi.idpedidoinstalacion=ped.idpedido" +
+        " and  ped.iddomicilio=d.iddomicilio" +
+        " and d.idzona =z.idzona" +
+        " and oi.idestadoorden=1" +
+        " and oi.idgrupogr = " + grupoGR;
+
+        SqlDataReader sdr = Datos.obtenerDataReader(sqlOrdenes);
+        List<OrdenInstalacionMedidor> ordenes = new List<OrdenInstalacionMedidor>();
+
+        while (sdr.Read())
+        {
+            OrdenInstalacionMedidor o = new OrdenInstalacionMedidor();
+            
+            o.NroOrden = Convert.ToInt32(sdr[0]);
+            o.FechaInst = Convert.ToDateTime(sdr[1]);
+            o.IdGrupo = Convert.ToInt32(sdr[2]);
+            o.Zona = sdr[3].ToString();
+
+            ordenes.Add(o);
+
+        }
+        sdr.Close();
+        return ordenes;
+
+    }
+    public List<OrdenInstalacionMedidor> buscarOrdenesInstalacion()
+    {
+        String sqlOrdenes = "select oi.idordeninstalacion, convert(char(10)," +
+        " oi.fechainstalacion, 103)AS fechainstalacion, " +
+        " oi.idgrupogr, z.descripcion" +
+        " from ordeninstalacion oi, pedidoinstalacion ped, zona z, domicilio d" +
+        " where oi.idpedidoinstalacion=ped.idpedido" +
+        " and  ped.iddomicilio=d.iddomicilio" +
+        " and d.idzona =z.idzona" +
+        " and oi.idestadoorden=1";
+
+        SqlDataReader sdr = Datos.obtenerDataReader(sqlOrdenes);
+        List<OrdenInstalacionMedidor> ordenes = new List<OrdenInstalacionMedidor>();
+
+        while (sdr.Read())
+        {
+            OrdenInstalacionMedidor o = new OrdenInstalacionMedidor();
+
+            o.NroOrden = Convert.ToInt32(sdr[0]);
+            o.FechaInst = Convert.ToDateTime(sdr[1]);
+            o.IdGrupo = Convert.ToInt32(sdr[2]);
+            o.Zona = sdr[3].ToString();
+
+            ordenes.Add(o);
+
+        }
+        sdr.Close();
+        return ordenes;
+
+    }
     public OrdenesInstalacionMedidor()
 	{
 		//
