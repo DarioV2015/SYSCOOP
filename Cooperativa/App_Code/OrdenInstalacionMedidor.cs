@@ -54,7 +54,14 @@ public class OrdenInstalacionMedidor
         set { idGrupo = value; }
     }
 
-    
+    private string zona;
+
+    public string Zona
+    {
+        get { return zona; }
+        set { zona = value; }
+    }
+
     public OrdenInstalacionMedidor()
 	{
 		//

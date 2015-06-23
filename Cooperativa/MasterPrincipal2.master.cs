@@ -65,8 +65,8 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 AccordionJefes.Visible = false;
             }
 
-
-            lblUsuario.Text = usr.Usuario;
+            lblUsuario.Text = usr.Usuario.ToUpper();
+            //lblRolUsuario.Text = usr.Rol.ToString();
 
             if (!usr.Rol.Equals("Socio"))
             {

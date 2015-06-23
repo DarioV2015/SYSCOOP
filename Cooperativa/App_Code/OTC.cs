@@ -104,6 +104,33 @@ public class OTC
         dr.Close();
         return otc;
     }
+    public OrdenInstalacionMedidor traerOrdenInstalacion(int grupoGR)
+    {
+        string sql = "select oi.idordeninstalacion, convert(char(10)," +
+        " oi.fechainstalacion, 103)AS fechainstalacion, " +
+        " oi.idgrupogr, z.descripcion" +
+        " from ordeninstalacion oi, pedidoinstalacion ped, zona z, domicilio d" +
+        " where oi.idpedidoinstalacion=ped.idpedido" +
+        " and  ped.iddomicilio=d.iddomicilio" +
+        " and d.idzona =z.idzona" +
+        " and oi.idestadoorden=1" + 
+        " and oi.idgrupogr = " + grupoGR;
+
+        SqlDataReader dr = Datos.obtenerDataReader(sql);
+
+        OrdenInstalacionMedidor oim = new OrdenInstalacionMedidor();
+
+        while (dr.Read())
+        {
+            oim.NroOrden = Convert.ToInt32(dr[0]);
+            oim.FechaInst = Convert.ToDateTime(dr[1]);
+            oim.IdGrupo = Convert.ToInt32(dr[2]);
+            oim.Zona = dr[3].ToString();
+        }
+
+        dr.Close();
+        return oim;
+    }
     public OrdenTrabajoCorrectivo verSIOTCaFinalizar(int grupoGR)
     {
         string sql = "select idordentrabajo" +

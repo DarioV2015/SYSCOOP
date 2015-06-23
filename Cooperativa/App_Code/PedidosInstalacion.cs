@@ -114,8 +114,14 @@ public class PedidosInstalacion
         {
             d.NombreCalle = dr[0].ToString();
             d.NroCalle = Convert.ToInt32(dr[1]);
-            d.Piso = Convert.ToSingle(dr[2]);
-            d.Dpto = dr[3].ToString();
+            if(dr[2].ToString() != "")
+                d.Piso = Convert.ToSingle(dr[2]);
+            else
+                d.Piso = Convert.ToSingle(0);
+            if (dr[3].ToString() != "")
+                d.Dpto = dr[3].ToString();
+            else
+                d.Dpto = "0";
             d.Zona = dr[4].ToString();
         }
 
