@@ -3,7 +3,6 @@
     Title="Pedido de Instalación de Medidor" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.8&amp;key=AIzaSyALhJSXocMN5jstXyeuT1X8mTiRJkVVXYg&amp;libraries=drawing,geometry&amp;language=es&amp;region=AR&amp;sensor=false"></script>
@@ -15,8 +14,8 @@
     <script type="text/javascript" src="../Js/general.js"></script>
 
     <script type="text/javascript" src="../Js/linea.js"></script>
-    
-        <script type="text/javascript" src="../Js/PedidoInstalacion.js"></script>
+
+    <script type="text/javascript" src="../Js/PedidoInstalacion.js"></script>
 
     <link href="../Style/Componentes.css" rel="stylesheet" type="text/css" />
     <link href="../Style/PopUp2.css" rel="stylesheet" type="text/css" />
@@ -86,156 +85,155 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
- <%--    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
-        <ContentTemplate> --%>
-            <asp:Panel ID="panelDatosSoico" runat="server">
-                <table width="800px" style="margin-top: 0px">
-                    <tr>
-                        <td style="border-bottom-style: inset" height="25px">
-                            &nbsp;
-                            <asp:Label ID="Label15" runat="server" Font-Italic="True" Font-Size="Medium" Text="Datos del Socio"></asp:Label>
-                            &nbsp;
-                        </td>
-                    </tr>
-                </table>
-                <table width="807px" style="margin-top: 0px">
-                    <tr>
-                        <td width="780px" class="datos">
-                            <asp:Label ID="Label1" runat="server" Text="Nro. de Socio:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtNroSocio" runat="server" Enabled="false"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="datos">
-                            <asp:Label ID="Label2" runat="server" Text="Apellido:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtApellido" runat="server" Enabled="false"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="datos">
-                            <asp:Label ID="Label3" runat="server" Text="Nombre:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtNombre" runat="server" Enabled="false"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="datos">
-                            <asp:Label ID="Label4" runat="server" Text="Nro. Documento:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtNroDocumento" runat="server" Enabled="false"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="datos">
-                            <asp:Label ID="Label5" runat="server" Text="Calle:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtNombreCalle" runat="server" Enabled="false"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label6" runat="server" Text="Nro:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtNroCalle" runat="server" Enabled="false" Width="40px"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label7" runat="server" Text="Piso:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtNroPiso" runat="server" Enabled="false" Width="40px"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label8" runat="server" Text="Dpto.:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtDpto" runat="server" Enabled="false" Width="40px"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label9" runat="server" Text="Zona:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtZona" runat="server" Enabled="false"></asp:TextBox>
-                            <asp:DropDownList ID="comboZona" runat="server" DataSourceID="sdsZona" DataTextField="DESCRIPCION"
-                                DataValueField="IDZONA" AppendDataBoundItems="True" Visible="false" Width="126px">
-                                <asp:ListItem>Seleccione Zona</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                  <%--       <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate> --%>
-                                <td width="100px">
-                                    <asp:ImageButton ID="btnNuevaDireccion" runat="server" OnClick="btnNuevaDireccion_Click"
-                                        ImageUrl="../Imagenes/button-MAS1.png" />
-                                    <%--<asp:Button ID="btnNuevaDireccion" runat="server"  OnClick="btnNuevaDireccion_Click"
+    <asp:Panel ID="panelDatosSoico" runat="server">
+        <table width="800px" style="margin-top: 0px">
+            <tr>
+                <td style="border-bottom-style: inset" height="25px">
+                    &nbsp;
+                    <asp:Label ID="Label15" runat="server" Font-Italic="True" Font-Size="Medium" Text="Datos del Socio"></asp:Label>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <table width="807px" style="margin-top: 0px">
+            <tr>
+                <td width="780px" class="datos">
+                    <asp:Label ID="Label1" runat="server" Text="Nro. de Socio:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNroSocio" runat="server" Enabled="false"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="datos">
+                    <asp:Label ID="Label2" runat="server" Text="Apellido:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtApellido" runat="server" Enabled="false"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="datos">
+                    <asp:Label ID="Label3" runat="server" Text="Nombre:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNombre" runat="server" Enabled="false"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="datos">
+                    <asp:Label ID="Label4" runat="server" Text="Nro. Documento:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNroDocumento" runat="server" Enabled="false"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="datos">
+                    <asp:Label ID="Label5" runat="server" Text="Calle:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNombreCalle" runat="server" Enabled="false"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="Label6" runat="server" Text="Nro:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNroCalle" runat="server" Enabled="false" Width="40px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="Label7" runat="server" Text="Piso:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtNroPiso" runat="server" Enabled="false" Width="40px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="Label8" runat="server" Text="Dpto.:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtDpto" runat="server" Enabled="false" Width="40px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Label ID="Label9" runat="server" Text="Zona:"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtZona" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:DropDownList ID="comboZona" runat="server" DataSourceID="sdsZona" DataTextField="DESCRIPCION"
+                        DataValueField="IDZONA" AppendDataBoundItems="True" Visible="false" Width="126px">
+                        <asp:ListItem>Seleccione Zona</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td width="100px">
+                    <asp:ImageButton ID="btnNuevaDireccion" runat="server" OnClick="btnNuevaDireccion_Click"
+                        ImageUrl="../Imagenes/button-MAS1.png" />
+                    <%--<asp:Button ID="btnNuevaDireccion" runat="server"  OnClick="btnNuevaDireccion_Click"
                                         Style="margin-left: 60px; margin-top: 20px;     "   Text="Nueva Dirección" />--%>
-                                </td>
-                                <td width="100px">
-                                    <asp:ImageButton ID="btnAceptarNuevaDireccion" OnClick="btnAceptarNuevaDireccion_Click"
-                                        runat="server" ImageUrl="../Imagenes/aceptar.png" Visible="False" />
-                                    <%--<asp:Button ID="btnAceptarNuevaDireccion" runat="server" Text="Aceptar" OnClick="btnAceptarNuevaDireccion_Click"
+                </td>
+                <td width="100px">
+                    <asp:ImageButton ID="btnAceptarNuevaDireccion" OnClick="btnAceptarNuevaDireccion_Click"
+                        runat="server" ImageUrl="../Imagenes/aceptar.png" Visible="False" />
+                    <%--<asp:Button ID="btnAceptarNuevaDireccion" runat="server" Text="Aceptar" OnClick="btnAceptarNuevaDireccion_Click"
                                         Style="margin-left: 60px; margin-top: 20px" Visible="false" />--%>
-                                </td>
-                                <td width="100px">
-                                    <asp:ImageButton ID="btnCancelarNuevaDireccion" OnClick="btnCancelarNuevaDireccion_Click"
-                                        runat="server" ImageUrl="../Imagenes/button-CANCELAR.png" Visible="False" />
-                                    <%--<asp:Button ID="btnCancelarNuevaDireccion" runat="server" Text="Cancelar" OnClick="btnCancelarNuevaDireccion_Click"
+                </td>
+                <td width="100px">
+                    <asp:ImageButton ID="btnCancelarNuevaDireccion" OnClick="btnCancelarNuevaDireccion_Click"
+                        runat="server" ImageUrl="../Imagenes/button-CANCELAR.png" Visible="False" />
+                    <%--<asp:Button ID="btnCancelarNuevaDireccion" runat="server" Text="Cancelar" OnClick="btnCancelarNuevaDireccion_Click"
                                         Style="margin-left: 60px; margin-top: 20px" Visible="false" />--%>
-                                </td>
-                      <%--         </ContentTemplate>
+                </td>
+                <%--         </ContentTemplate>
                         </asp:UpdatePanel> --%>
-                        <td>
-                            <asp:SqlDataSource ID="sdsZona" runat="server" ConnectionString="<%$ ConnectionStrings:SISEConnectionString %>"
-                                SelectCommand="SELECT [IDZONA], [DESCRIPCION] FROM [ZONA]"></asp:SqlDataSource>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="datos">
-                            <asp:Label ID="Label10" runat="server" Text="Tipo Medidor:"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                <ContentTemplate>
-                                    <asp:DropDownList ID="comboTipoMedidor" runat="server" DataSourceID="sdsTipoMedidor"
-                                        DataTextField="DESCRIPCION" DataValueField="IDTIPOMEDIDOR" OnSelectedIndexChanged="comboTipoMedidor_SelectedIndexChanged"
-                                        AppendDataBoundItems="True" AutoPostBack="True" Width="150px">
-                                        <asp:ListItem>Seleccione el Tipo de Medidor</asp:ListItem>
-                                    </asp:DropDownList>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                        </td>
-                        <td>
-                            <asp:SqlDataSource ID="sdsTipoMedidor" runat="server" ConnectionString="<%$ ConnectionStrings:SISEConnectionString %>"
-                                SelectCommand="SELECT [IDTIPOMEDIDOR], [DESCRIPCION] FROM [TIPOMEDIDOR]"></asp:SqlDataSource>
-                        </td>
-                    </tr>
-                    </table>
-                    <table style="margin-top:3px">
-                    <tr>
-                    <td colspan="6">
-                     <div id="divMap" style="width: 800px; height: 170px;" />
+                <td>
+                    <asp:SqlDataSource ID="sdsZona" runat="server" ConnectionString="<%$ ConnectionStrings:SISEConnectionString %>"
+                        SelectCommand="SELECT [IDZONA], [DESCRIPCION] FROM [ZONA]"></asp:SqlDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td class="datos">
+                    <asp:Label ID="Label10" runat="server" Text="Tipo Medidor:"></asp:Label>
+                </td>
+                <td>
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList ID="comboTipoMedidor" runat="server" DataSourceID="sdsTipoMedidor"
+                                DataTextField="DESCRIPCION" DataValueField="IDTIPOMEDIDOR" OnSelectedIndexChanged="comboTipoMedidor_SelectedIndexChanged"
+                                AppendDataBoundItems="True" AutoPostBack="True" Width="150px">
+                                <asp:ListItem>Seleccione el Tipo de Medidor</asp:ListItem>
+                            </asp:DropDownList>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>
+                <td>
+                    <asp:SqlDataSource ID="sdsTipoMedidor" runat="server" ConnectionString="<%$ ConnectionStrings:SISEConnectionString %>"
+                        SelectCommand="SELECT [IDTIPOMEDIDOR], [DESCRIPCION] FROM [TIPOMEDIDOR]"></asp:SqlDataSource>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <table style="margin-top: 3px">
+        <tr>
+            <td colspan="6">
+                <div id="divMap" style="width: 800px; height: 170px;" />
+            </td>
+        </tr>
+    </table>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <table style="margin-top: 10px">
+                <tr>
+                    <td>
+                        <asp:Button ID="btnConfirmarPedido" runat="server" Text="Aceptar" OnClick="btnConfirmarPedido_Click"
+                            Style="margin-top: 10px; margin-left: 250px" />
                     </td>
-                    </tr>
-                </table>
-                <table style="margin-top:10px">
-                    <tr>
-                        <td>
-                            <asp:Button ID="btnConfirmarPedido" runat="server" Text="Aceptar" OnClick="btnConfirmarPedido_Click"
-                                Style="margin-top: 10px; margin-left: 250px" />
-                        </td>
-                        <td>
-                            <asp:Button ID="btnCancelarPedido" runat="server" Text="Cancelar" OnClick="btnCancelarPedido_Click"
-                                Style="margin-top: 10px; margin-left: 20px" />
-                        </td>
-                    </tr>
-                </table>
+                    <td>
+                        <asp:Button ID="btnCancelarPedido" runat="server" Text="Cancelar" OnClick="btnCancelarPedido_Click"
+                            Style="margin-top: 10px; margin-left: 20px" />
+                    </td>
+                </tr>
+            </table>
             </asp:Panel>
-  <%--       </ContentTemplate>
-    </asp:UpdatePanel> --%>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <span style="display: none">
         <asp:LinkButton ID="LinkButton2" runat="server"></asp:LinkButton>
     </span>
@@ -251,7 +249,7 @@
             <div style="margin-right: 15px; text-align: center;">
                 <asp:UpdatePanel ID="UpdatePanel8" runat="server">
                     <ContentTemplate>
-                        <asp:Panel ID="panelMedidorAsignado" runat="server" Visible ="false">
+                        <asp:Panel ID="panelMedidorAsignado" runat="server" Visible="false">
                             <table style="margin-top: 0px; margin-left: 65px">
                                 <tr>
                                     <td style="border-bottom-style: inset; border-bottom-width: 2px" height="25px">
@@ -348,10 +346,13 @@
             <div style="margin-right: 15px; text-align: center">
                 <asp:UpdatePanel ID="UpdatePanel7" runat="server">
                     <ContentTemplate>
-                        <asp:Button ID="btnAceptarConfirmacion" runat="server" Text="Aceptar" CausesValidation="False"
-                            OnClick="btnAceptarConfirmacion_Click" CssClass="botonPopUp" />
+                            <asp:Label ID="lblMensaje" runat="server" Style="margin-left:30px" 
+                                Text="Recuerde guardar una copia del Comprobante"></asp:Label>
+                            <br />
+                            <asp:Button ID="btnAceptarConfirmacion" runat="server" Text="Aceptar" CausesValidation="False"
+                                OnClick="btnAceptarConfirmacion_Click" CssClass="botonPopUp" />
                             <asp:Button ID="btnVerComprobante" runat="server" Text="Comprobante" CausesValidation="False"
-                            OnClick="btnVerComprobante_Click"  />
+                                OnClick="btnVerComprobante_Click" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>

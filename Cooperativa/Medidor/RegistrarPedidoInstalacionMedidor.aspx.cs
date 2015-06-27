@@ -20,6 +20,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using System.Net;
+using System.Diagnostics;
 
 public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.Page
 {
@@ -32,7 +33,7 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
             ViewState["cambioDomicilio"] = false;
             Boolean asd = Convert.ToBoolean(ViewState["cambioDomicilio"]);
             ViewState["nuevoDomicilio"] = asd;
-            DatosUsuario usr = (DatosUsuario) Session["datosUsuario"];
+            DatosUsuario usr = (DatosUsuario)Session["datosUsuario"];
             Socio s = Datos.getSocios().traerDatosSocio(Convert.ToInt32(usr.NroSocio)); //luego tengo que pasar el nroSocio por el usuario logueado
             this.txtNroSocio.Text = Convert.ToString(s.IdSocio);
             this.txtApellido.Text = s.Apellido;
@@ -46,7 +47,7 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
             ViewState["nroZona"] = Convert.ToInt32(s.NroZona);
             ViewState["domicilio"] = s.IdDomicilio;
 
-            verificarDomicilio(s.NombreCalle, Convert.ToString(s.NroCalle), Convert.ToString(s.NroPiso), Convert.ToString(s.Dpto),s.Idcalle);
+            verificarDomicilio(s.NombreCalle, Convert.ToString(s.NroCalle), Convert.ToString(s.NroPiso), Convert.ToString(s.Dpto), s.Idcalle);
         }
     }
     protected void comboTipoMedidor_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,11 +264,20 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
         if (estadoPedido == 2) //si hay medidores disponibles muestro el PDF completo
         {
             generarPDF1();
+            verArchivoPDF();
         }
         else
         {
-            generarPDF2(); //muestro el PDF sin medidor
+            generarPDF2(); 
+            verArchivoPDF();
         }
+    }
+    protected void verArchivoPDF()
+    {
+        string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "");
+
+        string ubicacion = path + "Archivos\\PedidoDeInstalacion.pdf";
+        System.Diagnostics.Process.Start("AcroRd32.exe", ubicacion);
     }
     protected void generarPDF1()
     {
@@ -325,10 +335,6 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
             document.Add(new Paragraph(" "));
 
             document.Close();
-
-            Response.Redirect("./PedidoInstalacionMedidorPDF.aspx", false);
-
-
         }
         catch (Exception er)
         {

@@ -285,8 +285,17 @@ public class Domicilios
         {
             domi.IdCalle = Convert.ToInt32(dr[0]);
             domi.NroCalle = Convert.ToInt32(dr[1]);
-            domi.Piso = Convert.ToInt32(dr[2]);
-            domi.Dpto = dr[3].ToString();
+
+            if (dr[2].GetType() != Type.GetType("System.DBNull"))
+                domi.Piso = Convert.ToInt32(dr[2]);
+            else
+                domi.Piso = 0;
+
+            if (dr[3].GetType() != Type.GetType("System.DBNull"))
+                domi.Dpto = dr[3].ToString();
+            else
+                domi.Dpto = "0";
+
             domi.Latitud = dr[4].ToString();
             domi.Longitud = dr[5].ToString();
             domi.NombreCalle = Datos.getCalles().getCalle(domi.IdCalle).NombreCalle;
