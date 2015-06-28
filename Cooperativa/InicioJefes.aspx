@@ -116,7 +116,6 @@
                             Visible="False"></asp:Label>
                         <asp:GridView ID="gvOTCEnCurso" runat="server" AutoGenerateColumns="False" CellPadding="4"
                             ForeColor="#333333" GridLines="None" Style="border: none; width: 420px">
-                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" />
                             <Columns>
                                 <asp:BoundField DataField="NroOTC" HeaderText="Nº OTC">
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="60px"></HeaderStyle>
@@ -126,7 +125,7 @@
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
-                                    <asp:BoundField DataField="nrogrupogr" HeaderText="Grupo" SortExpression="nrogrupogr">
+                                <asp:BoundField DataField="nrogrupogr" HeaderText="Nº Grupo" SortExpression="nrogrupogr">
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
@@ -143,9 +142,9 @@
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
                             </Columns>
+                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" />
                         </asp:GridView>
                     </fieldset>
-                    
                     <fieldset class="fieldset" style="width: 430px;">
                         <legend class="titulo">Órdenes de Instalación de Medidor Pendientes</legend>
                         <br />
@@ -153,18 +152,17 @@
                             Visible="False"></asp:Label>
                         <asp:GridView ID="GvOIPendientes" runat="server" AutoGenerateColumns="False" CellPadding="4"
                             ForeColor="#333333" GridLines="None" Width="430px">
-                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" />
                             <Columns>
                                 <asp:BoundField DataField="nroorden" HeaderText="Nº Orden" ReadOnly="True" SortExpression="idordeninstalacion">
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
-                                <asp:BoundField DataField="fechainst" HeaderText="Fecha Instalación" ReadOnly="True" DataFormatString="{0:d}"
-                                    SortExpression="fechainstalacion">
+                                <asp:BoundField DataField="fechainst" HeaderText="Fecha Instalación" ReadOnly="True"
+                                    DataFormatString="{0:d}" SortExpression="fechainstalacion">
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
-                                <asp:BoundField DataField="idgrupo" HeaderText="Grupo" SortExpression="idgrupogr">
+                                <asp:BoundField DataField="idgrupo" HeaderText="Nº Grupo" SortExpression="idgrupogr">
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
@@ -174,16 +172,45 @@
                                 </asp:BoundField>
                             </Columns>
                             <HeaderStyle CssClass="estiloHeaderTabla" />
+                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" />
                         </asp:GridView>
                     </fieldset></asp:Panel>
                 <asp:Panel ID="Panel3" runat="server" Style="display: inline-flex; margin-top: 13px">
-                    <fieldset class="fieldset" style="width: auto; margin-left: 20px; height: auto">
+                    <fieldset class="fieldset" style="width: 430px; height: auto">
+                        <legend class="titulo">Pedidos de Instalación Pendientes</legend>
+                        <br />
+                        <asp:Label ID="lblNoHayPedidosPendientes" runat="server" Text="No posee Pedidos Pendientes"
+                            Visible="False"></asp:Label>
+                        <asp:GridView ID="grillaPedidosPendientes" runat="server" AutoGenerateColumns="False"
+                            CellPadding="4" ForeColor="#333333" GridLines="None" Width="360px">
+                            <Columns>
+                                <asp:BoundField HeaderText="Nº Pedido" DataField="nropedido" SortExpression="idpedido">
+                                    <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
+                                    <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                </asp:BoundField>
+                                <asp:BoundField HeaderText="Nº Socio" DataField="nrosocio" SortExpression="idsocio">
+                                    <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
+                                    <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                </asp:BoundField>
+                                <asp:BoundField HeaderText="Apellido" DataField="apellidosocio" SortExpression="apellidosocio">
+                                    <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
+                                    <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                </asp:BoundField>
+                                <asp:BoundField HeaderText="Nombre" DataField="nombresocio" SortExpression="nombresocio">
+                                    <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
+                                    <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                </asp:BoundField>
+                            </Columns>
+                            <HeaderStyle CssClass="estiloHeaderTabla" />
+                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" Width="360px" />
+                        </asp:GridView>
+                    </fieldset>
+                    <fieldset class="fieldset" style="width: auto; height: auto">
                         <legend class="titulo">Grupo en Turno</legend>
                         <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataSourceID="SdsGrupoEnTurno"
                             CellPadding="4" ForeColor="#333333" GridLines="None" Width="360px">
-                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" Width="360px" />
                             <Columns>
-                                <asp:BoundField HeaderText="Grupo" DataField="idgrupogr" SortExpression="idgrupogr">
+                                <asp:BoundField HeaderText="Nº Grupo" DataField="idgrupogr" SortExpression="idgrupogr">
                                     <HeaderStyle CssClass="estiloHeaderTabla" Width="90px"></HeaderStyle>
                                     <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
                                 </asp:BoundField>
@@ -209,6 +236,7 @@
                                 </asp:TemplateField>
                             </Columns>
                             <HeaderStyle CssClass="estiloHeaderTabla" />
+                            <RowStyle BackColor="#E8EFF8" ForeColor="#333333" Width="360px" />
                         </asp:GridView>
                         <asp:SqlDataSource ID="SdsGrupoEnTurno" runat="server" ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=SISE;Integrated Security=True"
                             ProviderName="System.Data.SqlClient" SelectCommand="select hg.idgrupogr, t.horainicio, t.horafin, v.dominio

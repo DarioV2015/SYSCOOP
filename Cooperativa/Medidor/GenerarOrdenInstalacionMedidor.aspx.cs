@@ -197,7 +197,7 @@ public partial class Medidor_GenerarOrdenInstalacionMedidor : System.Web.UI.Page
     }
     protected void btnAceptarCancelacionOrden_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);
+        Response.Redirect("/Cooperativa/InicioJefes.aspx", true);
     }
     protected void btnCancelarCancelacionOrden_Click(object sender, EventArgs e)
     {
@@ -205,6 +205,6 @@ public partial class Medidor_GenerarOrdenInstalacionMedidor : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionOrden_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);
+        Response.Redirect("/Cooperativa/InicioJefes.aspx", true);
     }
 }

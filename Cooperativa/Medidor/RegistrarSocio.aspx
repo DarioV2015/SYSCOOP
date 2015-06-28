@@ -52,30 +52,20 @@
             border-bottom-right-radius: 8px;
             border-bottom-left-radius: 8px;
         }
-       
-        .style12
-        {
-            text-align: right;
-        }
-        .style13
-        {
-            text-align: right;
-        }
         .font
         {
-        	font-family:Sans-Serif;
-        	font-size:14px
-        	}
-         .datos
+            font-family: Sans-Serif;
+            font-size: 14px;
+        }
+        .datos
         {
             text-align: right;
             width: 140px;
         }
-          .styleTitulo
-         {
-           
-             border-bottom-style: inset;
-             height:25px;
+        .styleTitulo
+        {
+            border-bottom-style: inset;
+            height: 25px;
         }
         .styleMargen
         {
@@ -98,6 +88,14 @@
         {
             width: 23px;
         }
+        .style14
+        {
+            width: 175px;
+        }
+        .style15
+        {
+            width: 148px;
+        }
     </style>
 
     <script language="javascript" type="text/javascript">
@@ -107,160 +105,148 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table >
+    <table>
         <tr>
-            <td class="styleTitulo"  colspan="5" width="800px">
+            <td class="styleTitulo">
                 <asp:Label ID="Label12" runat="server" Font-Italic="True" Font-Size="Medium" Text="Tipo de Socio"></asp:Label>
-                
             </td>
         </tr>
         <tr>
             <td>
-                <asp:RadioButtonList ID="radioTipoSocio" runat="server" AutoPostBack="True" OnSelectedIndexChanged="radioTipoSocio_SelectedIndexChanged"
-                    Style="margin-left: 29px">
-                    <asp:ListItem>Particular</asp:ListItem>
-                    <asp:ListItem>Empresa</asp:ListItem>
-                </asp:RadioButtonList>
+                        <asp:RadioButtonList ID="radioTipoSocio" runat="server" AutoPostBack="True" OnSelectedIndexChanged="radioTipoSocio_SelectedIndexChanged"
+                            Style="margin-left: 29px" Width="135px">
+                            <asp:ListItem>Particular</asp:ListItem>
+                            <asp:ListItem>Empresa</asp:ListItem>
+                        </asp:RadioButtonList>
             </td>
         </tr>
     </table>
     <asp:Panel ID="panelPFisica" runat="server" Visible="false">
-        <table id="tablaPFisica" >
+        <table id="tablaPFisica">
             <tr>
-                <td class="styleTitulo"  colspan="5" width="800px">
+                <td class="styleTitulo">
                     <asp:Label ID="Label27" runat="server" Font-Italic="True" Font-Size="Medium" Text="Datos del Socio"></asp:Label>
-                     &nbsp;
                 </td>
-             </tr>
-             </table>
-             
-             <table>
-           
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="Label5" runat="server" Text="Sexo:" CssClass="styleMargen" Style="text-align: right"></asp:Label>
+                </td>
+                <td class="style14">
+                    <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                        <ContentTemplate>
+                            <asp:RadioButtonList ID="radioSexo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="radioSexo_SelectedIndexChanged">
+                                <asp:ListItem>Femenino</asp:ListItem>
+                                <asp:ListItem>Masculino</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>
+                <td class="style15">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Debe seleccionar un Sexo"
+                        ControlToValidate="radioSexo" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <asp:Label ID="Label1" runat="server" Text="Apellido:" CssClass="styleMargen" Style="text-align: right"
                         Width="109px"></asp:Label>
                 </td>
-                <td colspan="9">
+                <td class="style14">
                     <asp:TextBox ID="txtApellido" runat="server" Style="margin-left: 13px" CssClass="styleMargen"
                         MaxLength="60"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar un Apellido"
                         ControlToValidate="txtApellido" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                 </td>
-                <td colspan="2">
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
+                <td class="style15">
                     <asp:Label ID="Label3" runat="server" Text="Nombre:" Width="109px" Style="text-align: right"></asp:Label>
                 </td>
-                <td colspan="8">
+                <td>
                     <asp:TextBox ID="txtNombre" runat="server" MaxLength="50"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar un Nombre"
                         ControlToValidate="txtNombre" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                 </td>
-                <td colspan="2">
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td>
                     <asp:Label ID="Label2" runat="server" Text="Tipo:" Width="109px" Style="text-align: right"></asp:Label>
                 </td>
-                <td colspan="1">
-                    <asp:SqlDataSource ID="sdsTipoDoc" runat="server" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=SISE;Integrated Security=True"
-                        ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [TIPODOCUMENTO]">
-                    </asp:SqlDataSource>
+                <td class="style14">
                     <asp:DropDownList ID="ddlTipo" runat="server" DataSourceID="sdsTipoDoc" DataTextField="DESCRIPCION"
-                        DataValueField="IDTIPODOCUMENTO" AppendDataBoundItems="True">
+                        DataValueField="IDTIPODOCUMENTO" AppendDataBoundItems="True" OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged">
                         <asp:ListItem>Seleccione un Tipo Documento</asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe seleccionar un Tipo Documento"
                         ControlToValidate="ddlTipo" Display="Dynamic" SetFocusOnError="True" InitialValue="Seleccione un Tipo Documento">*</asp:RequiredFieldValidator>
                 </td>
-                <td colspan="1">
+                <td class="style15">
                     <asp:Label ID="Label6" runat="server" Text="Nro Documento:" Style="text-align: right"
                         Width="109px" CssClass="styleLabelSegCol"></asp:Label>
                 </td>
-                <td colspan="3">
+                <td>
                     <asp:TextBox ID="txtNroDocumento" runat="server" MaxLength="8"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe ingresar un Número Documento"
                         ControlToValidate="txtNroDocumento" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                 </td>
+                <td>
+                    <asp:SqlDataSource ID="sdsTipoDoc" runat="server" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=SISE;Integrated Security=True"
+                        ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [TIPODOCUMENTO]">
+                    </asp:SqlDataSource>
+                </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td>
                     <asp:Label ID="Label4" runat="server" Text="Fecha Nacimiento:" Style="text-align: right"
                         Width="109px"></asp:Label>
                 </td>
-                <td colspan="2">
-                    <asp:TextBox ID="txtFechaNacimiento" runat="server" AutoPostBack="True"></asp:TextBox>
+                <td class="style14">
+                    <asp:TextBox ID="txtFechaNacimiento" runat="server" AutoPostBack="True" OnTextChanged="txtFechaNacimiento_TextChanged"></asp:TextBox>
                     <asp:Image ID="imgFecNac" runat="server" ImageUrl="../Imagenes/1410380987_Calendar_24x24.png"
                         ImageAlign="Middle" Style="vertical-align: middle" />
                     <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtFechaNacimiento"
                         PopupButtonID="imgFecNac" Format="dd/MM/yyyy">
                     </asp:CalendarExtender>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td class="style15">
                     <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="La Fecha de Nacimiento no puede ser posterior al dia de hoy."
                         ControlToValidate="txtFechaNacimiento" Display="Dynamic" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
                 </td>
-                <td colspan="3">
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
             </tr>
-            
             <tr>
-                <td colspan="2">
+                <td>
                     <asp:Label ID="Label11" runat="server" Text="Teléfono Fijo:" Style="text-align: right"
                         Width="109px"></asp:Label>
                 </td>
-                <td>
+                <td class="style14">
                     <asp:TextBox ID="txtTelFijo" runat="server" MaxLength="9"></asp:TextBox>
                 </td>
-                <td colspan="10">
-                </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td>
                     <asp:Label ID="Label13" runat="server" Text="e-mail:" Style="text-align: right" Width="109px"></asp:Label>
                 </td>
-                <td colspan="7">
-                    <asp:TextBox ID="txtEmail" runat="server" MaxLength="60"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" 
-                        ErrorMessage="Debe ingresar un dirección de Email" ControlToValidate="txtEmail" 
-                        Display="Dynamic" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
-                        ErrorMessage="Ingrese correctamente la dirección de Email" 
-                        ControlToValidate="txtEmail" Display="Dynamic" SetFocusOnError="True" 
-                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
-                </td>
-                <td colspan="2">
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
+                <td class="style14">
+                    <asp:TextBox ID="txtEmail" runat="server" MaxLength="60" Width="261px"></asp:TextBox>
+                    </td>
+                    <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="Debe ingresar un dirección de Email"
+                        ControlToValidate="txtEmail" Display="Dynamic" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese correctamente la dirección de Email"
+                        ControlToValidate="txtEmail" Display="Dynamic" SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                 </td>
             </tr>
-            </table>
-            <table style="margin-top:0px; width:840px">
+        </table>
+        <table style="margin-top: 0px; width: 840px">
             <tr>
-                <td colspan="2">
+                <td>
                     <asp:Label ID="Label7" runat="server" Text="Calle:" Style="text-align: right" Width="109px"></asp:Label>
                 </td>
                 <td>
@@ -268,16 +254,15 @@
                         DataValueField="IDCALLE" AppendDataBoundItems="True">
                         <asp:ListItem Selected="True">Seleccione una Calle</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="sdsCalle" runat="server" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=SISE;Integrated Security=True"
-                        ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [CALLE]"></asp:SqlDataSource>
+                </td>
+                <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe seleccionar una Calle"
                         ControlToValidate="ddlCalle" SetFocusOnError="True" InitialValue="Seleccione una Calle">*</asp:RequiredFieldValidator>
                 </td>
-                <td colspan="1">
-                    <asp:Label ID="Label8" runat="server" Text="Número:" Style="text-align: right" 
-                        CssClass="styleLabelSegCol"></asp:Label>
+                <td>
+                    <asp:Label ID="Label8" runat="server" Text="Número:" Style="text-align: right" CssClass="styleLabelSegCol"></asp:Label>
                 </td>
-                <td  width="30px">
+                <td width="30px">
                     <asp:TextBox ID="txtNroCalle" runat="server" Width="40px" MaxLength="4"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar un Número de Calle"
                         ControlToValidate="txtNroCalle" Display="Dynamic" SetFocusOnError="True">*</asp:RequiredFieldValidator>
@@ -286,7 +271,7 @@
                     <asp:Label ID="Label9" runat="server" Text="Piso:" CssClass="styleLabelSegCol" Style="text-align: right"
                         Width="27px"></asp:Label>
                 </td>
-                <td colspan="1">
+                <td>
                     <asp:TextBox ID="txtPiso" runat="server" Width="40px" MaxLength="2"></asp:TextBox>
                 </td>
                 <td>
@@ -300,51 +285,29 @@
                         Width="30px"></asp:Label>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlZona"
-                        Display="Dynamic" ErrorMessage="Debe seleccionar una Zona" InitialValue="Seleccione una Zona"
-                        SetFocusOnError="True">*</asp:RequiredFieldValidator>
                     <asp:DropDownList ID="ddlZona" runat="server" DataSourceID="sdsZona" DataTextField="DESCRIPCION"
-                        DataValueField="IDZONA" AppendDataBoundItems="True">
+                        DataValueField="IDZONA" AppendDataBoundItems="True" 
+                        OnSelectedIndexChanged="ddlZona_SelectedIndexChanged" AutoPostBack="True">
                         <asp:ListItem>Seleccione una Zona</asp:ListItem>
                     </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlZona"
+                            Display="Dynamic" ErrorMessage="Debe seleccionar una Zona" InitialValue="Seleccione una Zona"
+                            SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    </td>
+                </td>
+                <td>
+                    <asp:SqlDataSource ID="sdsCalle" runat="server" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=SISE;Integrated Security=True"
+                        ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [CALLE]"></asp:SqlDataSource>
+                </td>
+                <td>
                     <asp:SqlDataSource ID="sdsZona" runat="server" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=SISE;Integrated Security=True"
                         ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [ZONA]"></asp:SqlDataSource>
                 </td>
             </tr>
-            </table>
-            <table style="margin-top:0px">
-            <tr>
-                <td colspan="2">
-                    <asp:Label ID="Label30" runat="server" Text="Sexo:" Style="text-align: right" Width="109px"></asp:Label>
-                </td>
-                <td>
-                    <asp:RadioButtonList ID="radioSexo" runat="server" AutoPostBack="True">
-                        <asp:ListItem>Femenino</asp:ListItem>
-                        <asp:ListItem>Masculino</asp:ListItem>
-                    </asp:RadioButtonList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Debe seleccionar un Sexo"
-                        ControlToValidate="radioSexo" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td colspan="3">
-                    &nbsp;
-                </td>
-                <td colspan="2">
-                    &nbsp;
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td colspan="2">
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
+        </table>
+        <table style="margin-top: 0px">
             <tr>
                 <td colspan="2">
                     &nbsp;
@@ -381,17 +344,15 @@
         </table>
     </asp:Panel>
     <asp:Panel ID="panelPJuridica" runat="server" Visible="false">
-        <table id="tablaPJuridica" >
+        <table id="tablaPJuridica">
             <tr>
-                <td class="styleTitulo" colspan="5">
+                <td class="styleTitulo">
                     <asp:Label ID="Label28" runat="server" Font-Italic="True" Font-Size="Medium" Text="Datos Socio "></asp:Label>
                     &nbsp;
                 </td>
-                 </tr>
-          </table>
-          
-          <table>    
-           
+            </tr>
+        </table>
+        <table>
             <tr>
                 <td>
                     <asp:Label ID="Label14" runat="server" Text="Razón Social:" CssClass="styleMargen"
@@ -434,7 +395,7 @@
                 </td>
             </tr>
             <tr>
-                <td >
+                <td>
                     <asp:Label ID="Label17" runat="server" Text="Inicio Actividad:" Style="text-align: right"
                         Width="109px"></asp:Label>
                 </td>
@@ -553,14 +514,6 @@
                         ControlToValidate="txtNroDocResp" Display="Dynamic" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-            </tr>
         </table>
     </asp:Panel>
     <asp:Panel ID="popUpConfirmacion" runat="server" Style="display: none" CssClass="divFondo">
@@ -627,13 +580,13 @@
             </div>
         </div>
     </asp:Panel>
-    <table >
+    <table>
         <tr>
-            <td >
+            <td>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"
-                            Style="margin-left: 200px" Visible="False" />
+                            Style="margin-left: 200px" Enabled="False" />
                         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click"
                             CausesValidation="False" />
                         <span style="display: none">
@@ -656,9 +609,6 @@
                         </asp:ModalPopupExtender>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-            </td>
-            <td>
-                &nbsp;
             </td>
         </tr>
     </table>

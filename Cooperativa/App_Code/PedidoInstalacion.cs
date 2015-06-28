@@ -58,6 +58,21 @@ public class PedidoInstalacion
         set { estado = value; }
     }
 
+    private string apellidoSocio;
+
+    public string ApellidoSocio
+    {
+        get { return apellidoSocio; }
+        set { apellidoSocio = value; }
+    }
+    private string nombreSocio;
+
+    public string NombreSocio
+    {
+        get { return nombreSocio; }
+        set { nombreSocio = value; }
+    }
+
     public PedidoInstalacion()
 	{
 		//

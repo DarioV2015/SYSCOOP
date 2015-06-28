@@ -62,6 +62,27 @@ public partial class Inicio : System.Web.UI.Page
 
                 lblNoHayOrdenesInstalacion.Visible = true;
             }
+
+            //me fijo si hay Pedidos de Instalación Pendientes
+
+            List<PedidoInstalacion> pi = Datos.getOrdenInstalacion().buscarPedidosPendientes();
+
+            if (pi.Count > 0)
+            {
+                grillaPedidosPendientes.Visible = true;
+                grillaPedidosPendientes.DataSource = pi;
+                grillaPedidosPendientes.DataBind();
+
+                lblNoHayPedidosPendientes.Visible = false;
+            }
+            else
+            {
+                grillaPedidosPendientes.Visible = false;
+                grillaPedidosPendientes.DataSource = pi;
+                grillaPedidosPendientes.DataBind();
+
+                lblNoHayPedidosPendientes.Visible = true;
+            }
         }   
     }
     protected void VerEmpleados_click (object sender, EventArgs e)

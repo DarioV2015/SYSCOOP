@@ -32,30 +32,28 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
         {
             panelPJuridica.Visible = true;
             panelPFisica.Visible = false;
-
         }
 
         btnGuardar.Visible = true;
     }
-
-
+    protected void radioSexo_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        txtApellido.Focus();
+    }
     protected void btnGuardar_Click(object sender, EventArgs e)
     {
-
         ModalPopupRegistrar.Show();
     }
-
-
     protected void btnAceptarConfirmar_Click (object sender, EventArgs e)
     {
         try
         {
             {
-                if (this.radioTipoSocio.SelectedIndex == 0)
+                if (this.radioTipoSocio.SelectedIndex == 0) //Socio Particular
                 {
                     Persona existe = Datos.getPersonas().mostrarPersona(Convert.ToInt32(this.ddlTipo.SelectedValue), Convert.ToInt32(this.txtNroDocumento.Text));
 
-                    if (existe.NroDocumento != null && existe.NroDocumento != 0)
+                    if (Convert.ToInt32(existe.NroDocumento) != 0 && Convert.ToInt32(existe.NroDocumento) != 0)
                     {
                         lblTitAdvertencia.Text = "Ha Ocurrido un Problema";
                         lblMsjAdvertencia.Text = "La persona ya es socio.";
@@ -70,12 +68,26 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
                     // 2 - Creo un Domicilio
 
                     Domicilio d = new Domicilio();
+
                     d.IdDomicilio = Convert.ToInt32(Datos.getDomicilios().obtenerUltNroDomicilio());
                     d.NroCalle = Convert.ToInt32(this.txtNroCalle.Text);
-                    d.Piso = Convert.ToInt32(this.txtPiso.Text);
-                    d.IdCalle = Convert.ToInt32(this.ddlCalle.SelectedValue);
+
+                    if (txtPiso.Text == "")
+                        d.Piso = 0;
+                    else
+                        d.Piso = Convert.ToInt32(this.txtPiso.Text);
+
+                    if (txtNroCalle.Text == "")
+                        d.IdCalle = 0;
+                    else
+                        d.IdCalle = Convert.ToInt32(this.ddlCalle.SelectedValue);
+                    
                     d.IdZona = Convert.ToInt32(this.ddlZona.SelectedValue);
-                    d.Dpto = this.txtDpto.Text;
+
+                    if (txtDpto.Text == "")
+                        d.Dpto = "0";
+                    else
+                        d.Dpto = this.txtDpto.Text;
 
 
                     if (Datos.getDomicilios().crearDomicilio(d) <= 0)
@@ -93,6 +105,7 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
                     // 3 - Creo una Persona
 
                     Persona p = new Persona();
+
                     p.NroDocumento = Convert.ToInt32(this.txtNroDocumento.Text);
                     p.TipoDocumento = Convert.ToInt32(this.ddlTipo.SelectedValue);
                     p.IdDomicilio = Convert.ToInt32(d.IdDomicilio);
@@ -114,9 +127,6 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
                         ModalPopupCancelarRegistrar.Show();
                         return;
                     }
-
-
-
 
                     // 4 - Creo un Socio
 
@@ -147,7 +157,7 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
 
 
                 }
-                else if (this.radioTipoSocio.SelectedIndex == 1)
+                else if (this.radioTipoSocio.SelectedIndex == 1) // Socio Empresa
                 {
                     // 2 - Creo un Domicilio
 
@@ -226,7 +236,7 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
 
      protected void btnAceptarCancelacion_Click (object sender, EventArgs e)
      {
-         Response.Redirect("/Cooperativa/default.aspx", true);    
+         Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);    
      }
 
      protected void btnCancelarCancelacion_Click(object sender, EventArgs e)
@@ -239,18 +249,26 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
 
      {
          //Response.Redirect("/Cooperativa/Medidor/RegistrarSocio.aspx", true); 
-         Response.Redirect("/Cooperativa/default.aspx", true);
+         Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);
      
      }
-
-
-
-
      protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
      {
          if (Convert.ToDateTime(args.Value) > DateTime.Now)
          {
              args.IsValid = false;
          }
+     }
+     protected void ddlTipo_SelectedIndexChanged(object sender, EventArgs e)
+     {
+         txtNroDocumento.Focus();
+     }
+     protected void txtFechaNacimiento_TextChanged(object sender, EventArgs e)
+     {
+         txtTelFijo.Focus();
+     }
+     protected void ddlZona_SelectedIndexChanged(object sender, EventArgs e)
+     {
+         btnGuardar.Enabled = true;
      }
 }

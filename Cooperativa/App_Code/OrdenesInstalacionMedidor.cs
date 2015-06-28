@@ -154,6 +154,34 @@ public class OrdenesInstalacionMedidor
         return ordenes;
 
     }
+    public List<PedidoInstalacion> buscarPedidosPendientes()
+    {
+        String sqlOrdenes = "SELECT PI.IDPEDIDO, PI.IDSOCIO, P.APELLIDO, P.NOMBRE" +
+        " FROM PEDIDOINSTALACION PI, SOCIO S, PERSONA P" +
+        " WHERE PI.IDSOCIO = S.IDSOCIO" +
+        " AND S.IDTIPODOCUMENTO = P.TIPODOCUMENTO" +
+        " AND S.NRODOCUMENTO = P.NRODOCUMENTO" +
+        " AND PI.IDESTADO = 2";
+
+        SqlDataReader sdr = Datos.obtenerDataReader(sqlOrdenes);
+        List<PedidoInstalacion> pedidos = new List<PedidoInstalacion>();
+
+        while (sdr.Read())
+        {
+            PedidoInstalacion p = new PedidoInstalacion();
+
+            p.NroPedido = Convert.ToInt32(sdr[0]);
+            p.NroSocio = Convert.ToInt32(sdr[1]);
+            p.ApellidoSocio = Convert.ToString(sdr[2]);
+            p.NombreSocio = Convert.ToString(sdr[3]);
+
+            pedidos.Add(p);
+
+        }
+        sdr.Close();
+        return pedidos;
+    }
+
     public OrdenesInstalacionMedidor()
 	{
 		//

@@ -304,7 +304,7 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
 
             string ubicacion = path + "\\Archivos\\PedidoDeInstalacion.pdf";
 
-            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(path + "\\Imagenes\\SISE_logo_RGB.jpg");
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(path + "\\Imagenes\\logocop.png");
             jpg.Alignment = iTextSharp.text.Image.MIDDLE_ALIGN;
             jpg.ScaleToFit(90, 90);
             document.Add(jpg);
@@ -360,7 +360,7 @@ public partial class Medidor_RegistrarPedidoInstalacionMedidor : System.Web.UI.P
 
             string ubicacion = path + "\\Archivos\\PedidoDeInstalacion.pdf";
 
-            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(path + "\\Imagenes\\SISE_logo_RGB.jpg");
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(path + "\\Imagenes\\logocop.png");
             jpg.Alignment = iTextSharp.text.Image.MIDDLE_ALIGN;
             jpg.ScaleToFit(90, 90);
             document.Add(jpg);

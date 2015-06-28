@@ -285,7 +285,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionInsumos_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
     }
 
 
@@ -429,7 +429,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionInsumosF_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
     }
 
     //VENCIMIENTO HERRAMIENTAS
@@ -572,7 +572,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionHerramientas_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
     }
     
     //SIN MEDIDORES
@@ -715,6 +715,6 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionMedidores_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
     }
 }

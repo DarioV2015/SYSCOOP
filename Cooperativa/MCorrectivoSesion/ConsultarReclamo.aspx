@@ -275,6 +275,142 @@ t.idtiporeclamo = r.idtiporeclamo and
                     </tr>
                 </table>
             </asp:Panel>
+            
+            
+            
+            <asp:Panel ID="panelReclamoSocio" runat="server" Visible="false">
+                <table width="800px" style="margin-top: 5px">
+                    <tr>
+                        <td style="border-bottom-style: inset" height="25px">
+                            &nbsp;
+                            <asp:Label ID="Label7" runat="server" Font-Italic="True" Font-Size="Medium" Text="Detalle del Reclamo"></asp:Label>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+                <table style="margin-top: 0px">
+                    <tr>
+                        <td>
+                            <asp:GridView runat="server" AutoGenerateColumns="False" ID="grillaReclamoSocio" DataSourceID="sdsReclamos1"
+                                HeaderStyle-CssClass="estiloHeaderTabla" CellPadding="4" ForeColor="#333333"
+                                GridLines="None" Width="920px" OnRowDataBound="gvMaestro_RowDataBound">
+                                <RowStyle BackColor="#E8EFF8" ForeColor="#333333" />
+                                <Columns>
+                                    <asp:BoundField DataField="IDRECLAMO" HeaderText="Nro" SortExpression="DESCRIPCION"
+                                        HeaderStyle-Width="50px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="DESCRIPCION" HeaderText="Reclamo" SortExpression="DESCRIPCION"
+                                        HeaderStyle-Width="120px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="120px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="FECHA" HeaderText="Fecha" SortExpression="Fecha" HeaderStyle-Width="65px"
+                                        ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="HORA" HeaderText="Hora" SortExpression="Hora" HeaderStyle-Width="50px"
+                                        ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="IDTIPODOCUMENTO" HeaderText="Tipo Doc" SortExpression="IDTIPODOCUMENTO"
+                                        HeaderStyle-Width="70px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NRODOCUMENTO" HeaderText="Nro Doc" SortExpression="NRODOCUMENTO"
+                                        HeaderStyle-Width="80px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="80px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="IDSOCIO" HeaderText="Socio" HeaderStyle-Width="50px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="APELLIDO" HeaderText="Apellido" SortExpression="APELLIDO"
+                                        HeaderStyle-Width="70px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NOMBRE" HeaderText="Nombre" SortExpression="NOMBRE" HeaderStyle-Width="70px"
+                                        ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="ESTADO" HeaderText="Estado" SortExpression="ESTADO" HeaderStyle-Width="70px"
+                                        ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="TIPO" HeaderText="Tipo Reclamo" SortExpression="TIEMPO"
+                                        HeaderStyle-Width="170px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="170px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="TIEMPORESOLUCION" HeaderText="Tiempo" SortExpression="TIEMPORESOLUCION"
+                                        HeaderStyle-Width="100px" ItemStyle-CssClass="estiloHeaderTabla" Visible="False">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="100px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="PRI" HeaderText="Prioridad" SortExpression="PRI" HeaderStyle-Width="70px"
+                                        ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="PRIORIDAD" HeaderText="Pri" SortExpression="PRIORIDAD"
+                                        HeaderStyle-Width="70px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="70px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="IDORDENTRABAJOCORRECTIVO" HeaderText="OTC" SortExpression="IDORDENTRABAJOCORRECTIVO"
+                                        HeaderStyle-Width="50px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="HORAINICIO" HeaderText="hora otc" SortExpression="HORAINICIO"
+                                        HeaderStyle-Width="50px" ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="TIEMP" HeaderText="tiempo" SortExpression="TIEMP" HeaderStyle-Width="50px"
+                                        ItemStyle-CssClass="estiloHeaderTabla">
+                                        <HeaderStyle CssClass="estiloHeaderTabla" Width="50px"></HeaderStyle>
+                                        <ItemStyle CssClass="estiloFilasTabla"></ItemStyle>
+                                    </asp:BoundField>
+                                </Columns>
+                                <HeaderStyle CssClass="estiloHeaderTabla" />
+                            </asp:GridView>
+                        </td>
+                        <td>
+                            <asp:SqlDataSource ID="sdsReclamos1" runat="server" ConnectionString="<%$ ConnectionStrings:SISEConnectionString %>"
+                                SelectCommand="select r.idreclamo, r.descripcion, convert(char(10), r.fecha, 103) as fecha,convert(nvarchar(5), r.hora, 108) as hora, r.idtipodocumento, r.nrodocumento,r.idsocio, t.descripcion as tipo,p.nombre, p.apellido,eotc.descripcion as estado, pr.descripcion as pri, r.idordentrabajocorrectivo, otc.horainicio,t.tiemporesolucion as tiemp,
+(select sum(tiemporesolucion)
+from reclamo rc, tiporeclamo tr
+where rc.idtiporeclamo = tr.idtiporeclamo
+and tr.prioridad &gt; t.prioridad) tiempoResolucion, t.prioridad
+from reclamo r, tiporeclamo t, persona p, socio s, estadoreclamo er, prioridad pr, estadootc eotc,
+ordentrabajocorrectivo otc
+where r.idestadoreclamo = er.idestadoreclamo and
+otc.idestadoot = eotc.idestadootc and
+r.idordentrabajocorrectivo = otc.idordentrabajo and
+r.prioridad = pr.idprioridad and
+r.idestadoreclamo in (1,4) and
+((r.idtipodocumento is not null and r.nrodocumento is not null and p.tipodocumento = r.idtipodocumento and p.nrodocumento = r.nrodocumento) or
+(r.idsocio is not null and s.idsocio = r.idsocio and s.idtipodocumento = p.tipodocumento and s.nrodocumento = p.nrodocumento)
+) and
+t.idtiporeclamo = r.idtiporeclamo and
+s.idsocio = @socio">
+                                <SelectParameters>
+                                    <asp:Parameter Name="socio" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
         </ContentTemplate>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="UpdatePanel4" runat="server">

@@ -15,40 +15,59 @@ public partial class MCorrectivoSesion_ConsultarReclamo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //DatosUsuario usr = (DatosUsuario)Session["datosUsuario"];
-        //if(usr!= null && usr.Rol.ToUpper().Equals("SOCIO"))
-        //{
-        //    this.lblNroReclamo.Visible = false;
-        //    this.txtReclamo.Visible = false;
-        //    this.bntBuscar.Visible = false;
-        //    this.rblOpcion.Visible = false;
-        //    sdsReclamosSocio.SelectParameters["socio"].DefaultValue = usr.NroSocio;
-        //    sdsReclamosSocio.Select(DataSourceSelectArguments.Empty);
-        //}
-        //this.Button2.Visible = false;
-
-        DatosUsuario usr = (DatosUsuario)Session["datosUsuario"];
-        if (usr != null && usr.Rol.ToUpper().Equals("SOCIO"))
-        {
-            rdb24Horas.Visible = false;
-            rdbOtr.Checked = true;
-            txtNroReclamo.Focus();
-        }
-        else
-        {
-            rdb24Horas.Visible = true;
-        }
-
-        
         if (!Page.IsPostBack)
         {
-            rdb24Horas.Checked = false;
-            rdbOtr.Checked = false;
-            lblNroReclamo.Visible = false;
-            txtNroReclamo.Visible = false;
-            txtNroReclamo.Text = "";
-            lblMensaje.Text = "";
-            btnBuscar.Enabled = false;
+            DatosUsuario usr = (DatosUsuario)Session["datosUsuario"];
+            if (usr != null && usr.Rol.ToUpper().Equals("SOCIO"))
+            {
+                sdsReclamos1.SelectParameters["socio"].DefaultValue = usr.NroSocio;
+
+                panelBusqueda.Visible = false;
+                panelReclamoSocio.Visible = true;
+                panelDetalleTiempos.Visible = true;
+
+                int nroReclamo = 0;
+                float tiempoResolucion = 0;
+
+                foreach (GridViewRow row in grillaReclamoSocio.Rows)
+                {
+                    nroReclamo = Convert.ToInt32(grillaReclamoSocio.Rows[row.RowIndex].Cells[0].Text);
+                    tiempoResolucion = Convert.ToSingle(grillaReclamoSocio.Rows[row.RowIndex].Cells[16].Text);
+
+                    break;
+                }
+
+                OrdenTrabajoCorrectivo otc = Datos.getOTC().buscarOTC(nroReclamo);
+
+                DateTime horaInicioOTC = Convert.ToDateTime(otc.HoraInicio);
+
+                DateTime horaActual = DateTime.Now;
+
+                TimeSpan dif = horaActual - horaInicioOTC;
+
+                float resultado = tiempoResolucion - dif.Minutes;
+
+                DateTime horaF = Convert.ToDateTime(horaActual.AddMinutes(resultado));
+
+                lblTiempo.Text = tiempoResolucion.ToString() + " minutos";
+                lblHoraInicioOTC.Text = horaInicioOTC.ToString("HH:mm") + " hs.";
+                lblHoraActual.Text = horaActual.ToString("HH:mm") + " hs.";
+                lblDuracionEstimada.Text = resultado.ToString() + " minutos";
+                lblHoraFinEstimada.Text = horaF.ToString("HH:mm") + " hs.";
+            }
+            else
+            {
+                panelBusqueda.Visible = true;
+                panelReclamoSocio.Visible = false;
+
+                rdb24Horas.Checked = false;
+                rdbOtr.Checked = false;
+                lblNroReclamo.Visible = false;
+                txtNroReclamo.Visible = false;
+                txtNroReclamo.Text = "";
+                lblMensaje.Text = "";
+                btnBuscar.Enabled = false;
+            }
         }
 
     }

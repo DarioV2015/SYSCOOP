@@ -26,7 +26,6 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
             {
                 AccordionSocio.Visible = true;
                 AccordionAdministrativo.Visible = false;
-                AccordionCapataz.Visible = false;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = false;
               
@@ -35,7 +34,6 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
             {
                 AccordionSocio.Visible = false;
                 AccordionAdministrativo.Visible = false;
-                AccordionCapataz.Visible = false;
                 AccordionGuardia.Visible =  true;
                 AccordionJefes.Visible = false;
                
@@ -44,7 +42,6 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
             {
                 AccordionSocio.Visible = false;
                 AccordionAdministrativo.Visible = false;
-                AccordionCapataz.Visible = true;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = false;
             }
@@ -52,7 +49,6 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
             {
                 AccordionSocio.Visible = false;
                 AccordionAdministrativo.Visible = false;
-                AccordionCapataz.Visible = false;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = true;
             }
@@ -60,14 +56,13 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
             {
                 AccordionSocio.Visible = false;
                 AccordionAdministrativo.Visible = true;
-                AccordionCapataz.Visible = false;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = false;
             }
 
             lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString();
 
-            if (!usr.Rol.Equals("Socio"))
+            if (usr.Rol.Equals("JefeRedes"))
             {
                 List<Insumo> listaInsumosPorVencer = (List<Insumo>)Datos.getAvisos().traerInsumosVencidos();
 
@@ -106,7 +101,6 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
             lblUsuario.Text = "";
             AccordionSocio.Visible = false;
             AccordionAdministrativo.Visible = false;
-            AccordionCapataz.Visible = false;
             AccordionGuardia.Visible = false;
             AccordionJefes.Visible = false;
           

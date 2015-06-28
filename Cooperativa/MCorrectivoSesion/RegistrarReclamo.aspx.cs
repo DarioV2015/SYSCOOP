@@ -430,7 +430,7 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                             txtDptoSocioP.Text = d.Dpto;
                             txtZonaSocioP.Text = d.Zona;
 
-                            ViewState["idDomicilio"] = d.IdDomicilio;
+                            Session["idDomicilio"] = d.IdDomicilio;
 
                             break;
                         }
@@ -458,7 +458,7 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                             lblDptoE.Text = se.Dpto;
                             lblZonaE.Text = se.DescripcionZona;
 
-                            ViewState["idDomicilio"] = se.IdDomicilio;
+                            Session["idDomicilio"] = se.IdDomicilio;
 
                             break;
                         }
@@ -567,7 +567,7 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
             txtDptoSocioP.Text = d.Dpto;
             txtZonaSocioP.Text = d.Zona;
 
-            ViewState["idDomicilio"] = d.IdDomicilio;
+            Session["idDomicilio"] = d.IdDomicilio;
 
             //busco los Medidores
             int nroSocioParticular = 0;
@@ -645,7 +645,7 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                 lblDptoE.Text = se.Dpto;
                 lblZonaE.Text = se.DescripcionZona;
 
-                ViewState["idDomicilio"] = se.IdDomicilio;
+                Session["idDomicilio"] = se.IdDomicilio;
 
             }
 
@@ -690,7 +690,7 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
 
             if (medidorSeleccionado.Checked)
             {
-                ViewState["idDomicilio"] = gvMedidores.Rows[rows.RowIndex].Cells[11].Text;
+                Session["idDomicilio"] = gvMedidores.Rows[rows.RowIndex].Cells[11].Text;
             }
         }
         
@@ -849,11 +849,11 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                     int ultimoDomicilio = Datos.getDomicilios().obtenerUltimoIdDomicilio();
                     int dom = Datos.getDomicilios().insertarDomicilio(ultimoDomicilio, Convert.ToInt32(rdbCalle.SelectedItem.Value), Convert.ToInt32(lblNroCalleNueva.Text), Convert.ToInt32(lblNroPisoNuevo.Text), lblNroDptoNuevo.Text, Convert.ToInt32(rdbZona.SelectedItem.Value));
 
-                    ViewState["idDomicilio"] = Convert.ToInt32(ultimoDomicilio);
+                    Session["idDomicilio"] = Convert.ToInt32(ultimoDomicilio);
                 }
 
                 //tomo el Domicilio de donde corresponda
-                int idDomicilio = Convert.ToInt32(ViewState["idDomicilio"]);
+                int idDomicilio = Convert.ToInt32(Session["idDomicilio"]);
                 
                 int idsocio = 0;
 
@@ -918,18 +918,18 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                     if (existeDomi == 0) //es nuevo el Domicilio
                     { 
                         int domi = Datos.getDomicilios().insertarDomicilio(ultimoDomicilio, Convert.ToInt32(rdbCalle.SelectedItem.Value), Convert.ToInt32(lblNroCalleNueva.Text), piso, depto, Convert.ToInt32(rdbZona.SelectedItem.Value));
-                        ViewState["idDomicilio"] = ultimoDomicilio;
+                        Session["idDomicilio"] = ultimoDomicilio;
                     }
                     else  //ya existe el Domicilio
                     { 
                         int domi = existeDomi;
-                        ViewState["idDomicilio"] = domi;
+                        Session["idDomicilio"] = domi;
                     }
 
                     //Insertar Persona
                     int per = Datos.getPersonas().insertarPersona(nroDoc, tipoDoc, nombre, apellido, tel);
 
-                    int idDomicilio = Convert.ToInt32(ViewState["idDomicilio"]);
+                    int idDomicilio = Convert.ToInt32(Session["idDomicilio"]);
 
                     //idreclamo, fecha, hora, descripcion, idotc, idsocio,idestadoreclamo,idtiporeclamo,
                     //iddomicilio, nrodocumento, prioridad, idusuario, idtipodocumento

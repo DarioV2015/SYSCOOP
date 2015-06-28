@@ -150,7 +150,7 @@
             <td class="style5" >
             <div style="height: 121px">    
                 <asp:Image ID="Image1" runat="server" Height="130px" 
-                    ImageUrl="~/Imagenes/SISE_logo_RGB.jpg" Width="176px" />
+                    ImageUrl="~/Imagenes/logocop.png" Width="176px" />
                 </div>
             </td>
             <td class="color"  >
