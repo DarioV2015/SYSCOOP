@@ -393,6 +393,24 @@ public class Datos
             return -1;
         }
     }
+    public static string recuperarPassword(int idUsuario)
+    {
+        String sql = "select u.contraseña" +
+        " from usuario u" +
+        " where u.idusuario = " + idUsuario;
 
+        SqlDataReader d = Datos.obtenerDataReader(sql);
+
+        string password = ""; 
+
+        while (d.Read())
+        {
+            password = d[0].ToString();
+        }
+
+        d.Close();
+
+        return password;
+    }
 }
  

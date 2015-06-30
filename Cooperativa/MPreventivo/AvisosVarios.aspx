@@ -84,6 +84,21 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:UpdatePanel ID="UpdatePanel21" runat="server">
+        <ContentTemplate>
+            <asp:Panel ID="panel1" runat="server" Visible="False">
+                <table width="800px" style="margin-top: 5px">
+                    <tr>
+                        <td style="border-bottom-style: inset" height="25px">
+                            &nbsp;
+                            <asp:Label ID="Label25" runat="server" Font-Italic="True" Font-Size="Medium" Text="No hay Avisos"></asp:Label>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:Panel ID="panelVencimientoInsumos" runat="server" Visible="False">
@@ -942,7 +957,8 @@ and pi.idestadopedidoinsumo in (1,2))"></asp:SqlDataSource>
                 </tr>
             </table>
         </div>
-        <div class="content" style="height: 170px; border-top: 0.1px solid #bababa; width: 400px; height: 200px">
+        <div class="content" style="height: 170px; border-top: 0.1px solid #bababa; width: 400px;
+            height: 200px">
             <div>
                 <table style="margin-top: 0px; margin-left: 15px">
                     <tr>
@@ -1088,4 +1104,12 @@ where m.idtipomedidor = tm.idtipomedidor"></asp:SqlDataSource>
             </div>
         </div>
     </asp:Panel>
+    <table>
+        <tr>
+            <td>
+                <asp:Button ID="btnVolver1" runat="server" Text="Volver" OnClick="btnVolver1_Click"
+                    Style="margin-left: 50px; margin-top: 10px" />
+            </td>
+        </tr>
+    </table>
 </asp:Content>

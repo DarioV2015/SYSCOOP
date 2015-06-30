@@ -22,16 +22,18 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
 
     protected void radioTipoSocio_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (this.radioTipoSocio.SelectedIndex == 0)
+        if (this.radioTipoSocio.SelectedIndex == 0) //Socio Particular
         {
             panelPFisica.Visible = true;
             panelPJuridica.Visible = false;
         }
 
-        if (this.radioTipoSocio.SelectedIndex == 1)
+        if (this.radioTipoSocio.SelectedIndex == 1) //Socio Empresa
         {
             panelPJuridica.Visible = true;
             panelPFisica.Visible = false;
+
+            txtRazonSocial.Focus();
         }
 
         btnGuardar.Visible = true;
@@ -90,7 +92,7 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
                         d.Dpto = this.txtDpto.Text;
 
 
-                    if (Datos.getDomicilios().crearDomicilio(d) <= 0)
+                    if (!Datos.getDomicilios().crearDomicilio1(d)) //no se pudo crear el Domicilio
                     {
                         lblTitAdvertencia.Text = "Ha Ocurrido un Problema";
                         lblMsjAdvertencia.Text = "No se pudo registrar el domicilio.";
@@ -155,7 +157,6 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
                         return;
                     }
 
-
                 }
                 else if (this.radioTipoSocio.SelectedIndex == 1) // Socio Empresa
                 {
@@ -201,7 +202,6 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
                         s.IdUsuario = idusuario;
                     
                    Datos.getSocios().crearSocio(s);
-
                 }
             }
             Datos.commit();
@@ -213,22 +213,16 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
             Datos.rollback();
         }
 
+
         ModalPopupRegistrar.Hide();
         ModalPopupExito.Show();
-
-       
-
     }
-
-
     protected void btnCancelar_Click(object sender, EventArgs e)
     {
         btnAceptarCancelacion.Visible = true;
         btnCancelarCancelacion.Text = "Cancelar";
         ModalPopupCancelarRegistrar.Show();
-
     }
-
     protected void btnCancelarConfirmar_Click(object sender, EventArgs e)
     {
          Response.Redirect("/Cooperativa/Medidor/RegistrarSocio.aspx", true);    
@@ -238,7 +232,6 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
      {
          Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);    
      }
-
      protected void btnCancelarCancelacion_Click(object sender, EventArgs e)
 
      {
@@ -265,10 +258,18 @@ public partial class Medidor_RegistrarSocio : System.Web.UI.Page
      }
      protected void txtFechaNacimiento_TextChanged(object sender, EventArgs e)
      {
-         txtTelFijo.Focus();
+         //txtTelFijo.Focus();
      }
      protected void ddlZona_SelectedIndexChanged(object sender, EventArgs e)
      {
          btnGuardar.Enabled = true;
+     }
+     protected void ddlTipoDocResp_SelectedIndexChanged(object sender, EventArgs e)
+     {
+         txtNroDocResp.Focus();
+     }
+     protected void ddlTipoOrganizacion_SelectedIndexChanged(object sender, EventArgs e)
+     {
+         txtFechaInicio.Focus();
      }
 }

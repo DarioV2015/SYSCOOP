@@ -83,7 +83,31 @@ public class Domicilios
         return filas;
 
     }
+    public bool crearDomicilio1(Domicilio d)
+    {
+        List<SqlParameter> param = new List<SqlParameter>();
 
+        param.Add(new SqlParameter("@a", d.IdDomicilio));
+        param.Add(new SqlParameter("@b", d.NroCalle));
+        param.Add(new SqlParameter("@c", d.Piso));
+        param.Add(new SqlParameter("@d", d.IdCalle));
+        param.Add(new SqlParameter("@e", d.IdZona));
+        param.Add(new SqlParameter("@f", d.Dpto));
+        param.Add(new SqlParameter("@g", ""));
+        param.Add(new SqlParameter("@h", ""));
+
+       string sql = "insert into Domicilio(idDomicilio, nroCalle, piso, idCalle, idZona, dpto, latitud, longitud )" +
+       " values (@a, @b, @c, @d, @e, @f, @g, @h)";
+
+        int insertado = Datos.ejecutarComando(sql, param);
+        bool correcto = false;
+
+        if (insertado > 0)
+        {
+            correcto = true;
+        }
+        return correcto;
+    }
     /*public List<Domicilio> getDomicilioDeDetalle(String idDom)
     {
         List<Domicilio> domicilios = new List<Domicilio>();

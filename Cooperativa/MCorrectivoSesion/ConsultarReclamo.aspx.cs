@@ -173,7 +173,21 @@ public partial class MCorrectivoSesion_ConsultarReclamo : System.Web.UI.Page
    }
    protected void btnVolver_Click1(object sender, EventArgs e)
    {
-       Response.Redirect("/Cooperativa/Default.aspx", true);
+       DatosUsuario usr = (DatosUsuario)Session["datosUsuario"];
+
+       string rolUsuario = usr.Rol;
+
+       if (rolUsuario.ToUpper().Equals("GUARDIA"))
+           Response.Redirect("/Cooperativa/InicioGuardiaReclamo.aspx", true);
+
+       if (rolUsuario.ToUpper().Equals("SOCIO"))
+           Response.Redirect("/Cooperativa/Default.aspx", true);
+
+       if (rolUsuario.ToUpper().Equals("JEFEREDES"))
+           Response.Redirect("/Cooperativa/InicioJefes.aspx", true);
+
+       if (rolUsuario.ToUpper().Equals("ADMINISTRATIVO"))
+           Response.Redirect("/Cooperativa/InicioAdministrativo.aspx", true);
    }
    protected void gvMaestro_RowDataBound(object sender, GridViewRowEventArgs e)
    {

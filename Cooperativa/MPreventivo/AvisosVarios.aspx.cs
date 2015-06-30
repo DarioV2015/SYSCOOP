@@ -36,7 +36,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
                 panelFaltaStock.Visible = false;
             else
             {
-                panelFaltaStock.Visible = false;
+                panelFaltaStock.Visible = true;
 
                 grillaInsumosSinStock.DataSource = listaInsumosSinStock;
                 grillaInsumosSinStock.DataBind();
@@ -64,6 +64,15 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
 
                 grillaSinMedidores.DataSource = listaStockMedidores;
                 grillaSinMedidores.DataBind();
+            }
+
+            if (listaInsumosPorVencer.Count == 0 && listaInsumosSinStock.Count == 0 && listaHerramientasPorVencer.Count == 0)
+            {
+                panel1.Visible = true;
+            }
+            else
+            {
+                panel1.Visible = false;
             }
         }
     }
@@ -285,7 +294,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionInsumos_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
     }
 
 
@@ -429,7 +438,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionInsumosF_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
     }
 
     //VENCIMIENTO HERRAMIENTAS
@@ -572,7 +581,7 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionHerramientas_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
     }
     
     //SIN MEDIDORES
@@ -715,6 +724,10 @@ public partial class MPreventivo_AvisosVarios : System.Web.UI.Page
     }
     protected void btnAceptarConfirmacionMedidores_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/Cooperativa/MPreventivo/InicioJefes.aspx", true);
+        Response.Redirect("/Cooperativa/MPreventivo/AvisosVarios.aspx", true);
+    }
+    protected void btnVolver1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/Cooperativa/InicioJefes.aspx", true);
     }
 }
