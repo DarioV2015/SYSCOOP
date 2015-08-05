@@ -164,6 +164,12 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                 txtNroDocumento.Visible = false;
                 lblCUIT.Visible = false;
                 txtNroCUIT.Visible = false;
+
+                rdbSocio.Checked = false;
+                rdbNoSocio.Checked = false;
+
+                PanelNoSocio.Visible = false;
+                txtReclamo.Text = " ";
             }
         }
 
@@ -1031,7 +1037,7 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
             Datos.rollback();
         }
         ModalPopupConfirmacion.Hide();
-        ModalPopupExito.Show();  
+        ModalPopupExito.Show();
     }
     protected void btnCancelarRegistrar_Click(object sender, EventArgs e)
     {
