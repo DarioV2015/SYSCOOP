@@ -320,7 +320,9 @@ using System.Data.SqlClient;
             " set iddomicilio = " + idDomicilio + "," +
             " idsocio = " + nroSocio + "," +
             " idestadomedidor = " + estado + "," +
-            " idzona = " + idZona +
+            " idzona = " + idZona + "," +
+            " idlinea = 1, " + 
+            " idprioridad = 1 " +
             " where idmedidor = @a";
 
             int filas = 0;

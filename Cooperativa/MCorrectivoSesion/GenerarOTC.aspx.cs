@@ -29,7 +29,6 @@ public partial class MCorrectivoSesion_GenerarOTC : System.Web.UI.Page
             {
 
                 txtNroReclamo.Text = r.NroReclamo.ToString();
-                ViewState["NRORECLAMO"] = r.NroReclamo;
 
                 txtTipoReclamo.Text = r.DescripcionTipoReclamo.ToString();
                 txtDescripcion.Text = r.Descripcion.ToString();

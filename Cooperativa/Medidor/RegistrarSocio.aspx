@@ -608,20 +608,22 @@
         </div>
     </asp:Panel>
     <asp:Panel ID="popUpExito" runat="server" Style="display: none" CssClass="divFondo">
-        <div style="float: left; width: 40px; margin-left: 20px; margin-top: 3px; height: auto">
+        <div style="float: left; width: 40px; margin-left: 20px; margin-top: 3px">
             <asp:Image ID="Image1" runat="server" ImageUrl="../Imagenes/confirmación.png" Width="35px" />
         </div>
-        <div class="heading" style="width: 400px">
+        <div class="heading">
             <asp:Label ID="Label33" runat="server" Text="El Socio fue registrado con éxito" Style="margin-right: 15px"></asp:Label>
             <br />
-            <asp:Label ID="Label30" runat="server" Text="Tome nota de sus datos de Usuario. Recuerde cambiar su contraseña."></asp:Label>
+            <asp:Label ID="Label310" runat="server" Text="Recuerde cambiar su contraseña."></asp:Label>
             <br />
-            <asp:Label ID="lblNombreUsuario" runat="server" Text="USUARIO: nombre"></asp:Label>
-            <asp:Label ID="lblPassword" runat="server" Text="CONTRASEÑA: Nº Documento"></asp:Label>
-            <br />
+            <asp:Label ID="lblNombreUsuario" runat="server" Text="USUARIO: Apellido"></asp:Label>
+            <asp:Label ID="lblPassword" runat="server" Text=" - CONTRASEÑA: Nº Documento"></asp:Label>
         </div>
-        <div class="content" style="height: 100px; border-top: 0.1px solid #bababa; width: 400px">
+        <div class="content">
             <div style="margin-right: 15px; text-align: center">
+                <br />
+                <br />
+                <br />
                 <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
                         <asp:Button ID="btnAceptarConfirmacion" runat="server" Text="Aceptar" CausesValidation="False"

@@ -432,6 +432,9 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
 
                             Session["idDomicilio"] = d.IdDomicilio;
 
+                            //Session["tipoDoc"] = Convert.ToInt32(rdbTipoDocNoSocio.SelectedItem.Value);
+                            //Session["nroDoc"] = Convert.ToInt32(txtNroDocSocioP.Text); 
+
                             break;
                         }
                     case 2:
@@ -670,7 +673,9 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                     panelNuevaDir.Visible = true;
                 }
             }
-        }    
+        }
+
+        Session["nroSocio"] = txtNroSocioP.Text;
     }
     protected void gvMedidores_RowDataBound(object sender, GridViewRowEventArgs e)
     {
@@ -858,8 +863,16 @@ public partial class MCorrectivoSesion_RegistrarReclamo : System.Web.UI.Page
                 int idsocio = 0;
 
                 //Socio Particular
-                if (txtNroSocioP.Text != "")
-                    idsocio = Convert.ToInt32(txtNroSocioP.Text);
+                //if (txtNroSocioP.Text != "")
+                if (Session["nroSocio"].ToString() != " ")
+                    //idsocio = Convert.ToInt32(txtNroSocioP.Text);
+                    idsocio = Convert.ToInt32(Session["nroSocio"].ToString());
+                //else
+                //{
+                //    Socio s = Datos.getSocios().traerDatosSocioNroDoc(Convert.ToInt32(Session["tipoDoc"].ToString()), Convert.ToInt32(Session["nroDoc"].ToString()));
+                //    idsocio = Convert.ToInt32(s.IdSocio);
+                //}
+
 
                 //Socio Empresa 
                 if (lblNroSocioE.Text != "")

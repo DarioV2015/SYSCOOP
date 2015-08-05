@@ -28,6 +28,8 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 AccordionAdministrativo.Visible = false;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = false;
+
+                lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString() + " Nº " + usr.NroSocio.ToString();
               
             }
             else if (usr.Rol.Equals("Guardia"))
@@ -36,7 +38,8 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 AccordionAdministrativo.Visible = false;
                 AccordionGuardia.Visible =  true;
                 AccordionJefes.Visible = false;
-               
+
+                lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString();
             }
             else if (usr.Rol.Equals("Capataz") )
             {
@@ -44,6 +47,8 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 AccordionAdministrativo.Visible = false;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = false;
+
+                lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString();
             }
             else if (usr.Rol.Equals("JefeRedes") || usr.Rol.Equals("JefeDistribucion"))
             {
@@ -51,6 +56,8 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 AccordionAdministrativo.Visible = false;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = true;
+
+                lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString();
             }
             else if (usr.Rol.Equals("Administrativo"))
             {
@@ -58,18 +65,18 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 AccordionAdministrativo.Visible = true;
                 AccordionGuardia.Visible = false;
                 AccordionJefes.Visible = false;
-            }
 
-            lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString();
+                lblUsuario.Text = usr.Usuario.ToUpper() + " - " + usr.Rol.ToString();
+            }
 
             if (usr.Rol.Equals("JefeRedes"))
             {
-                List<Insumo> listaInsumosPorVencer = (List<Insumo>)Datos.getAvisos().traerInsumosVencidos();
+                //List<Insumo> listaInsumosPorVencer = (List<Insumo>)Datos.getAvisos().traerInsumosVencidos();
 
-                if (listaInsumosPorVencer.Count == 0)  //no hay insumos por vencer
-                    imagenAvisos.Visible = false;
-                else
-                    imagenAvisos.Visible = true;
+                //if (listaInsumosPorVencer.Count == 0)  //no hay insumos por vencer
+                //    imagenAvisos.Visible = false;
+                //else
+                //    imagenAvisos.Visible = true;
 
                 List<Insumo> listaInsumosSinStock = (List<Insumo>)Datos.getAvisos().traerInsumosFaltaStock();
 
@@ -78,19 +85,22 @@ public partial class MasterPrincipal2 : System.Web.UI.MasterPage
                 else
                     imagenAvisos.Visible = true;
 
-                List<Herramienta> listaHerramientasPorVencer = (List<Herramienta>)Datos.getAvisos().traerHerramientasVencidas();
+                //List<Herramienta> listaHerramientasPorVencer = (List<Herramienta>)Datos.getAvisos().traerHerramientasVencidas();
 
-                if (listaHerramientasPorVencer.Count == 0)
-                    imagenAvisos.Visible = false;
-                else
-                    imagenAvisos.Visible = true;
+                //if (listaHerramientasPorVencer.Count == 0)
+                //    imagenAvisos.Visible = false;
+                //else
+                //    imagenAvisos.Visible = true;
 
-                List<Medidor> listaStockMedidores = (List<Medidor>)Datos.getAvisos().traerStockMedidores();
+                //List<Medidor> listaStockMedidores = (List<Medidor>)Datos.getAvisos().traerStockMedidores();
 
-                if (listaStockMedidores.Count > 10)
-                    imagenAvisos.Visible = false;
-                else
-                    imagenAvisos.Visible = true;
+                //if (listaStockMedidores.Count > 10)
+                //    imagenAvisos.Visible = false;
+                //else
+                //{
+                //    imagenAvisos.Visible = true;
+                //    break;
+                //}
             }
             else
             {

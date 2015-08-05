@@ -79,6 +79,8 @@ public partial class MCorrectivoSesion_ConsultarReclamo : System.Web.UI.Page
        lblNroReclamo.Visible = false;
        txtNroReclamo.Visible = false;
        btnBuscar.Enabled = true;
+
+       panelDetalleTiempos.Visible = false;
    }
    protected void rdbOtr_CheckedChanged(object sender, EventArgs e)
    {
@@ -88,6 +90,8 @@ public partial class MCorrectivoSesion_ConsultarReclamo : System.Web.UI.Page
        txtNroReclamo.Visible = true;
        btnBuscar.Enabled = true;
        txtNroReclamo.Focus();
+
+       panelDetalleTiempos.Visible = false;
    }
    protected void btnBuscar_Click1(object sender, EventArgs e)
    {
@@ -162,13 +166,23 @@ public partial class MCorrectivoSesion_ConsultarReclamo : System.Web.UI.Page
            float resultado = tiempoResolucion - dif.Minutes;
 
            DateTime horaF = Convert.ToDateTime(horaActual.AddMinutes(resultado));
-           
+
+           panelDetalleTiempos.Visible = true;
+
+           if (Convert.ToSingle(tiempoResolucion) == 0)
+           {
+               lblDuracionEstimada.Text = " - ";
+               lblHoraFinEstimada.Text = " - ";
+           }
+           else
+           {
+               lblDuracionEstimada.Text = resultado.ToString() + " minutos";
+               lblHoraFinEstimada.Text = horaF.ToString("HH:mm") + " hs.";
+           }
+
            lblTiempo.Text = tiempoResolucion.ToString() + " minutos";
            lblHoraInicioOTC.Text = horaInicioOTC.ToString("HH:mm") + " hs.";
            lblHoraActual.Text = horaActual.ToString("HH:mm") + " hs.";
-           lblDuracionEstimada.Text = resultado.ToString() + " minutos";
-           lblHoraFinEstimada.Text = horaF.ToString("HH:mm") + " hs.";
-
        }
    }
    protected void btnVolver_Click1(object sender, EventArgs e)
